@@ -18,6 +18,7 @@ namespace ProyectoSGBD_MySQL
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new Forms.Form_BD());
             Application.Run(new Forms.Form_Principal());
+            //hola
         }
     }
 }
