@@ -186,7 +186,7 @@ namespace ProyectoSGBD_MySQL.Forms
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string selectedItem = comboBox3.SelectedItem.ToString();
+            string selectedItem = comboBox2.SelectedItem.ToString();
 
             string generatedText = string.Empty;
 
