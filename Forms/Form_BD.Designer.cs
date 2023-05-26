@@ -54,7 +54,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label17 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.listBoxEsquemas = new System.Windows.Forms.ListBox();
             this.treeView2 = new System.Windows.Forms.TreeView();
             this.panel7 = new System.Windows.Forms.Panel();
             this.label18 = new System.Windows.Forms.Label();
@@ -457,7 +456,6 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.Azure;
-            this.panel4.Controls.Add(this.listBoxEsquemas);
             this.panel4.Controls.Add(this.treeView2);
             this.panel4.Controls.Add(this.panel7);
             this.panel4.Location = new System.Drawing.Point(7, 391);
@@ -465,16 +463,6 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(170, 214);
             this.panel4.TabIndex = 42;
-            // 
-            // listBoxEsquemas
-            // 
-            this.listBoxEsquemas.BackColor = System.Drawing.Color.Azure;
-            this.listBoxEsquemas.FormattingEnabled = true;
-            this.listBoxEsquemas.Location = new System.Drawing.Point(6, 103);
-            this.listBoxEsquemas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.listBoxEsquemas.Name = "listBoxEsquemas";
-            this.listBoxEsquemas.Size = new System.Drawing.Size(158, 108);
-            this.listBoxEsquemas.TabIndex = 30;
             // 
             // treeView2
             // 
@@ -1080,7 +1068,6 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TextBox textBox_Consola;
         private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.ListBox listBoxEsquemas;
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Panel panel11;

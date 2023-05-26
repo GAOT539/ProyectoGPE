@@ -48,7 +48,7 @@ namespace ProyectoSGBD_MySQL.Forms
                     //listBoxEsquemas.DisplayMember = "database_name";
                     //listBoxEsquemas.ValueMember = "database_name";
 
-                    TreeNode nodoRaiz = new TreeNode("esquemas");
+                    TreeNode nodoRaiz = new TreeNode("Esquemas");
                     treeView2.Nodes.Add(nodoRaiz);
                     foreach (DataRow row in schemas.Rows)
                     {
