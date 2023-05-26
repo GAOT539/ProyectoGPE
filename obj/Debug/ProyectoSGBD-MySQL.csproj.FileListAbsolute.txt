@@ -18,3 +18,23 @@ C:\Users\34641\Documents\Compartida\5º Semestre\Gabriel Ocampo\Sistemas de Base
 C:\Users\34641\Documents\Compartida\5º Semestre\Gabriel Ocampo\Sistemas de Bases de Datos Distribuidos\Parcial 1\ProyectoSGBD-MySQL\bin\Debug\MySql.Data.xml
 C:\Users\34641\Documents\Compartida\5º Semestre\Gabriel Ocampo\Sistemas de Bases de Datos Distribuidos\Parcial 1\ProyectoSGBD-MySQL\obj\Debug\ProyectoSGBD-MySQL.csproj.CopyComplete
 C:\Users\34641\Documents\Compartida\5º Semestre\Gabriel Ocampo\Sistemas de Bases de Datos Distribuidos\Parcial 1\ProyectoSGBD-MySQL\obj\Debug\ProyectoSGBD_MySQL.Forms.Form_BD.resources
+C:\Users\34641\source\repos\GAOT28\ProyectoSGBD-MySQL\GAOT28\ProyectoGPE\bin\Debug\ProyectoSGBD-MySQL.exe.config
+C:\Users\34641\source\repos\GAOT28\ProyectoSGBD-MySQL\GAOT28\ProyectoGPE\bin\Debug\ProyectoSGBD-MySQL.exe
+C:\Users\34641\source\repos\GAOT28\ProyectoSGBD-MySQL\GAOT28\ProyectoGPE\bin\Debug\ProyectoSGBD-MySQL.pdb
+C:\Users\34641\source\repos\GAOT28\ProyectoSGBD-MySQL\GAOT28\ProyectoGPE\bin\Debug\MySql.Data.dll
+C:\Users\34641\source\repos\GAOT28\ProyectoSGBD-MySQL\GAOT28\ProyectoGPE\bin\Debug\System.Memory.dll
+C:\Users\34641\source\repos\GAOT28\ProyectoSGBD-MySQL\GAOT28\ProyectoGPE\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\34641\source\repos\GAOT28\ProyectoSGBD-MySQL\GAOT28\ProyectoGPE\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\34641\source\repos\GAOT28\ProyectoSGBD-MySQL\GAOT28\ProyectoGPE\bin\Debug\System.Buffers.dll
+C:\Users\34641\source\repos\GAOT28\ProyectoSGBD-MySQL\GAOT28\ProyectoGPE\bin\Debug\MySql.Data.xml
+C:\Users\34641\source\repos\GAOT28\ProyectoSGBD-MySQL\GAOT28\ProyectoGPE\obj\Debug\ProyectoSGBD-MySQL.csproj.AssemblyReference.cache
+C:\Users\34641\source\repos\GAOT28\ProyectoSGBD-MySQL\GAOT28\ProyectoGPE\obj\Debug\ProyectoSGBD-MySQL.csproj.SuggestedBindingRedirects.cache
+C:\Users\34641\source\repos\GAOT28\ProyectoSGBD-MySQL\GAOT28\ProyectoGPE\obj\Debug\ProyectoSGBD_MySQL.Forms.Form_BD.resources
+C:\Users\34641\source\repos\GAOT28\ProyectoSGBD-MySQL\GAOT28\ProyectoGPE\obj\Debug\ProyectoSGBD_MySQL.Forms.Form_Login.resources
+C:\Users\34641\source\repos\GAOT28\ProyectoSGBD-MySQL\GAOT28\ProyectoGPE\obj\Debug\ProyectoSGBD_MySQL.Forms.Form_Principal.resources
+C:\Users\34641\source\repos\GAOT28\ProyectoSGBD-MySQL\GAOT28\ProyectoGPE\obj\Debug\ProyectoSGBD_MySQL.Properties.Resources.resources
+C:\Users\34641\source\repos\GAOT28\ProyectoSGBD-MySQL\GAOT28\ProyectoGPE\obj\Debug\ProyectoSGBD-MySQL.csproj.GenerateResource.cache
+C:\Users\34641\source\repos\GAOT28\ProyectoSGBD-MySQL\GAOT28\ProyectoGPE\obj\Debug\ProyectoSGBD-MySQL.csproj.CoreCompileInputs.cache
+C:\Users\34641\source\repos\GAOT28\ProyectoSGBD-MySQL\GAOT28\ProyectoGPE\obj\Debug\ProyectoSGBD-MySQL.csproj.CopyComplete
+C:\Users\34641\source\repos\GAOT28\ProyectoSGBD-MySQL\GAOT28\ProyectoGPE\obj\Debug\ProyectoSGBD-MySQL.exe
+C:\Users\34641\source\repos\GAOT28\ProyectoSGBD-MySQL\GAOT28\ProyectoGPE\obj\Debug\ProyectoSGBD-MySQL.pdb
