@@ -43,11 +43,6 @@ namespace ProyectoSGBD_MySQL.Forms
                     connection.Open();
 
                     DataTable schemas = connection.GetSchema("Databases");
-
-                    //listBoxEsquemas.DataSource = schemas;
-                    //listBoxEsquemas.DisplayMember = "database_name";
-                    //listBoxEsquemas.ValueMember = "database_name";
-
                     TreeNode nodoRaiz = new TreeNode("Esquemas");
                     treeView2.Nodes.Add(nodoRaiz);
                     foreach (DataRow row in schemas.Rows)
