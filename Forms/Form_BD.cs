@@ -44,14 +44,24 @@ namespace ProyectoSGBD_MySQL.Forms
 
                     DataTable schemas = connection.GetSchema("Databases");
 
-                    // Mostrar los esquemas en el ListBox
-                    listBoxEsquemas.DataSource = schemas;
-                    listBoxEsquemas.DisplayMember = "SCHEMA_NAME";
-                    listBoxEsquemas.ValueMember = "SCHEMA_NAME";
+                    //listBoxEsquemas.DataSource = schemas;
+                    //listBoxEsquemas.DisplayMember = "database_name";
+                    //listBoxEsquemas.ValueMember = "database_name";
+
+                    TreeNode nodoRaiz = new TreeNode("esquemas");
+                    treeView2.Nodes.Add(nodoRaiz);
+                    foreach (DataRow row in schemas.Rows)
+                    {
+                        string schemaName = row["database_name"].ToString();
+
+                        // Crear un nodo para cada esquema y agregarlo al nodo raíz
+                        TreeNode schemaNode = new TreeNode(schemaName);
+                        nodoRaiz.Nodes.Add(schemaNode);
+                    }
                 }
                 catch (Exception ex)
                 {
-                    //MessageBox.Show("Error al obtener los esquemas: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Error al obtener los esquemas: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
