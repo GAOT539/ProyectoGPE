@@ -158,7 +158,7 @@
             this.panel3.Location = new System.Drawing.Point(7, 47);
             this.panel3.Margin = new System.Windows.Forms.Padding(0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(193, 334);
+            this.panel3.Size = new System.Drawing.Size(170, 334);
             this.panel3.TabIndex = 40;
             // 
             // pictureBox20
@@ -463,7 +463,7 @@
             this.panel6.Controls.Add(this.pictureBox31);
             this.panel6.Location = new System.Drawing.Point(0, -1);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(896, 32);
+            this.panel6.Size = new System.Drawing.Size(645, 32);
             this.panel6.TabIndex = 42;
             // 
             // pictureBox35
@@ -629,10 +629,10 @@
             this.panel1.Controls.Add(this.panel6);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.textBox_RecibeBD);
-            this.panel1.Location = new System.Drawing.Point(209, 47);
+            this.panel1.Location = new System.Drawing.Point(182, 47);
             this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(896, 334);
+            this.panel1.Size = new System.Drawing.Size(645, 334);
             this.panel1.TabIndex = 0;
             // 
             // textBox_Query
@@ -643,7 +643,7 @@
             this.textBox_Query.Multiline = true;
             this.textBox_Query.Name = "textBox_Query";
             this.textBox_Query.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox_Query.Size = new System.Drawing.Size(871, 252);
+            this.textBox_Query.Size = new System.Drawing.Size(618, 252);
             this.textBox_Query.TabIndex = 43;
             // 
             // label1
@@ -664,7 +664,7 @@
             this.textBox_RecibeBD.Location = new System.Drawing.Point(134, 36);
             this.textBox_RecibeBD.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox_RecibeBD.Name = "textBox_RecibeBD";
-            this.textBox_RecibeBD.Size = new System.Drawing.Size(751, 28);
+            this.textBox_RecibeBD.Size = new System.Drawing.Size(499, 28);
             this.textBox_RecibeBD.TabIndex = 0;
             // 
             // panel2
@@ -709,7 +709,7 @@
             this.panel4.Location = new System.Drawing.Point(7, 391);
             this.panel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(193, 214);
+            this.panel4.Size = new System.Drawing.Size(170, 214);
             this.panel4.TabIndex = 42;
             // 
             // listBoxEsquemas
@@ -719,7 +719,7 @@
             this.listBoxEsquemas.Location = new System.Drawing.Point(6, 103);
             this.listBoxEsquemas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.listBoxEsquemas.Name = "listBoxEsquemas";
-            this.listBoxEsquemas.Size = new System.Drawing.Size(179, 108);
+            this.listBoxEsquemas.Size = new System.Drawing.Size(158, 108);
             this.listBoxEsquemas.TabIndex = 30;
             // 
             // treeView2
@@ -731,7 +731,7 @@
             this.treeView2.Location = new System.Drawing.Point(5, 22);
             this.treeView2.Name = "treeView2";
             this.treeView2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.treeView2.Size = new System.Drawing.Size(187, 189);
+            this.treeView2.Size = new System.Drawing.Size(165, 189);
             this.treeView2.TabIndex = 29;
             // 
             // panel7
@@ -761,7 +761,7 @@
             this.panel5.Controls.Add(this.panel9);
             this.panel5.Controls.Add(this.textBox_Consola);
             this.panel5.Controls.Add(this.panel8);
-            this.panel5.Location = new System.Drawing.Point(209, 393);
+            this.panel5.Location = new System.Drawing.Point(182, 393);
             this.panel5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(895, 211);
