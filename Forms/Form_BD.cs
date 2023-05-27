@@ -254,6 +254,10 @@ namespace ProyectoSGBD_MySQL.Forms
 
         private void pictureBox30_Click(object sender, EventArgs e)
         {
+            // Limpiar el árbol antes de actualizar el esquema
+            treeView2.Nodes.Clear();
+            // Llamar al método para obtener y mostrar el esquema
+            ObtenerEsquemas();
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             saveFileDialog.Filter = "Archivos SQL (*.sql)|*.sql";
             saveFileDialog.Title = "Guardar archivo SQL";
