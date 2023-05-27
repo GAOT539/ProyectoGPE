@@ -56,6 +56,7 @@ namespace ProyectoSGBD_MySQL.Forms
                         MostrarVistasCadaEsquema(schemaName, schemaNode, connection);
                         MostrarProcedimientosCadaEsquema(schemaName, schemaNode, connection);
                         MostrarFuncionesCadaEsquema(schemaName, schemaNode, connection);
+                        MostrarTriggersCadaEsquema(schemaName, schemaNode, connection);
                     }
                 }
                 catch (Exception ex)
@@ -66,6 +67,34 @@ namespace ProyectoSGBD_MySQL.Forms
                 {
                     connection.Close();
                 }
+            }
+        }
+
+        private void MostrarTriggersCadaEsquema(string schemaName, TreeNode schemaNode, MySqlConnection connection)
+        {
+            try
+            {
+                if (connection.State != ConnectionState.Open)
+                {
+                    connection.Open();
+                }
+
+                DataTable triggers = connection.GetSchema("Triggers", new string[] { null, schemaName });
+
+                TreeNode triggersNode = new TreeNode("Triggers");
+                schemaNode.Nodes.Add(triggersNode);
+
+                foreach (DataRow triggerRow in triggers.Rows)
+                {
+                    string triggerName = triggerRow["TRIGGER_NAME"].ToString();
+
+                    TreeNode triggerNode = new TreeNode(triggerName);
+                    triggersNode.Nodes.Add(triggerNode);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al obtener los triggers del esquema: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -191,41 +220,6 @@ namespace ProyectoSGBD_MySQL.Forms
             }
         }
 
-        //private void MostrarTriggersDeTabla(string tableName, TreeNode tableNode, MySqlConnection connection)
-        //{
-        //    try
-        //    {
-        //        if (connection.State != ConnectionState.Open)
-        //        {
-        //            connection.Open();
-        //        }
-        //        // Consulta SQL para obtener los triggers de la tabla
-        //        string sql = $"SHOW TRIGGERS LIKE 'persona'";
-
-        //        using (MySqlCommand command = new MySqlCommand(sql, connection))
-        //        using (MySqlDataReader reader = command.ExecuteReader())
-        //        {
-        //            TreeNode triggersNode = new TreeNode("Triggers");
-        //            tableNode.Nodes.Add(triggersNode);
-
-        //            for (int i = 0; i < reader.FieldCount; i++)
-        //            {
-        //                string triggerName = reader.GetString(1);
-
-        //                    MessageBox.Show(i + "  hola  " + reader.ToString());
-
-
-        //                    TreeNode triggerNode = new TreeNode(triggerName);
-        //                    triggersNode.Nodes.Add(triggerNode);
-
-        //            }
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show("Error al obtener los triggers de la tabla: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //    }
-        //}
 
         private void MostrarColumnasDeTabla(string schemaName, string tableName, TreeNode tableNode, MySqlConnection connection)
         {
