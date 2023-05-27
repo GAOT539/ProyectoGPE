@@ -22,6 +22,7 @@ namespace ProyectoSGBD_MySQL.Forms
             InitializeComponent();
             this.MaximizeBox = false;
             Load += FormularioEsquemas_Load;
+            comboBox2.SelectedIndexChanged += comboBox2_SelectedIndexChanged;
         }
 
 
@@ -43,21 +44,217 @@ namespace ProyectoSGBD_MySQL.Forms
                     connection.Open();
 
                     DataTable schemas = connection.GetSchema("Databases");
-                    TreeNode nodoRaiz = new TreeNode("Esquemas");
+                    TreeNode nodoRaiz = new TreeNode("esquemas");
                     treeView2.Nodes.Add(nodoRaiz);
                     foreach (DataRow row in schemas.Rows)
                     {
                         string schemaName = row["database_name"].ToString();
-
                         // Crear un nodo para cada esquema y agregarlo al nodo raíz
                         TreeNode schemaNode = new TreeNode(schemaName);
                         nodoRaiz.Nodes.Add(schemaNode);
+                        MostrarTablasCadaEsquema(schemaName, schemaNode, connection);
+                        MostrarVistasCadaEsquema(schemaName, schemaNode, connection);
+                        MostrarProcedimientosCadaEsquema(schemaName, schemaNode, connection);
+                        MostrarFuncionesCadaEsquema(schemaName, schemaNode, connection);
                     }
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show("Error al obtener los esquemas: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+                finally
+                {
+                    connection.Close();
+                }
+            }
+        }
+
+        private void MostrarFuncionesCadaEsquema(string schemaName, TreeNode schemaNode, MySqlConnection connection)
+        {
+            try
+            {
+                if (connection.State != ConnectionState.Open)
+                {
+                    connection.Open();
+                }
+
+                DataTable functions = connection.GetSchema("Functions", new string[] { null, schemaName });
+
+                TreeNode funcionesNode = new TreeNode("Funciones");
+                schemaNode.Nodes.Add(funcionesNode);
+
+                foreach (DataRow functionRow in functions.Rows)
+                {
+                    string functionName = functionRow["ROUTINE_NAME"].ToString();
+
+                    TreeNode functionNode = new TreeNode(functionName);
+                    funcionesNode.Nodes.Add(functionNode);
+                }
+            }
+            catch (Exception ex)
+            {
+                //MessageBox.Show("Error al obtener las funciones del esquema: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void MostrarProcedimientosCadaEsquema(string schemaName, TreeNode schemaNode, MySqlConnection connection)
+        {
+            try
+            {
+                if (connection.State != ConnectionState.Open)
+                {
+                    connection.Open();
+                }
+
+                DataTable procedures = connection.GetSchema("Procedures", new string[] { null, schemaName });
+
+                TreeNode procedimientosNode = new TreeNode("Procedimientos");
+                schemaNode.Nodes.Add(procedimientosNode);
+
+                foreach (DataRow procedureRow in procedures.Rows)
+                {
+                    string procedureName = procedureRow["ROUTINE_NAME"].ToString();
+
+                    TreeNode procedureNode = new TreeNode(procedureName);
+                    procedimientosNode.Nodes.Add(procedureNode);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al obtener los procedimientos del esquema: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void MostrarVistasCadaEsquema(string schemaName, TreeNode schemaNode, MySqlConnection connection)
+        {
+            try
+            {
+                if (connection.State != ConnectionState.Open)
+                {
+                    connection.Open();
+                }
+
+                DataTable views = connection.GetSchema("Views", new string[] { null, schemaName });
+
+                TreeNode vistasNode = new TreeNode("Vistas");
+                schemaNode.Nodes.Add(vistasNode);
+
+                foreach (DataRow viewRow in views.Rows)
+                {
+                    string viewName = viewRow["TABLE_NAME"].ToString();
+
+                    TreeNode viewNode = new TreeNode(viewName);
+                    vistasNode.Nodes.Add(viewNode);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al obtener las vistas del esquema: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void MostrarTablasCadaEsquema(string schemaName, TreeNode schemaNode, MySqlConnection connection)
+        {
+            try
+            {
+                using (connection)
+                {
+                    if (connection.State != ConnectionState.Open)
+                    {
+                        connection.Open();
+                    }
+
+                    DataTable tables = connection.GetSchema("Tables", new string[] { null, schemaName });
+                    // Crear el nodo padre "Columnas"
+                    TreeNode columnasNode = new TreeNode("Tablas");
+                    schemaNode.Nodes.Add(columnasNode);
+
+                    foreach (DataRow tableRow in tables.Rows)
+                    {
+                        string tableName = tableRow["TABLE_NAME"].ToString();
+                        // Crear un nodo para cada tabla y agregarlo como hijo del nodo del esquema
+                        TreeNode tableNode = new TreeNode(tableName);
+                        //schemaNode.Nodes.Add(tableNode);
+                        columnasNode.Nodes.Add(tableNode);
+                        MostrarColumnasDeTabla(schemaName, tableName, tableNode, connection);
+                        //MostrarTriggersDeTabla(tableName, tableNode, connection);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error tablas del esquema: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+
+        //private void MostrarTriggersDeTabla(string tableName, TreeNode tableNode, MySqlConnection connection)
+        //{
+        //    try
+        //    {
+        //        if (connection.State != ConnectionState.Open)
+        //        {
+        //            connection.Open();
+        //        }
+        //        // Consulta SQL para obtener los triggers de la tabla
+        //        string sql = $"SHOW TRIGGERS LIKE 'persona'";
+
+        //        using (MySqlCommand command = new MySqlCommand(sql, connection))
+        //        using (MySqlDataReader reader = command.ExecuteReader())
+        //        {
+        //            TreeNode triggersNode = new TreeNode("Triggers");
+        //            tableNode.Nodes.Add(triggersNode);
+
+        //            for (int i = 0; i < reader.FieldCount; i++)
+        //            {
+        //                string triggerName = reader.GetString(1);
+
+        //                    MessageBox.Show(i + "  hola  " + reader.ToString());
+
+
+        //                    TreeNode triggerNode = new TreeNode(triggerName);
+        //                    triggersNode.Nodes.Add(triggerNode);
+
+        //            }
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show("Error al obtener los triggers de la tabla: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //    }
+        //}
+
+        private void MostrarColumnasDeTabla(string schemaName, string tableName, TreeNode tableNode, MySqlConnection connection)
+        {
+            try
+            {
+                if (connection.State != ConnectionState.Open)
+                {
+                    connection.Open();
+                }
+
+                DataTable columns = connection.GetSchema("Columns", new string[] { null, schemaName, tableName });
+                // Crear el nodo padre "Columnas"
+                TreeNode columnasNode = new TreeNode("Columnas");
+                tableNode.Nodes.Add(columnasNode);
+
+                foreach (DataRow columnRow in columns.Rows)
+                {
+                    string columnName = columnRow["COLUMN_NAME"].ToString();
+                    TreeNode columnNode = new TreeNode(columnName);
+                    tableNode.Nodes.Add(columnNode);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al obtener las columnas de la tabla: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                connection.Close();
             }
         }
 
@@ -199,7 +396,7 @@ namespace ProyectoSGBD_MySQL.Forms
             switch (selectedItem)
             {
                 case "Jump to":
-                    generatedText = "";
+                    generatedText = "Automatic context help is disabled. Use the toolbar to manually get help for the current caret position or to toggle automatic help.";
                     break;
                 case "SELECT":
                     generatedText = "SELECT Syntax:\r\nSELECT is used to retrieve rows selected from one or more tables, and can include UNION statements and subqueries. See union, and subqueries. A SELECT statement can start with a WITH clause to define common table expressions accessible within the SELECT. See with.\r\n\r\nThe most commonly used clauses of SELECT statements are these:\r\n\r\nEach select_expr indicates a column that you want to retrieve. There must be at least one select_expr.\r\n\r\n\r\ntable_references indicates the table or tables from which to retrieve rows. Its syntax is described in join.\r\n\r\n\r\nSELECT supports explicit partition selection using the PARTITION with a list of partitions or subpartitions (or both) following the name of the table in a table_reference (see join). In this case, rows are selected only from the partitions listed, and any other partitions of the table are ignored.";
@@ -223,7 +420,7 @@ namespace ProyectoSGBD_MySQL.Forms
                     generatedText = "CREATE PROCEDURE Syntax:\r\nThese statements create stored routines. By default, a routine is associated with the default database. To associate the routine explicitly with a given database, specify the name as db_name.sp_name when you create it.\r\n\r\nThe CREATE FUNCTION statement is also used in MySQL to support UDFs (user-defined functions). See adding-functions. A UDF can be regarded as an external stored function. Stored functions share their namespace with UDFs. See function-resolution, for the rules describing how the server interprets references to different kinds of functions.\r\n\r\nTo invoke a stored procedure, use the CALL statement (see call). To invoke a stored function, refer to it in an expression. The function returns a value during expression evaluation.\r\n\r\nCREATE PROCEDURE and CREATE FUNCTION require the CREATE ROUTINE privilege. If the DEFINER clause is present, the privileges required depend on the user value, as discussed in stored-objects-security. If binary logging is enabled, CREATE FUNCTION might require the SUPER privilege, as discussed in stored-programs-logging.\r\n\r\nBy default, MySQL automatically grants the ALTER ROUTINE and EXECUTE privileges to the routine creator. This behavior can be changed by disabling the automatic_sp_privileges system variable. See stored-routines-privileges.\r\n\r\nThe DEFINER and SQL SECURITY clauses specify the security context to be used when checking access privileges at routine execution time, as described later in this section.\r\n\r\nIf the routine name is the same as the name of a built-in SQL function, a syntax error occurs unless you use a space between the name and the following parenthesis when defining the routine or invoking it later. For this reason, avoid using the names of existing SQL functions for your own stored routines.\r\n\r\nThe IGNORE_SPACE SQL mode applies to built-in functions, not to stored routines. It is always permissible to have spaces after a stored routine name, regardless of whether IGNORE_SPACE is enabled.\r\n\r\nThe parameter list enclosed within parentheses must always be present. If there are no parameters, an empty parameter list of () should be used. Parameter names are not case sensitive.\r\n\r\nEach parameter is an IN parameter by default. To specify otherwise for a parameter, use the keyword OUT or INOUT before the parameter name.\r\n\r\nAn IN parameter passes a value into a procedure. The procedure might modify the value, but the modification is not visible to the caller when the procedure returns. An OUT parameter passes a value from the procedure back to the caller. Its initial value is NULL within the procedure, and its value is visible to the caller when the procedure returns. An INOUT parameter is initialized by the caller, can be modified by the procedure, and any change made by the procedure is visible to the caller when the procedure returns.\r\n\r\nFor each OUT or INOUT parameter, pass a user-defined variable in the CALL statement that invokes the procedure so that you can obtain its value when the procedure returns. If you are calling the procedure from within another stored procedure or function, you can also pass a routine parameter or local routine variable as an OUT or INOUT parameter. If you are calling the procedure from within a trigger, you can also pass NEW.col_name as an OUT or INOUT parameter.\r\n\r\nFor information about the effect of unhandled conditions on procedure parameters, see conditions-and-parameters.\r\n\r\nRoutine parameters cannot be referenced in statements prepared within the routine; see stored-program-restrictions.\r\n\r\nThe following example shows a simple stored procedure that uses an OUT parameter:\r\n\r\n>\r\nmysql> delimiter //\r\n\r\nmysql> CREATE PROCEDURE simpleproc (OUT param1 INT)\r\n    -> BEGIN\r\n    ->   SELECT COUNT(*) INTO param1 FROM t;\r\n    -> END//\r\nQuery OK, 0 rows affected (0.00 sec)\r\n\r\nmysql> delimiter ;\r\n\r\nmysql> CALL simpleproc(@a);\r\nQuery OK, 0 rows affected (0.00 sec)\r\n\r\nmysql> SELECT @a;\r\n+------+\r\n| @a   |\r\n+------+\r\n| 3    |\r\n+------+\r\n1 row in set (0.00 sec)\r\nThe example uses the mysql client delimiter command to change the statement delimiter from ; to // while the procedure is being defined. This enables the ; delimiter used in the procedure body to be passed through to the server rather than being interpreted by mysql itself. See stored-programs-defining.\r\n\r\nThe RETURNS clause may be specified only for a FUNCTION, for which it is mandatory. It indicates the return type of the function, and the function body must contain a RETURN value statement. If the RETURN statement returns a value of a different type, the value is coerced to the proper type. For example, if a function specifies an ENUM or SET value in the RETURNS clause, but the RETURN statement returns an integer, the value returned from the function is the string for the corresponding ENUM member of set of SET members.\r\n\r\nThe following example function takes a parameter, performs an operation using an SQL function, and returns the result. In this case, it is unnecessary to use delimiter because the function definition contains no internal ; statement delimiters:\r\n\r\n>\r\nmysql> CREATE FUNCTION hello (s CHAR(20))\r\nmysql> RETURNS CHAR(50) DETERMINISTIC\r\n    -> RETURN CONCAT('Hello, ',s,'!');\r\nQuery OK, 0 rows affected (0.00 sec)\r\n\r\nmysql> SELECT hello('world');\r\n+----------------+\r\n| hello('world') |\r\n+----------------+\r\n| Hello, world!  |\r\n+----------------+\r\n1 row in set (0.00 sec)\r\nParameter types and function return types can be declared to use any valid data type. The COLLATE attribute can be used if preceded by a CHARACTER SET specification.\r\n\r\nThe routine_body consists of a valid SQL routine statement. This can be a simple statement such as SELECT or INSERT, or a compound statement written using BEGIN and END. Compound statements can contain declarations, loops, and other control structure statements. The syntax for these statements is described in sql-compound-statements. In practice, stored functions tend to use compound statements, unless the body consists of a single RETURN statement.\r\n\r\nMySQL permits routines to contain DDL statements, such as CREATE and DROP. MySQL also permits stored procedures (but not stored functions) to contain SQL transaction statements such as COMMIT. Stored functions may not contain statements that perform explicit or implicit commit or rollback. Support for these statements is not required by the SQL standard, which states that each DBMS vendor may decide whether to permit them.\r\n\r\nStatements that return a result set can be used within a stored procedure but not within a stored function. This prohibition includes SELECT statements that do not have an INTO var_list clause and other statements such as SHOW, EXPLAIN, and CHECK TABLE. For statements that can be determined at function definition time to return a result set, a Not allowed to return a result set from a function error occurs (ER_SP_NO_RETSET). For statements that can be determined only at runtime to return a result set, a PROCEDURE %s can't return a result set in the given context error occurs (ER_SP_BADSELECT).\r\n\r\nUSE statements within stored routines are not permitted. When a routine is invoked, an implicit USE db_name is performed (and undone when the routine terminates). The causes the routine to have the given default database while it executes. References to objects in databases other than the routine default database should be qualified with the appropriate database name.\r\n\r\nFor additional information about statements that are not permitted in stored routines, see stored-program-restrictions.\r\n\r\nFor information about invoking stored procedures from within programs written in a language that has a MySQL interface, see call.\r\n\r\nMySQL stores the sql_mode system variable setting in effect when a routine is created or altered, and always executes the routine with this setting in force, regardless of the current server SQL mode when the routine begins executing.\r\n\r\nThe switch from the SQL mode of the invoker to that of the routine occurs after evaluation of arguments and assignment of the resulting values to routine parameters. If you define a routine in strict SQL mode but invoke it in nonstrict mode, assignment of arguments to routine parameters does not take place in strict mode. If you require that expressions passed to a routine be assigned in strict SQL mode, you should invoke the routine with strict mode in effect.\r\n\r\nSee also: : Online help create-procedure";
                     break;
                 case "CREATE FUNCTION":
-                    generatedText = "";
+                    generatedText = "Automatic context help is disabled. Use the toolbar to manually get help for the current caret position or to toggle automatic help.";
                     break;
                 case "ALTER TABLE":
                     generatedText = "ALTER TABLE Syntax:\r\nALTER TABLE changes the structure of a table. For example, you can add or delete columns, create or destroy indexes, change the type of existing columns, or rename columns or the table itself. You can also change characteristics such as the storage engine used for the table or the table comment.\r\n\r\nTo use ALTER TABLE, you need ALTER, CREATE, and INSERT privileges for the table. Renaming a table requires ALTER and DROP on the old table, ALTER, CREATE, and INSERT on the new table.\r\n\r\n\r\nFollowing the table name, specify the alterations to be made. If none are given, ALTER TABLE does nothing.\r\n\r\n\r\nThe syntax for many of the permissible alterations is similar to clauses of the CREATE TABLE statement. column_definition clauses use the same syntax for ADD and CHANGE as for CREATE TABLE. For more information, see create-table.\r\n\r\n\r\nThe word COLUMN is optional and can be omitted, except for RENAME COLUMN (to distinguish a column-renaming operation from the RENAME table-renaming operation).\r\n\r\n\r\nMultiple ADD, ALTER, DROP, and CHANGE clauses are permitted in a single ALTER TABLE statement, separated by commas. This is a MySQL extension to standard SQL, which permits only one of each clause per ALTER TABLE statement. For example, to drop multiple columns in a single statement, do this:\r\n\r\n>\r\nALTER TABLE t2 DROP COLUMN c, DROP COLUMN d;\r\n\r\nIf a storage engine does not support an attempted ALTER TABLE operation, a warning may result. Such warnings can be displayed with SHOW WARNINGS. See show-warnings. For information on troubleshooting ALTER TABLE, see alter-table-problems.\r\n\r\n\r\nFor information about generated columns, see alter-table-generated-columns.\r\n\r\n\r\nFor usage examples, see alter-table-examples.\r\n\r\n\r\nInnoDB in MySQL 8.0.17 and later supports addition of multi-valued indexes on JSON columns using a key_part specification can take the form (CAST json_path AS type ARRAY). See create-index-multi-valued, for detailed information regarding multi-valued index creation and usage of, as well as restrictions and limitations on multi-valued indexes.\r\n\r\n\r\nWith the mysql_info() C API function, you can find out how many rows were copied by ALTER TABLE. See mysql-info.\r\n\r\n\r\n\r\nSee also: : Online help alter-table";
