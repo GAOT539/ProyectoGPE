@@ -431,5 +431,16 @@ namespace ProyectoSGBD_MySQL.Forms
 
             textBox1.Text = generatedText;
         }
+
+        private void pictureBox6_Click(object sender, EventArgs e)
+        {
+            Forms.Form_Dinamico form_D = new Forms.Form_Dinamico();
+            //AddOwnedForm(form_BD); //Establece una relación de propiedad entre formularios.
+            //form_BD.textBox_RecibeBD.Text = cadenaConexion; //Establecer text (cadenaConexion)
+            cAux cAux = new cAux();
+            this.Hide();
+            form_D.ShowDialog();
+            this.Show();
+        }
     }
 }

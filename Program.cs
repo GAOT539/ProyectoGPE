@@ -16,7 +16,7 @@ namespace ProyectoSGBD_MySQL
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new Forms.Form_BD());
+            //Application.Run(new Forms.Form_Dinamico());
             Application.Run(new Forms.Form_Principal());
         }
     }

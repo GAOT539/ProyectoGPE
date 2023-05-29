@@ -64,3 +64,7 @@ C:\Users\HP\Source\Repos\GAOT28\ProyectoGPE\obj\Debug\ProyectoSGBD-MySQL.csproj.
 C:\Users\HP\Source\Repos\GAOT28\ProyectoGPE\obj\Debug\ProyectoSGBD-MySQL.csproj.CopyComplete
 C:\Users\HP\Source\Repos\GAOT28\ProyectoGPE\obj\Debug\ProyectoSGBD-MySQL.exe
 C:\Users\HP\Source\Repos\GAOT28\ProyectoGPE\obj\Debug\ProyectoSGBD-MySQL.pdb
+C:\Users\34641\source\repos\GAOT28\ProyectoSGBD-MySQL\GAOT28\ProyectoGPE\obj\Debug\ProyectoSGBD_MySQL.Forms.Form_CreateBD.resources
+C:\Users\34641\source\repos\GAOT28\ProyectoSGBD-MySQL\GAOT28\ProyectoGPE\obj\Debug\ProyectoSGBD_MySQL.Forms.Form_CreateColumna.resources
+C:\Users\34641\source\repos\GAOT28\ProyectoSGBD-MySQL\GAOT28\ProyectoGPE\obj\Debug\ProyectoSGBD_MySQL.Forms.Form_CreateTabla.resources
+C:\Users\34641\source\repos\GAOT28\ProyectoSGBD-MySQL\GAOT28\ProyectoGPE\obj\Debug\ProyectoSGBD_MySQL.Forms.Form_Dinamico.resources
