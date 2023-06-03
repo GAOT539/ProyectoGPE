@@ -98,3 +98,5 @@ C:\Users\HP\Source\Repos\GAOT539\ProyectoGPE\obj\Debug\ProyectoSGBD-MySQL.csproj
 C:\Users\HP\Source\Repos\GAOT539\ProyectoGPE\obj\Debug\ProyectoSGBD-MySQL.csproj.CopyComplete
 C:\Users\HP\Source\Repos\GAOT539\ProyectoGPE\obj\Debug\ProyectoSGBD-MySQL.exe
 C:\Users\HP\Source\Repos\GAOT539\ProyectoGPE\obj\Debug\ProyectoSGBD-MySQL.pdb
+C:\Users\HP\Source\Repos\GAOT539\ProyectoGPE\obj\Debug\ProyectoSGBD_MySQL.Forms.Form_Dinamico_BD_COL_TAB.resources
+C:\Users\HP\Source\Repos\GAOT539\ProyectoGPE\obj\Debug\ProyectoSGBD_MySQL.Forms.Form_Usuarios_Privilegios.resources

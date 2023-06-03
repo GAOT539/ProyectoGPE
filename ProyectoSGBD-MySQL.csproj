@@ -81,6 +81,12 @@
     <Compile Include="Forms\Form_Dinamico.Designer.cs">
       <DependentUpon>Form_Dinamico.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Form_Dinamico_BD_COL_TAB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Form_Dinamico_BD_COL_TAB.Designer.cs">
+      <DependentUpon>Form_Dinamico_BD_COL_TAB.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Form_Principal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,6 +121,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Form_Dinamico.resx">
       <DependentUpon>Form_Dinamico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form_Dinamico_BD_COL_TAB.resx">
+      <DependentUpon>Form_Dinamico_BD_COL_TAB.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Form_Login.resx">
       <DependentUpon>Form_Login.cs</DependentUpon>
@@ -264,6 +273,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\user_person_people_6100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Recursos\Imagenes\981402.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Recursos\Imagenes\1239779.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Recursos\Imagenes\31491.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

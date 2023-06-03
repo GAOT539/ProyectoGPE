@@ -63,9 +63,29 @@ namespace ProyectoSGBD_MySQL.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _1239779 {
+            get {
+                object obj = ResourceManager.GetObject("1239779", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _30393 {
             get {
                 object obj = ResourceManager.GetObject("30393", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _31491 {
+            get {
+                object obj = ResourceManager.GetObject("31491", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -106,6 +126,16 @@ namespace ProyectoSGBD_MySQL.Properties {
         internal static System.Drawing.Bitmap _6367690 {
             get {
                 object obj = ResourceManager.GetObject("6367690", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _981402 {
+            get {
+                object obj = ResourceManager.GetObject("981402", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
