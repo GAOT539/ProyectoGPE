@@ -105,7 +105,7 @@
             this.groupBox1.Controls.Add(this.pictureBox1);
             this.groupBox1.Location = new System.Drawing.Point(4, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1004, 78);
+            this.groupBox1.Size = new System.Drawing.Size(1031, 78);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
@@ -209,7 +209,7 @@
             this.tabPage_Login.Controls.Add(this.label3);
             this.tabPage_Login.Location = new System.Drawing.Point(4, 22);
             this.tabPage_Login.Name = "tabPage_Login";
-            this.tabPage_Login.Size = new System.Drawing.Size(697, 327);
+            this.tabPage_Login.Size = new System.Drawing.Size(804, 407);
             this.tabPage_Login.TabIndex = 0;
             this.tabPage_Login.Text = "Login";
             this.tabPage_Login.UseVisualStyleBackColor = true;
@@ -230,7 +230,7 @@
             this.tabPage_Account_Limits.Controls.Add(this.label17);
             this.tabPage_Account_Limits.Location = new System.Drawing.Point(4, 22);
             this.tabPage_Account_Limits.Name = "tabPage_Account_Limits";
-            this.tabPage_Account_Limits.Size = new System.Drawing.Size(697, 327);
+            this.tabPage_Account_Limits.Size = new System.Drawing.Size(804, 407);
             this.tabPage_Account_Limits.TabIndex = 1;
             this.tabPage_Account_Limits.Text = "Account Limits";
             this.tabPage_Account_Limits.UseVisualStyleBackColor = true;
@@ -250,7 +250,7 @@
             // 
             this.tabPage_Schema_Privileges.Location = new System.Drawing.Point(4, 22);
             this.tabPage_Schema_Privileges.Name = "tabPage_Schema_Privileges";
-            this.tabPage_Schema_Privileges.Size = new System.Drawing.Size(759, 327);
+            this.tabPage_Schema_Privileges.Size = new System.Drawing.Size(804, 407);
             this.tabPage_Schema_Privileges.TabIndex = 3;
             this.tabPage_Schema_Privileges.Text = "Schema Privileges";
             this.tabPage_Schema_Privileges.UseVisualStyleBackColor = true;
@@ -284,7 +284,7 @@
             // 
             // button_Apply
             // 
-            this.button_Apply.Location = new System.Drawing.Point(933, 563);
+            this.button_Apply.Location = new System.Drawing.Point(960, 563);
             this.button_Apply.Name = "button_Apply";
             this.button_Apply.Size = new System.Drawing.Size(75, 23);
             this.button_Apply.TabIndex = 6;
@@ -293,7 +293,7 @@
             // 
             // button_Revert
             // 
-            this.button_Revert.Location = new System.Drawing.Point(852, 563);
+            this.button_Revert.Location = new System.Drawing.Point(879, 563);
             this.button_Revert.Name = "button_Revert";
             this.button_Revert.Size = new System.Drawing.Size(75, 23);
             this.button_Revert.TabIndex = 5;
