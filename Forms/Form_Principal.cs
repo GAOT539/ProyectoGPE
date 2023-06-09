@@ -8,16 +8,24 @@ namespace ProyectoSGBD_MySQL.Forms
         public Form_Principal()
         {
             InitializeComponent();
-            this.MaximizeBox = false; //Bloquear Maximizar
+            // Bloquea la maximización del formulario
+            this.MaximizeBox = false; 
         }
 
-        private void pictureBox3_Click(object sender, EventArgs e)
+        private void pictureBox_Exit_Click(object sender, EventArgs e)
         {
+            // Este método se activa cuando se hace clic en el pictureBox_Exit.
+            // Cierra la aplicación.
             Application.Exit();
         }
 
-        private void panel3_Click(object sender, EventArgs e)
+        private void panel_Inicio_Click(object sender, EventArgs e)
         {
+            // Este método se activa cuando se hace clic en el panel_Inicio.
+            // Crea una instancia del formulario de inicio de sesión (Form_Login) y una instancia de cAux.
+            // Muestra el formulario de inicio de sesión.
+            // Agrega un controlador de eventos para el evento FormClosed, que se ejecuta cuando se cierra el formulario de inicio de sesión.
+            // Oculta el formulario actual.
             Form_Login login = new Form_Login();
             cAux cAux = new cAux();
             login.Show();
@@ -25,8 +33,10 @@ namespace ProyectoSGBD_MySQL.Forms
             this.Hide();
         }
 
-        private void label6_Click(object sender, EventArgs e)
+        private void label_BrowseDocumentation_Click(object sender, EventArgs e)
         {
+            // Este método se activa cuando se hace clic en el label_BrowseDocumentation.
+            // Abre un enlace específico en el navegador web predeterminado del sistema.
             string enlace = "https://dev.mysql.com/doc/workbench/en/";
 
             try
@@ -35,12 +45,15 @@ namespace ProyectoSGBD_MySQL.Forms
             }
             catch (Exception ex)
             {
+                // Muestra un mensaje de error si ocurre alguna excepción al abrir el enlace.
                 MessageBox.Show("Error al abrir el enlace: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        private void label8_Click(object sender, EventArgs e)
+        private void label_DiscussForums_Click(object sender, EventArgs e)
         {
+            // Este método se activa cuando se hace clic en el label_DiscussForums.
+            // Abre un enlace específico en el navegador web predeterminado del sistema.
             string enlace = "https://forums.mysql.com/list.php?152";
 
             try
@@ -49,12 +62,15 @@ namespace ProyectoSGBD_MySQL.Forms
             }
             catch (Exception ex)
             {
+                // Muestra un mensaje de error si ocurre alguna excepción al abrir el enlace.
                 MessageBox.Show("Error al abrir el enlace: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        private void label7_Click(object sender, EventArgs e)
+        private void label_ReadBlog_Click(object sender, EventArgs e)
         {
+            // Este método se activa cuando se hace clic en el label_ReadBlog.
+            // Abre un enlace específico en el navegador web predeterminado del sistema.
             string enlace = "https://dev.mysql.com/blog-archive/";
 
             try
@@ -63,8 +79,10 @@ namespace ProyectoSGBD_MySQL.Forms
             }
             catch (Exception ex)
             {
+                // Muestra un mensaje de error si ocurre alguna excepción al abrir el enlace.
                 MessageBox.Show("Error al abrir el enlace: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
     }
 }

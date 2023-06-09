@@ -122,3 +122,6 @@ C:\Users\34641\source\repos\GAOT539\ProyectoGPE\obj\Debug\ProyectoSGBD-MySQL.csp
 C:\Users\34641\source\repos\GAOT539\ProyectoGPE\obj\Debug\ProyectoSGBD-MySQL.csproj.CopyComplete
 C:\Users\34641\source\repos\GAOT539\ProyectoGPE\obj\Debug\ProyectoSGBD-MySQL.exe
 C:\Users\34641\source\repos\GAOT539\ProyectoGPE\obj\Debug\ProyectoSGBD-MySQL.pdb
+C:\Users\34641\source\repos\GAOT539\ProyectoGPE\bin\Debug\Newtonsoft.Json.dll
+C:\Users\34641\source\repos\GAOT539\ProyectoGPE\bin\Debug\Newtonsoft.Json.xml
+C:\Users\34641\source\repos\GAOT539\ProyectoGPE\obj\Debug\ProyectoSGBD_MySQL.Forms.Form_ChatGPT.resources

@@ -18,6 +18,7 @@ namespace ProyectoSGBD_MySQL
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new Forms.Form_Dinamico_BD_COL_TAB());
             Application.Run(new Forms.Form_Principal());
+            //Application.Run(new Forms.Form_ChatGPT());
         }
     }
 }

@@ -32,13 +32,13 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox_Exit = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.label_DiscussForums = new System.Windows.Forms.Label();
+            this.label_ReadBlog = new System.Windows.Forms.Label();
+            this.label_BrowseDocumentation = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel_Inicio = new System.Windows.Forms.Panel();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -50,9 +50,9 @@
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Exit)).BeginInit();
             this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
+            this.panel_Inicio.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -64,7 +64,7 @@
             this.panel1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.pictureBox2);
-            this.panel1.Controls.Add(this.pictureBox3);
+            this.panel1.Controls.Add(this.pictureBox_Exit);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(90, 382);
@@ -94,26 +94,26 @@
             this.pictureBox2.TabIndex = 2;
             this.pictureBox2.TabStop = false;
             // 
-            // pictureBox3
+            // pictureBox_Exit
             // 
-            this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(6, 180);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(6);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(78, 74);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 3;
-            this.pictureBox3.TabStop = false;
-            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
+            this.pictureBox_Exit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox_Exit.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox_Exit.Image")));
+            this.pictureBox_Exit.Location = new System.Drawing.Point(6, 180);
+            this.pictureBox_Exit.Margin = new System.Windows.Forms.Padding(6);
+            this.pictureBox_Exit.Name = "pictureBox_Exit";
+            this.pictureBox_Exit.Size = new System.Drawing.Size(78, 74);
+            this.pictureBox_Exit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox_Exit.TabIndex = 3;
+            this.pictureBox_Exit.TabStop = false;
+            this.pictureBox_Exit.Click += new System.EventHandler(this.pictureBox_Exit_Click);
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.label8);
-            this.panel2.Controls.Add(this.label7);
-            this.panel2.Controls.Add(this.label6);
+            this.panel2.Controls.Add(this.label_DiscussForums);
+            this.panel2.Controls.Add(this.label_ReadBlog);
+            this.panel2.Controls.Add(this.label_BrowseDocumentation);
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.panel3);
+            this.panel2.Controls.Add(this.panel_Inicio);
             this.panel2.Controls.Add(this.pictureBox5);
             this.panel2.Controls.Add(this.pictureBox4);
             this.panel2.Controls.Add(this.label9);
@@ -122,47 +122,47 @@
             this.panel2.Size = new System.Drawing.Size(466, 382);
             this.panel2.TabIndex = 17;
             // 
-            // label8
+            // label_DiscussForums
             // 
-            this.label8.AutoSize = true;
-            this.label8.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label8.Location = new System.Drawing.Point(103, 145);
-            this.label8.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(228, 25);
-            this.label8.TabIndex = 24;
-            this.label8.Text = "Discuss on the Forums >";
-            this.label8.Click += new System.EventHandler(this.label8_Click);
+            this.label_DiscussForums.AutoSize = true;
+            this.label_DiscussForums.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label_DiscussForums.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_DiscussForums.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.label_DiscussForums.Location = new System.Drawing.Point(103, 145);
+            this.label_DiscussForums.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label_DiscussForums.Name = "label_DiscussForums";
+            this.label_DiscussForums.Size = new System.Drawing.Size(228, 25);
+            this.label_DiscussForums.TabIndex = 24;
+            this.label_DiscussForums.Text = "Discuss on the Forums >";
+            this.label_DiscussForums.Click += new System.EventHandler(this.label_DiscussForums_Click);
             // 
-            // label7
+            // label_ReadBlog
             // 
-            this.label7.AutoSize = true;
-            this.label7.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label7.Location = new System.Drawing.Point(103, 189);
-            this.label7.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(151, 25);
-            this.label7.TabIndex = 23;
-            this.label7.Text = "Read the Blog >";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
+            this.label_ReadBlog.AutoSize = true;
+            this.label_ReadBlog.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label_ReadBlog.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_ReadBlog.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.label_ReadBlog.Location = new System.Drawing.Point(103, 189);
+            this.label_ReadBlog.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label_ReadBlog.Name = "label_ReadBlog";
+            this.label_ReadBlog.Size = new System.Drawing.Size(151, 25);
+            this.label_ReadBlog.TabIndex = 23;
+            this.label_ReadBlog.Text = "Read the Blog >";
+            this.label_ReadBlog.Click += new System.EventHandler(this.label_ReadBlog_Click);
             // 
-            // label6
+            // label_BrowseDocumentation
             // 
-            this.label6.AutoSize = true;
-            this.label6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label6.Location = new System.Drawing.Point(103, 98);
-            this.label6.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(230, 25);
-            this.label6.TabIndex = 22;
-            this.label6.Text = "Browse Documentation >";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
+            this.label_BrowseDocumentation.AutoSize = true;
+            this.label_BrowseDocumentation.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label_BrowseDocumentation.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_BrowseDocumentation.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.label_BrowseDocumentation.Location = new System.Drawing.Point(103, 98);
+            this.label_BrowseDocumentation.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label_BrowseDocumentation.Name = "label_BrowseDocumentation";
+            this.label_BrowseDocumentation.Size = new System.Drawing.Size(230, 25);
+            this.label_BrowseDocumentation.TabIndex = 22;
+            this.label_BrowseDocumentation.Text = "Browse Documentation >";
+            this.label_BrowseDocumentation.Click += new System.EventHandler(this.label_BrowseDocumentation_Click);
             // 
             // label1
             // 
@@ -174,21 +174,21 @@
             this.label1.TabIndex = 21;
             this.label1.Text = "Welcome to GPE";
             // 
-            // panel3
+            // panel_Inicio
             // 
-            this.panel3.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.pictureBox7);
-            this.panel3.Controls.Add(this.pictureBox6);
-            this.panel3.Controls.Add(this.label12);
-            this.panel3.Controls.Add(this.label10);
-            this.panel3.Controls.Add(this.label11);
-            this.panel3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panel3.Location = new System.Drawing.Point(108, 263);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(246, 87);
-            this.panel3.TabIndex = 20;
-            this.panel3.Click += new System.EventHandler(this.panel3_Click);
+            this.panel_Inicio.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.panel_Inicio.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel_Inicio.Controls.Add(this.pictureBox7);
+            this.panel_Inicio.Controls.Add(this.pictureBox6);
+            this.panel_Inicio.Controls.Add(this.label12);
+            this.panel_Inicio.Controls.Add(this.label10);
+            this.panel_Inicio.Controls.Add(this.label11);
+            this.panel_Inicio.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panel_Inicio.Location = new System.Drawing.Point(108, 263);
+            this.panel_Inicio.Name = "panel_Inicio";
+            this.panel_Inicio.Size = new System.Drawing.Size(246, 87);
+            this.panel_Inicio.TabIndex = 20;
+            this.panel_Inicio.Click += new System.EventHandler(this.panel_Inicio_Click);
             // 
             // pictureBox7
             // 
@@ -296,11 +296,11 @@
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Exit)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
+            this.panel_Inicio.ResumeLayout(false);
+            this.panel_Inicio.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
@@ -314,9 +314,9 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pictureBox_Exit;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel_Inicio;
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.Label label12;
@@ -326,8 +326,8 @@
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label_DiscussForums;
+        private System.Windows.Forms.Label label_ReadBlog;
+        private System.Windows.Forms.Label label_BrowseDocumentation;
     }
 }

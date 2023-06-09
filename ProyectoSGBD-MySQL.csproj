@@ -37,6 +37,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\MySQL\Connector NET 8.0\MySql.Data.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -51,6 +54,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="cAux.cs" />
+    <Compile Include="Forms\Form_ChatGPT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Form_ChatGPT.Designer.cs">
+      <DependentUpon>Form_ChatGPT.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Form_BD.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,6 +95,9 @@
     <EmbeddedResource Include="Forms\Form_BD.resx">
       <DependentUpon>Form_BD.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form_ChatGPT.resx">
+      <DependentUpon>Form_ChatGPT.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Form_Dinamico_BD_COL_TAB.resx">
       <DependentUpon>Form_Dinamico_BD_COL_TAB.cs</DependentUpon>
     </EmbeddedResource>
@@ -108,6 +120,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\DataSources\cAux.datasource" />
     <None Include="Properties\DataSources\MySql.Data.MySqlClient.Authentication.MySqlAuthenticationPlugin.datasource" />
     <None Include="Properties\DataSources\MySql.Data.MySqlClient.Authentication.MySqlClearPasswordPlugin.datasource" />
