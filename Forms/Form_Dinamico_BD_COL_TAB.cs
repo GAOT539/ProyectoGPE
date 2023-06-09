@@ -347,5 +347,30 @@ namespace ProyectoSGBD_MySQL.Forms
                 MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void comboBox_DataBase_Tabla_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string cadenaConexion = "Database=mysql; Data Source=localhost; Port=3306; User Id=root; Password=2001;";
+            try
+            {
+                using (MySqlConnection connection = new MySqlConnection(cadenaConexion))
+                {
+                    connection.Open();
+                    // Cargar los datos de la tabla en el dataGridView_Muestra
+                    string sqlQuery = "SELECT table_name FROM information_schema.tables WHERE table_schema = '" + comboBox_DataBase_Tabla.Text+"';";
+                    using (MySqlDataAdapter adapter = new MySqlDataAdapter(sqlQuery, connection))
+                    {
+                        DataTable dataTable = new DataTable();
+                        adapter.Fill(dataTable);
+                        dataGridView_Muestra.DataSource = dataTable;
+                    }
+                    connection.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

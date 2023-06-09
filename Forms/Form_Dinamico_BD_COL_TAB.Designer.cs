@@ -216,6 +216,7 @@
             this.comboBox_DataBase_Tabla.Name = "comboBox_DataBase_Tabla";
             this.comboBox_DataBase_Tabla.Size = new System.Drawing.Size(475, 28);
             this.comboBox_DataBase_Tabla.TabIndex = 8;
+            this.comboBox_DataBase_Tabla.SelectedIndexChanged += new System.EventHandler(this.comboBox_DataBase_Tabla_SelectedIndexChanged);
             // 
             // button_Añadir_Tabla
             // 
