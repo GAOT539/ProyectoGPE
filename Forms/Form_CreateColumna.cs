@@ -43,7 +43,7 @@ namespace ProyectoSGBD_MySQL.Forms
                     }
 
                     // Obtener los tipos de datos
-                    List<string> tiposDatos = new List<string>()
+                    List<string> tiposDatos_Columna = new List<string>()
                     {
                         "INT",
                         "BIGINT",
@@ -64,7 +64,7 @@ namespace ProyectoSGBD_MySQL.Forms
                         "BLOB"
                     };
 
-                    comboBox_TiposDatos.DataSource = tiposDatos;
+                    comboBox_TiposDatos.DataSource = tiposDatos_Columna;
                     connection.Close();
                 }
             }
@@ -83,18 +83,20 @@ namespace ProyectoSGBD_MySQL.Forms
                 using (MySqlConnection connection = new MySqlConnection(cadenaConexion))
                 {
                     connection.Open();
-                    string sqlQuery = "ALTER TABLE " + textBox_Nombre.Text + " ADD " + textBox_Primaria.Text + " " + comboBox_TiposDatos.Text + ";";//añadir checkbox notnull null
+                    string sqlQuery = "ALTER TABLE " + MySqlHelper.EscapeString(textBox_Nombre.Text) + " ADD " + MySqlHelper.EscapeString(textBox_Primaria.Text) + " " + MySqlHelper.EscapeString(comboBox_TiposDatos.Text) + ";";
+                    //añadir checkbox notnull null
                     using (MySqlCommand command = new MySqlCommand(sqlQuery, connection))
                     {
                         command.ExecuteNonQuery();
                     }
 
                     MessageBox.Show("Columna creada exitosamente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

@@ -11,19 +11,9 @@ namespace ProyectoSGBD_MySQL.Forms
             this.MaximizeBox = false; //Bloquear Maximizar
         }
 
-        private void Form_Principal_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void pictureBox3_Click(object sender, EventArgs e)
         {
             Application.Exit();
-        }
-
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void panel3_Click(object sender, EventArgs e)
