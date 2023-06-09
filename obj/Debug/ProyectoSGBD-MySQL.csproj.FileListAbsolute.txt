@@ -112,10 +112,6 @@ C:\Users\34641\source\repos\GAOT539\ProyectoGPE\bin\Debug\MySql.Data.xml
 C:\Users\34641\source\repos\GAOT539\ProyectoGPE\obj\Debug\ProyectoSGBD-MySQL.csproj.AssemblyReference.cache
 C:\Users\34641\source\repos\GAOT539\ProyectoGPE\obj\Debug\ProyectoSGBD-MySQL.csproj.SuggestedBindingRedirects.cache
 C:\Users\34641\source\repos\GAOT539\ProyectoGPE\obj\Debug\ProyectoSGBD_MySQL.Forms.Form_BD.resources
-C:\Users\34641\source\repos\GAOT539\ProyectoGPE\obj\Debug\ProyectoSGBD_MySQL.Forms.Form_CreateBD.resources
-C:\Users\34641\source\repos\GAOT539\ProyectoGPE\obj\Debug\ProyectoSGBD_MySQL.Forms.Form_CreateColumna.resources
-C:\Users\34641\source\repos\GAOT539\ProyectoGPE\obj\Debug\ProyectoSGBD_MySQL.Forms.Form_CreateTabla.resources
-C:\Users\34641\source\repos\GAOT539\ProyectoGPE\obj\Debug\ProyectoSGBD_MySQL.Forms.Form_Dinamico.resources
 C:\Users\34641\source\repos\GAOT539\ProyectoGPE\obj\Debug\ProyectoSGBD_MySQL.Forms.Form_Dinamico_BD_COL_TAB.resources
 C:\Users\34641\source\repos\GAOT539\ProyectoGPE\obj\Debug\ProyectoSGBD_MySQL.Forms.Form_Login.resources
 C:\Users\34641\source\repos\GAOT539\ProyectoGPE\obj\Debug\ProyectoSGBD_MySQL.Forms.Form_Principal.resources
