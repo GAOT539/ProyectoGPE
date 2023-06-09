@@ -57,30 +57,6 @@
     <Compile Include="Forms\Form_BD.Designer.cs">
       <DependentUpon>Form_BD.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Form_CreateBD.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Form_CreateBD.Designer.cs">
-      <DependentUpon>Form_CreateBD.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Form_CreateColumna.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Form_CreateColumna.Designer.cs">
-      <DependentUpon>Form_CreateColumna.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Form_CreateTabla.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Form_CreateTabla.Designer.cs">
-      <DependentUpon>Form_CreateTabla.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Form_Dinamico.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Form_Dinamico.Designer.cs">
-      <DependentUpon>Form_Dinamico.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\Form_Dinamico_BD_COL_TAB.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,18 +85,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\Form_BD.resx">
       <DependentUpon>Form_BD.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Form_CreateBD.resx">
-      <DependentUpon>Form_CreateBD.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Form_CreateColumna.resx">
-      <DependentUpon>Form_CreateColumna.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Form_CreateTabla.resx">
-      <DependentUpon>Form_CreateTabla.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Form_Dinamico.resx">
-      <DependentUpon>Form_Dinamico.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Form_Dinamico_BD_COL_TAB.resx">
       <DependentUpon>Form_Dinamico_BD_COL_TAB.cs</DependentUpon>

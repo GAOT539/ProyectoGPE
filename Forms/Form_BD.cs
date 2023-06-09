@@ -434,7 +434,7 @@ namespace ProyectoSGBD_MySQL.Forms
 
         private void pictureBox6_Click(object sender, EventArgs e)
         {
-            Forms.Form_Dinamico form_D = new Forms.Form_Dinamico();
+            Forms.Form_Dinamico_BD_COL_TAB form_D = new Forms.Form_Dinamico_BD_COL_TAB();
             //AddOwnedForm(form_BD); //Establece una relación de propiedad entre formularios.
             //form_BD.textBox_RecibeBD.Text = cadenaConexion; //Establecer text (cadenaConexion)
             cAux cAux = new cAux();
