@@ -134,6 +134,7 @@
             this.label8.Size = new System.Drawing.Size(228, 25);
             this.label8.TabIndex = 24;
             this.label8.Text = "Discuss on the Forums >";
+            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // label7
             // 
@@ -147,6 +148,7 @@
             this.label7.Size = new System.Drawing.Size(151, 25);
             this.label7.TabIndex = 23;
             this.label7.Text = "Read the Blog >";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // label6
             // 
@@ -160,6 +162,7 @@
             this.label6.Size = new System.Drawing.Size(230, 25);
             this.label6.TabIndex = 22;
             this.label6.Text = "Browse Documentation >";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label1
             // 

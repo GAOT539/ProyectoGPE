@@ -772,6 +772,7 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(451, 28);
             this.comboBox1.TabIndex = 17;
+            this.comboBox1.Text = "Standard (TCP/IP)";
             // 
             // textName
             // 
@@ -781,6 +782,7 @@
             this.textName.Name = "textName";
             this.textName.Size = new System.Drawing.Size(451, 26);
             this.textName.TabIndex = 16;
+            this.textName.Text = "Local instance MySQL80";
             // 
             // label5
             // 
