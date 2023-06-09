@@ -44,8 +44,15 @@
             this.button_Añadir_Tabla = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.textBox_ClavePrimaria_Tabla = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.comboBox_TipoDato_Tabla = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.checkBox_Null_Columna = new System.Windows.Forms.CheckBox();
+            this.comboBox_DataBase_Columna = new System.Windows.Forms.ComboBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.button_Añadir_Columna = new System.Windows.Forms.Button();
             this.comboBox_TipoDato_Columna = new System.Windows.Forms.ComboBox();
             this.textBox_Atributo_Tabla = new System.Windows.Forms.TextBox();
@@ -53,19 +60,12 @@
             this.label8 = new System.Windows.Forms.Label();
             this.comboBox_Tabla_Columna = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.comboBox_TipoDato_Tabla = new System.Windows.Forms.ComboBox();
-            this.textBox_ClavePrimaria_Tabla = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
             this.dataGridView_Muestra = new System.Windows.Forms.DataGridView();
             this.textBox_Consola = new System.Windows.Forms.TextBox();
             this.panel8 = new System.Windows.Forms.Panel();
             this.label19 = new System.Windows.Forms.Label();
-            this.comboBox_DataBase_Columna = new System.Windows.Forms.ComboBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.checkBox_Null_Columna = new System.Windows.Forms.CheckBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -249,6 +249,43 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "Base de Datos:";
             // 
+            // textBox_ClavePrimaria_Tabla
+            // 
+            this.textBox_ClavePrimaria_Tabla.Location = new System.Drawing.Point(211, 162);
+            this.textBox_ClavePrimaria_Tabla.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBox_ClavePrimaria_Tabla.Name = "textBox_ClavePrimaria_Tabla";
+            this.textBox_ClavePrimaria_Tabla.Size = new System.Drawing.Size(162, 26);
+            this.textBox_ClavePrimaria_Tabla.TabIndex = 13;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(87, 165);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(113, 20);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "Clave Primaria:";
+            // 
+            // comboBox_TipoDato_Tabla
+            // 
+            this.comboBox_TipoDato_Tabla.FormattingEnabled = true;
+            this.comboBox_TipoDato_Tabla.Location = new System.Drawing.Point(524, 162);
+            this.comboBox_TipoDato_Tabla.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.comboBox_TipoDato_Tabla.Name = "comboBox_TipoDato_Tabla";
+            this.comboBox_TipoDato_Tabla.Size = new System.Drawing.Size(162, 28);
+            this.comboBox_TipoDato_Tabla.TabIndex = 14;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(402, 165);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(104, 20);
+            this.label5.TabIndex = 12;
+            this.label5.Text = "Tipo de Dato:";
+            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.checkBox_Null_Columna);
@@ -271,6 +308,26 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Columna";
             // 
+            // checkBox_Null_Columna
+            // 
+            this.checkBox_Null_Columna.AutoSize = true;
+            this.checkBox_Null_Columna.Location = new System.Drawing.Point(574, 122);
+            this.checkBox_Null_Columna.Name = "checkBox_Null_Columna";
+            this.checkBox_Null_Columna.Size = new System.Drawing.Size(112, 24);
+            this.checkBox_Null_Columna.TabIndex = 21;
+            this.checkBox_Null_Columna.Text = "NOT NULL";
+            this.checkBox_Null_Columna.UseVisualStyleBackColor = true;
+            // 
+            // comboBox_DataBase_Columna
+            // 
+            this.comboBox_DataBase_Columna.FormattingEnabled = true;
+            this.comboBox_DataBase_Columna.Location = new System.Drawing.Point(211, 66);
+            this.comboBox_DataBase_Columna.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.comboBox_DataBase_Columna.Name = "comboBox_DataBase_Columna";
+            this.comboBox_DataBase_Columna.Size = new System.Drawing.Size(475, 28);
+            this.comboBox_DataBase_Columna.TabIndex = 16;
+            this.comboBox_DataBase_Columna.SelectedIndexChanged += new System.EventHandler(this.comboBox_DataBase_Columna_SelectedIndexChanged);
+            // 
             // pictureBox4
             // 
             this.pictureBox4.Image = global::ProyectoSGBD_MySQL.Properties.Resources._1239779;
@@ -282,6 +339,16 @@
             this.pictureBox4.TabIndex = 9;
             this.pictureBox4.TabStop = false;
             this.pictureBox4.Click += new System.EventHandler(this.button_Añadir_Columna_Click);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(81, 69);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(119, 20);
+            this.label9.TabIndex = 15;
+            this.label9.Text = "Base de Datos:";
             // 
             // button_Añadir_Columna
             // 
@@ -340,6 +407,7 @@
             this.comboBox_Tabla_Columna.Name = "comboBox_Tabla_Columna";
             this.comboBox_Tabla_Columna.Size = new System.Drawing.Size(332, 28);
             this.comboBox_Tabla_Columna.TabIndex = 16;
+            this.comboBox_Tabla_Columna.SelectedIndexChanged += new System.EventHandler(this.comboBox_Tabla_Columna_SelectedIndexChanged);
             // 
             // label6
             // 
@@ -350,43 +418,6 @@
             this.label6.Size = new System.Drawing.Size(52, 20);
             this.label6.TabIndex = 15;
             this.label6.Text = "Tabla:";
-            // 
-            // comboBox_TipoDato_Tabla
-            // 
-            this.comboBox_TipoDato_Tabla.FormattingEnabled = true;
-            this.comboBox_TipoDato_Tabla.Location = new System.Drawing.Point(524, 162);
-            this.comboBox_TipoDato_Tabla.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.comboBox_TipoDato_Tabla.Name = "comboBox_TipoDato_Tabla";
-            this.comboBox_TipoDato_Tabla.Size = new System.Drawing.Size(162, 28);
-            this.comboBox_TipoDato_Tabla.TabIndex = 14;
-            // 
-            // textBox_ClavePrimaria_Tabla
-            // 
-            this.textBox_ClavePrimaria_Tabla.Location = new System.Drawing.Point(211, 162);
-            this.textBox_ClavePrimaria_Tabla.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox_ClavePrimaria_Tabla.Name = "textBox_ClavePrimaria_Tabla";
-            this.textBox_ClavePrimaria_Tabla.Size = new System.Drawing.Size(162, 26);
-            this.textBox_ClavePrimaria_Tabla.TabIndex = 13;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(402, 165);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(104, 20);
-            this.label5.TabIndex = 12;
-            this.label5.Text = "Tipo de Dato:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(87, 165);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(113, 20);
-            this.label4.TabIndex = 11;
-            this.label4.Text = "Clave Primaria:";
             // 
             // panel5
             // 
@@ -448,36 +479,6 @@
             this.label19.Size = new System.Drawing.Size(1605, 25);
             this.label19.TabIndex = 5;
             this.label19.Text = resources.GetString("label19.Text");
-            // 
-            // comboBox_DataBase_Columna
-            // 
-            this.comboBox_DataBase_Columna.FormattingEnabled = true;
-            this.comboBox_DataBase_Columna.Location = new System.Drawing.Point(211, 66);
-            this.comboBox_DataBase_Columna.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.comboBox_DataBase_Columna.Name = "comboBox_DataBase_Columna";
-            this.comboBox_DataBase_Columna.Size = new System.Drawing.Size(475, 28);
-            this.comboBox_DataBase_Columna.TabIndex = 16;
-            this.comboBox_DataBase_Columna.SelectedIndexChanged += new System.EventHandler(this.comboBox_DataBase_Columna_SelectedIndexChanged);
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(81, 69);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(119, 20);
-            this.label9.TabIndex = 15;
-            this.label9.Text = "Base de Datos:";
-            // 
-            // checkBox_Null_Columna
-            // 
-            this.checkBox_Null_Columna.AutoSize = true;
-            this.checkBox_Null_Columna.Location = new System.Drawing.Point(574, 122);
-            this.checkBox_Null_Columna.Name = "checkBox_Null_Columna";
-            this.checkBox_Null_Columna.Size = new System.Drawing.Size(112, 24);
-            this.checkBox_Null_Columna.TabIndex = 21;
-            this.checkBox_Null_Columna.Text = "NOT NULL";
-            this.checkBox_Null_Columna.UseVisualStyleBackColor = true;
             // 
             // Form_Dinamico_BD_COL_TAB
             // 
