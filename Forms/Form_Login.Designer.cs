@@ -89,11 +89,11 @@
             this.label26 = new System.Windows.Forms.Label();
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.comboBox_ConnectionMethod = new System.Windows.Forms.ComboBox();
-            this.textBox_ConnectionName = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.comboBox_ConnectionName = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -774,16 +774,6 @@
             this.comboBox_ConnectionMethod.TabIndex = 17;
             this.comboBox_ConnectionMethod.Text = "Standard (TCP/IP)";
             // 
-            // textBox_ConnectionName
-            // 
-            this.textBox_ConnectionName.Enabled = false;
-            this.textBox_ConnectionName.Location = new System.Drawing.Point(189, 22);
-            this.textBox_ConnectionName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox_ConnectionName.Name = "textBox_ConnectionName";
-            this.textBox_ConnectionName.Size = new System.Drawing.Size(451, 26);
-            this.textBox_ConnectionName.TabIndex = 16;
-            this.textBox_ConnectionName.Text = "Local instance MySQL80";
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -824,18 +814,27 @@
             this.label1.TabIndex = 12;
             this.label1.Text = "Connection Name:";
             // 
+            // comboBox_ConnectionName
+            // 
+            this.comboBox_ConnectionName.FormattingEnabled = true;
+            this.comboBox_ConnectionName.Location = new System.Drawing.Point(189, 25);
+            this.comboBox_ConnectionName.Name = "comboBox_ConnectionName";
+            this.comboBox_ConnectionName.Size = new System.Drawing.Size(451, 28);
+            this.comboBox_ConnectionName.TabIndex = 23;
+            this.comboBox_ConnectionName.Text = "Local instance MySQL80";
+            // 
             // Form_Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1044, 536);
+            this.Controls.Add(this.comboBox_ConnectionName);
             this.Controls.Add(this.button_TestConnection);
             this.Controls.Add(this.button_Exit);
             this.Controls.Add(this.button_Connection);
             this.Controls.Add(this.button_ConfigureServerManagement);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.comboBox_ConnectionMethod);
-            this.Controls.Add(this.textBox_ConnectionName);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
@@ -917,10 +916,10 @@
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.CheckedListBox checkedListBox1;
         private System.Windows.Forms.ComboBox comboBox_ConnectionMethod;
-        private System.Windows.Forms.TextBox textBox_ConnectionName;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox comboBox_ConnectionName;
     }
 }

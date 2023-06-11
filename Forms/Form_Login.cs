@@ -72,6 +72,9 @@ namespace ProyectoSGBD_MySQL.Forms
             string usuario = textBox_Username.Text;
             string password = textBox_Password.Text;
             string bd = textBox_NameBD.Text;
+            string nombreConexion = comboBox_ConnectionName.Text;
+
+            cAux.datosConexion(servidor, puerto, usuario, password, bd, nombreConexion);
 
             // Asigna el valor de la cadena de conexión a la propiedad CadenaConexion de cAux.cs
             cAux.CadenaConexion = "Database=" + bd + "; Data Source=" + servidor + "; Port=" + puerto + "; User Id=" +

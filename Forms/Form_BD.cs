@@ -442,5 +442,14 @@ namespace ProyectoSGBD_MySQL.Forms
             form_D.ShowDialog();
             this.Show();
         }
+
+        private void label_Users_Click(object sender, EventArgs e)
+        {
+            Forms.Form_Usuarios_Privilegios form_Usuarios_Privilegios = new Forms.Form_Usuarios_Privilegios();
+            cAux cAux = new cAux();
+            this.Hide();
+            form_Usuarios_Privilegios.ShowDialog();
+            this.Show();
+        }
     }
 }

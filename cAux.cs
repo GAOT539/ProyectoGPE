@@ -1,14 +1,31 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 
 namespace ProyectoSGBD_MySQL
 {
     public class cAux
     {
+        public static string Servidor;
+        public static string Puerto;
+        public static string Usuario;
+        public static string Password;
+        public static string Bd;
+        public static string NombreConexion;
+
+        public static void datosConexion(string servidor, string puerto, string usuario, string password, string bd, string nombreConexion)
+        {
+            Servidor = servidor;
+            Puerto = puerto;
+            Usuario = usuario;
+            Password = password;
+            Bd = bd;
+            NombreConexion = nombreConexion;
+        }
+
+        public static void datosConexion()
+        {
+            // Implementa tu lógica aquí para utilizar los datos de conexión
+        }
+
         public static string CadenaConexion { get; set; }
 
         public static void cerrarFormulario(object sender, FormClosedEventArgs e)
@@ -244,6 +261,6 @@ namespace ProyectoSGBD_MySQL
             "how many rows were copied by ALTER TABLE. See mysql-info.\r\n\r\n\r\n\r\nSee also: : Online help alter-table";
 
         public static string AutomaticText { get; } = "Automatic context help is disabled. Use the toolbar to manually get help for the current caret position or to toggle automatic help.";
-
+    
     }
 }

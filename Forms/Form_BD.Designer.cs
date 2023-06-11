@@ -53,7 +53,7 @@
             this.label_AbrirDocumento = new System.Windows.Forms.Label();
             this.label_GuardarDocumento = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.label_Users = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -169,7 +169,7 @@
             this.panel3.Controls.Add(this.label_AbrirDocumento);
             this.panel3.Controls.Add(this.label_GuardarDocumento);
             this.panel3.Controls.Add(this.label6);
-            this.panel3.Controls.Add(this.label5);
+            this.panel3.Controls.Add(this.label_Users);
             this.panel3.Controls.Add(this.label4);
             this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.label2);
@@ -445,17 +445,18 @@
             this.label6.TabIndex = 7;
             this.label6.Text = "Status and System Variables";
             // 
-            // label5
+            // label_Users
             // 
-            this.label5.AutoSize = true;
-            this.label5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(39, 103);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(164, 20);
-            this.label5.TabIndex = 6;
-            this.label5.Text = "Users and Privileges";
+            this.label_Users.AutoSize = true;
+            this.label_Users.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label_Users.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Users.Location = new System.Drawing.Point(39, 103);
+            this.label_Users.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label_Users.Name = "label_Users";
+            this.label_Users.Size = new System.Drawing.Size(164, 20);
+            this.label_Users.TabIndex = 6;
+            this.label_Users.Text = "Users and Privileges";
+            this.label_Users.Click += new System.EventHandler(this.label_Users_Click);
             // 
             // label4
             // 
@@ -1094,7 +1095,7 @@
         private System.Windows.Forms.Label label_AbrirDocumento;
         private System.Windows.Forms.Label label_GuardarDocumento;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label_Users;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
