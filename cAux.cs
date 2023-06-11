@@ -9,7 +9,8 @@ namespace ProyectoSGBD_MySQL
 {
     public class cAux
     {
-        public void cerrarFormulario(object sender, FormClosedEventArgs e)
+        public static string CadenaConexion { get; set; }
+        public static void cerrarFormulario(object sender, FormClosedEventArgs e)
         {
             // Cerrar completamente la aplicación
             Application.Exit();

@@ -29,26 +29,26 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Login));
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.button_TestConnection = new System.Windows.Forms.Button();
+            this.button_Exit = new System.Windows.Forms.Button();
+            this.button_Connection = new System.Windows.Forms.Button();
+            this.button_ConfigureServerManagement = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.checkBoxPassword = new System.Windows.Forms.CheckBox();
+            this.checkBox_Password = new System.Windows.Forms.CheckBox();
             this.label33 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox_DefaultSchema = new System.Windows.Forms.TextBox();
             this.label34 = new System.Windows.Forms.Label();
-            this.textPassword = new System.Windows.Forms.TextBox();
+            this.textBox_Password = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.textPort = new System.Windows.Forms.TextBox();
-            this.textNameBD = new System.Windows.Forms.TextBox();
-            this.textUsername = new System.Windows.Forms.TextBox();
-            this.textHostname = new System.Windows.Forms.TextBox();
+            this.textBox_Port = new System.Windows.Forms.TextBox();
+            this.textBox_NameBD = new System.Windows.Forms.TextBox();
+            this.textBox_Username = new System.Windows.Forms.TextBox();
+            this.textBox_Hostname = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -88,8 +88,8 @@
             this.label25 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textName = new System.Windows.Forms.TextBox();
+            this.comboBox_ConnectionMethod = new System.Windows.Forms.ComboBox();
+            this.textBox_ConnectionName = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -100,53 +100,53 @@
             this.tabPage3.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button4
+            // button_TestConnection
             // 
-            this.button4.Location = new System.Drawing.Point(723, 480);
-            this.button4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(165, 35);
-            this.button4.TabIndex = 22;
-            this.button4.Text = "Test Connection";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.button_TestConnection.Location = new System.Drawing.Point(736, 480);
+            this.button_TestConnection.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button_TestConnection.Name = "button_TestConnection";
+            this.button_TestConnection.Size = new System.Drawing.Size(165, 35);
+            this.button_TestConnection.TabIndex = 22;
+            this.button_TestConnection.Text = "Test Connection";
+            this.button_TestConnection.UseVisualStyleBackColor = true;
+            this.button_TestConnection.Click += new System.EventHandler(this.button_TestConnection_Click);
             // 
-            // button3
+            // button_Exit
             // 
-            this.button3.Location = new System.Drawing.Point(603, 480);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(112, 35);
-            this.button3.TabIndex = 21;
-            this.button3.Text = "Exit";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.button_Exit.Location = new System.Drawing.Point(616, 480);
+            this.button_Exit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button_Exit.Name = "button_Exit";
+            this.button_Exit.Size = new System.Drawing.Size(112, 35);
+            this.button_Exit.TabIndex = 21;
+            this.button_Exit.Text = "Exit";
+            this.button_Exit.UseVisualStyleBackColor = true;
+            this.button_Exit.Click += new System.EventHandler(this.button_Exit_Click);
             // 
-            // button2
+            // button_Connection
             // 
-            this.button2.FlatAppearance.BorderColor = System.Drawing.SystemColors.MenuHighlight;
-            this.button2.FlatAppearance.BorderSize = 2;
-            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.button2.Location = new System.Drawing.Point(909, 480);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(112, 35);
-            this.button2.TabIndex = 20;
-            this.button2.Text = "Connection";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button_Connection.FlatAppearance.BorderColor = System.Drawing.SystemColors.MenuHighlight;
+            this.button_Connection.FlatAppearance.BorderSize = 2;
+            this.button_Connection.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.button_Connection.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.button_Connection.Location = new System.Drawing.Point(909, 480);
+            this.button_Connection.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button_Connection.Name = "button_Connection";
+            this.button_Connection.Size = new System.Drawing.Size(112, 35);
+            this.button_Connection.TabIndex = 20;
+            this.button_Connection.Text = "Connection";
+            this.button_Connection.UseVisualStyleBackColor = true;
+            this.button_Connection.Click += new System.EventHandler(this.button_Connection_Control_Click);
             // 
-            // button1
+            // button_ConfigureServerManagement
             // 
-            this.button1.Enabled = false;
-            this.button1.Location = new System.Drawing.Point(30, 480);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(288, 35);
-            this.button1.TabIndex = 19;
-            this.button1.Text = "Configure Server Management";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button_ConfigureServerManagement.Enabled = false;
+            this.button_ConfigureServerManagement.Location = new System.Drawing.Point(30, 480);
+            this.button_ConfigureServerManagement.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button_ConfigureServerManagement.Name = "button_ConfigureServerManagement";
+            this.button_ConfigureServerManagement.Size = new System.Drawing.Size(288, 35);
+            this.button_ConfigureServerManagement.TabIndex = 19;
+            this.button_ConfigureServerManagement.Text = "Configure Server Management";
+            this.button_ConfigureServerManagement.UseVisualStyleBackColor = true;
             // 
             // tabControl1
             // 
@@ -162,20 +162,20 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.checkBoxPassword);
+            this.tabPage1.Controls.Add(this.checkBox_Password);
             this.tabPage1.Controls.Add(this.label33);
-            this.tabPage1.Controls.Add(this.textBox1);
+            this.tabPage1.Controls.Add(this.textBox_DefaultSchema);
             this.tabPage1.Controls.Add(this.label34);
-            this.tabPage1.Controls.Add(this.textPassword);
+            this.tabPage1.Controls.Add(this.textBox_Password);
             this.tabPage1.Controls.Add(this.label13);
             this.tabPage1.Controls.Add(this.label12);
             this.tabPage1.Controls.Add(this.label11);
             this.tabPage1.Controls.Add(this.label10);
             this.tabPage1.Controls.Add(this.label9);
-            this.tabPage1.Controls.Add(this.textPort);
-            this.tabPage1.Controls.Add(this.textNameBD);
-            this.tabPage1.Controls.Add(this.textUsername);
-            this.tabPage1.Controls.Add(this.textHostname);
+            this.tabPage1.Controls.Add(this.textBox_Port);
+            this.tabPage1.Controls.Add(this.textBox_NameBD);
+            this.tabPage1.Controls.Add(this.textBox_Username);
+            this.tabPage1.Controls.Add(this.textBox_Hostname);
             this.tabPage1.Controls.Add(this.label8);
             this.tabPage1.Controls.Add(this.label7);
             this.tabPage1.Controls.Add(this.label6);
@@ -189,15 +189,15 @@
             this.tabPage1.Text = "Parameters";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // checkBoxPassword
+            // checkBox_Password
             // 
-            this.checkBoxPassword.AutoSize = true;
-            this.checkBoxPassword.Location = new System.Drawing.Point(612, 123);
-            this.checkBoxPassword.Name = "checkBoxPassword";
-            this.checkBoxPassword.Size = new System.Drawing.Size(22, 21);
-            this.checkBoxPassword.TabIndex = 28;
-            this.checkBoxPassword.UseVisualStyleBackColor = true;
-            this.checkBoxPassword.CheckedChanged += new System.EventHandler(this.checkBoxPassword_CheckedChanged);
+            this.checkBox_Password.AutoSize = true;
+            this.checkBox_Password.Location = new System.Drawing.Point(612, 123);
+            this.checkBox_Password.Name = "checkBox_Password";
+            this.checkBox_Password.Size = new System.Drawing.Size(22, 21);
+            this.checkBox_Password.TabIndex = 28;
+            this.checkBox_Password.UseVisualStyleBackColor = true;
+            this.checkBox_Password.CheckedChanged += new System.EventHandler(this.checkBoxPassword_CheckedChanged);
             // 
             // label33
             // 
@@ -209,14 +209,14 @@
             this.label33.TabIndex = 27;
             this.label33.Text = "The schema to use as default schema.";
             // 
-            // textBox1
+            // textBox_DefaultSchema
             // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(183, 221);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(451, 26);
-            this.textBox1.TabIndex = 26;
+            this.textBox_DefaultSchema.Enabled = false;
+            this.textBox_DefaultSchema.Location = new System.Drawing.Point(183, 221);
+            this.textBox_DefaultSchema.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBox_DefaultSchema.Name = "textBox_DefaultSchema";
+            this.textBox_DefaultSchema.Size = new System.Drawing.Size(451, 26);
+            this.textBox_DefaultSchema.TabIndex = 26;
             // 
             // label34
             // 
@@ -228,14 +228,14 @@
             this.label34.TabIndex = 25;
             this.label34.Text = "Default Schema:";
             // 
-            // textPassword
+            // textBox_Password
             // 
-            this.textPassword.Location = new System.Drawing.Point(183, 120);
-            this.textPassword.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textPassword.Name = "textPassword";
-            this.textPassword.Size = new System.Drawing.Size(422, 26);
-            this.textPassword.TabIndex = 24;
-            this.textPassword.Text = "2001";
+            this.textBox_Password.Location = new System.Drawing.Point(183, 120);
+            this.textBox_Password.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBox_Password.Name = "textBox_Password";
+            this.textBox_Password.Size = new System.Drawing.Size(422, 26);
+            this.textBox_Password.TabIndex = 24;
+            this.textBox_Password.Text = "2001";
             // 
             // label13
             // 
@@ -287,41 +287,41 @@
             this.label9.TabIndex = 20;
             this.label9.Text = "Port:";
             // 
-            // textPort
+            // textBox_Port
             // 
-            this.textPort.Location = new System.Drawing.Point(453, 28);
-            this.textPort.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textPort.Name = "textPort";
-            this.textPort.Size = new System.Drawing.Size(181, 26);
-            this.textPort.TabIndex = 19;
-            this.textPort.Text = "3306";
+            this.textBox_Port.Location = new System.Drawing.Point(453, 28);
+            this.textBox_Port.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBox_Port.Name = "textBox_Port";
+            this.textBox_Port.Size = new System.Drawing.Size(181, 26);
+            this.textBox_Port.TabIndex = 19;
+            this.textBox_Port.Text = "3306";
             // 
-            // textNameBD
+            // textBox_NameBD
             // 
-            this.textNameBD.Location = new System.Drawing.Point(183, 168);
-            this.textNameBD.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textNameBD.Name = "textNameBD";
-            this.textNameBD.Size = new System.Drawing.Size(451, 26);
-            this.textNameBD.TabIndex = 18;
-            this.textNameBD.Text = "mysql";
+            this.textBox_NameBD.Location = new System.Drawing.Point(183, 168);
+            this.textBox_NameBD.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBox_NameBD.Name = "textBox_NameBD";
+            this.textBox_NameBD.Size = new System.Drawing.Size(451, 26);
+            this.textBox_NameBD.TabIndex = 18;
+            this.textBox_NameBD.Text = "mysql";
             // 
-            // textUsername
+            // textBox_Username
             // 
-            this.textUsername.Location = new System.Drawing.Point(183, 72);
-            this.textUsername.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textUsername.Name = "textUsername";
-            this.textUsername.Size = new System.Drawing.Size(451, 26);
-            this.textUsername.TabIndex = 16;
-            this.textUsername.Text = "root";
+            this.textBox_Username.Location = new System.Drawing.Point(183, 72);
+            this.textBox_Username.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBox_Username.Name = "textBox_Username";
+            this.textBox_Username.Size = new System.Drawing.Size(451, 26);
+            this.textBox_Username.TabIndex = 16;
+            this.textBox_Username.Text = "root";
             // 
-            // textHostname
+            // textBox_Hostname
             // 
-            this.textHostname.Location = new System.Drawing.Point(183, 28);
-            this.textHostname.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textHostname.Name = "textHostname";
-            this.textHostname.Size = new System.Drawing.Size(181, 26);
-            this.textHostname.TabIndex = 12;
-            this.textHostname.Text = "localhost";
+            this.textBox_Hostname.Location = new System.Drawing.Point(183, 28);
+            this.textBox_Hostname.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBox_Hostname.Name = "textBox_Hostname";
+            this.textBox_Hostname.Size = new System.Drawing.Size(181, 26);
+            this.textBox_Hostname.TabIndex = 12;
+            this.textBox_Hostname.Text = "localhost";
             // 
             // label8
             // 
@@ -756,33 +756,33 @@
             this.checkedListBox1.Size = new System.Drawing.Size(344, 73);
             this.checkedListBox1.TabIndex = 0;
             // 
-            // comboBox1
+            // comboBox_ConnectionMethod
             // 
-            this.comboBox1.Enabled = false;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.comboBox_ConnectionMethod.Enabled = false;
+            this.comboBox_ConnectionMethod.FormattingEnabled = true;
+            this.comboBox_ConnectionMethod.Items.AddRange(new object[] {
             "Standard (TCP/IP)",
             "Local Socket/Pipe",
             "Standard (TCP/IP) over SSH",
             "LDAP User/Password",
             "LDAPSasl/Kerberos",
             "NativeKerberos"});
-            this.comboBox1.Location = new System.Drawing.Point(189, 65);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(451, 28);
-            this.comboBox1.TabIndex = 17;
-            this.comboBox1.Text = "Standard (TCP/IP)";
+            this.comboBox_ConnectionMethod.Location = new System.Drawing.Point(189, 65);
+            this.comboBox_ConnectionMethod.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.comboBox_ConnectionMethod.Name = "comboBox_ConnectionMethod";
+            this.comboBox_ConnectionMethod.Size = new System.Drawing.Size(451, 28);
+            this.comboBox_ConnectionMethod.TabIndex = 17;
+            this.comboBox_ConnectionMethod.Text = "Standard (TCP/IP)";
             // 
-            // textName
+            // textBox_ConnectionName
             // 
-            this.textName.Enabled = false;
-            this.textName.Location = new System.Drawing.Point(189, 22);
-            this.textName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textName.Name = "textName";
-            this.textName.Size = new System.Drawing.Size(451, 26);
-            this.textName.TabIndex = 16;
-            this.textName.Text = "Local instance MySQL80";
+            this.textBox_ConnectionName.Enabled = false;
+            this.textBox_ConnectionName.Location = new System.Drawing.Point(189, 22);
+            this.textBox_ConnectionName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBox_ConnectionName.Name = "textBox_ConnectionName";
+            this.textBox_ConnectionName.Size = new System.Drawing.Size(451, 26);
+            this.textBox_ConnectionName.TabIndex = 16;
+            this.textBox_ConnectionName.Text = "Local instance MySQL80";
             // 
             // label5
             // 
@@ -829,13 +829,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1044, 536);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.button_TestConnection);
+            this.Controls.Add(this.button_Exit);
+            this.Controls.Add(this.button_Connection);
+            this.Controls.Add(this.button_ConfigureServerManagement);
             this.Controls.Add(this.tabControl1);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textName);
+            this.Controls.Add(this.comboBox_ConnectionMethod);
+            this.Controls.Add(this.textBox_ConnectionName);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
@@ -843,7 +843,6 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form_Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Load += new System.EventHandler(this.Form_Login_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -858,26 +857,26 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button_TestConnection;
+        private System.Windows.Forms.Button button_Exit;
+        private System.Windows.Forms.Button button_Connection;
+        private System.Windows.Forms.Button button_ConfigureServerManagement;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.CheckBox checkBoxPassword;
+        private System.Windows.Forms.CheckBox checkBox_Password;
         private System.Windows.Forms.Label label33;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox_DefaultSchema;
         private System.Windows.Forms.Label label34;
-        private System.Windows.Forms.TextBox textPassword;
+        private System.Windows.Forms.TextBox textBox_Password;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textPort;
-        private System.Windows.Forms.TextBox textNameBD;
-        private System.Windows.Forms.TextBox textUsername;
-        private System.Windows.Forms.TextBox textHostname;
+        private System.Windows.Forms.TextBox textBox_Port;
+        private System.Windows.Forms.TextBox textBox_NameBD;
+        private System.Windows.Forms.TextBox textBox_Username;
+        private System.Windows.Forms.TextBox textBox_Hostname;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
@@ -917,8 +916,8 @@
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.CheckedListBox checkedListBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textName;
+        private System.Windows.Forms.ComboBox comboBox_ConnectionMethod;
+        private System.Windows.Forms.TextBox textBox_ConnectionName;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;

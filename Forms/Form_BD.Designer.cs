@@ -50,15 +50,15 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.label_AbrirDocumento = new System.Windows.Forms.Label();
+            this.label_GuardarDocumento = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.button_Dinamico = new System.Windows.Forms.PictureBox();
+            this.pictureBox_FormDinamico = new System.Windows.Forms.PictureBox();
             this.pictureBox35 = new System.Windows.Forms.PictureBox();
             this.pictureBox34 = new System.Windows.Forms.PictureBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -68,35 +68,35 @@
             this.pictureBox26 = new System.Windows.Forms.PictureBox();
             this.pictureBox27 = new System.Windows.Forms.PictureBox();
             this.pictureBox28 = new System.Windows.Forms.PictureBox();
-            this.button_Ejecutar = new System.Windows.Forms.PictureBox();
-            this.pictureBox30 = new System.Windows.Forms.PictureBox();
-            this.pictureBox31 = new System.Windows.Forms.PictureBox();
+            this.button_EjecutarQuery = new System.Windows.Forms.PictureBox();
+            this.pictureBox_GuardarDocumento = new System.Windows.Forms.PictureBox();
+            this.pictureBox_AbrirDocumento = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.textBox_Query = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox_RecibeBD = new System.Windows.Forms.TextBox();
+            this.textBox_Connection = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label17 = new System.Windows.Forms.Label();
             this.panel10 = new System.Windows.Forms.Panel();
             this.label20 = new System.Windows.Forms.Label();
             this.panel11 = new System.Windows.Forms.Panel();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBox_Asistente = new System.Windows.Forms.ComboBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panel12 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox_Asistente = new System.Windows.Forms.TextBox();
             this.panel7 = new System.Windows.Forms.Panel();
             this.label18 = new System.Windows.Forms.Label();
-            this.treeView2 = new System.Windows.Forms.TreeView();
+            this.treeView_Schemas = new System.Windows.Forms.TreeView();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
             this.label19 = new System.Windows.Forms.Label();
             this.textBox_Consola = new System.Windows.Forms.TextBox();
             this.panel9 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridView_Muestra = new System.Windows.Forms.DataGridView();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).BeginInit();
@@ -112,7 +112,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             this.panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.button_Dinamico)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_FormDinamico)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox35)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox34)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox33)).BeginInit();
@@ -121,9 +121,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox26)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox27)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox28)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.button_Ejecutar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox30)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox31)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.button_EjecutarQuery)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_GuardarDocumento)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_AbrirDocumento)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -138,7 +138,7 @@
             this.panel4.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel9.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Muestra)).BeginInit();
             this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -166,8 +166,8 @@
             this.panel3.Controls.Add(this.label11);
             this.panel3.Controls.Add(this.label12);
             this.panel3.Controls.Add(this.label9);
-            this.panel3.Controls.Add(this.label8);
-            this.panel3.Controls.Add(this.label7);
+            this.panel3.Controls.Add(this.label_AbrirDocumento);
+            this.panel3.Controls.Add(this.label_GuardarDocumento);
             this.panel3.Controls.Add(this.label6);
             this.panel3.Controls.Add(this.label5);
             this.panel3.Controls.Add(this.label4);
@@ -407,29 +407,31 @@
             this.label9.TabIndex = 10;
             this.label9.Text = "INSTANCE";
             // 
-            // label8
+            // label_AbrirDocumento
             // 
-            this.label8.AutoSize = true;
-            this.label8.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(39, 205);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(161, 20);
-            this.label8.TabIndex = 9;
-            this.label8.Text = "Data Import/Restore";
+            this.label_AbrirDocumento.AutoSize = true;
+            this.label_AbrirDocumento.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label_AbrirDocumento.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_AbrirDocumento.Location = new System.Drawing.Point(39, 205);
+            this.label_AbrirDocumento.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label_AbrirDocumento.Name = "label_AbrirDocumento";
+            this.label_AbrirDocumento.Size = new System.Drawing.Size(161, 20);
+            this.label_AbrirDocumento.TabIndex = 9;
+            this.label_AbrirDocumento.Text = "Data Import/Restore";
+            this.label_AbrirDocumento.Click += new System.EventHandler(this.pictureBox_AbrirDocumento_Click);
             // 
-            // label7
+            // label_GuardarDocumento
             // 
-            this.label7.AutoSize = true;
-            this.label7.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(39, 171);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(98, 20);
-            this.label7.TabIndex = 8;
-            this.label7.Text = "Data Export";
+            this.label_GuardarDocumento.AutoSize = true;
+            this.label_GuardarDocumento.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label_GuardarDocumento.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_GuardarDocumento.Location = new System.Drawing.Point(39, 171);
+            this.label_GuardarDocumento.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label_GuardarDocumento.Name = "label_GuardarDocumento";
+            this.label_GuardarDocumento.Size = new System.Drawing.Size(98, 20);
+            this.label_GuardarDocumento.TabIndex = 8;
+            this.label_GuardarDocumento.Text = "Data Export";
+            this.label_GuardarDocumento.Click += new System.EventHandler(this.pictureBox_GuardarDocumento_Click);
             // 
             // label6
             // 
@@ -494,7 +496,7 @@
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.panel6.Controls.Add(this.button_Dinamico);
+            this.panel6.Controls.Add(this.pictureBox_FormDinamico);
             this.panel6.Controls.Add(this.pictureBox35);
             this.panel6.Controls.Add(this.pictureBox34);
             this.panel6.Controls.Add(this.comboBox1);
@@ -504,27 +506,27 @@
             this.panel6.Controls.Add(this.pictureBox26);
             this.panel6.Controls.Add(this.pictureBox27);
             this.panel6.Controls.Add(this.pictureBox28);
-            this.panel6.Controls.Add(this.button_Ejecutar);
-            this.panel6.Controls.Add(this.pictureBox30);
-            this.panel6.Controls.Add(this.pictureBox31);
+            this.panel6.Controls.Add(this.button_EjecutarQuery);
+            this.panel6.Controls.Add(this.pictureBox_GuardarDocumento);
+            this.panel6.Controls.Add(this.pictureBox_AbrirDocumento);
             this.panel6.Location = new System.Drawing.Point(0, -2);
             this.panel6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(968, 49);
             this.panel6.TabIndex = 42;
             // 
-            // button_Dinamico
+            // pictureBox_FormDinamico
             // 
-            this.button_Dinamico.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button_Dinamico.Image = global::ProyectoSGBD_MySQL.Properties.Resources._30393;
-            this.button_Dinamico.Location = new System.Drawing.Point(922, 7);
-            this.button_Dinamico.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button_Dinamico.Name = "button_Dinamico";
-            this.button_Dinamico.Size = new System.Drawing.Size(42, 31);
-            this.button_Dinamico.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.button_Dinamico.TabIndex = 12;
-            this.button_Dinamico.TabStop = false;
-            this.button_Dinamico.Click += new System.EventHandler(this.pictureBox6_Click);
+            this.pictureBox_FormDinamico.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox_FormDinamico.Image = global::ProyectoSGBD_MySQL.Properties.Resources._30393;
+            this.pictureBox_FormDinamico.Location = new System.Drawing.Point(922, 7);
+            this.pictureBox_FormDinamico.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pictureBox_FormDinamico.Name = "pictureBox_FormDinamico";
+            this.pictureBox_FormDinamico.Size = new System.Drawing.Size(42, 31);
+            this.pictureBox_FormDinamico.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox_FormDinamico.TabIndex = 12;
+            this.pictureBox_FormDinamico.TabStop = false;
+            this.pictureBox_FormDinamico.Click += new System.EventHandler(this.pictureBox_FormDinamico_Click);
             // 
             // pictureBox35
             // 
@@ -655,44 +657,44 @@
             this.pictureBox28.TabIndex = 3;
             this.pictureBox28.TabStop = false;
             // 
-            // button_Ejecutar
+            // button_EjecutarQuery
             // 
-            this.button_Ejecutar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button_Ejecutar.Image = ((System.Drawing.Image)(resources.GetObject("button_Ejecutar.Image")));
-            this.button_Ejecutar.Location = new System.Drawing.Point(112, 5);
-            this.button_Ejecutar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button_Ejecutar.Name = "button_Ejecutar";
-            this.button_Ejecutar.Size = new System.Drawing.Size(46, 31);
-            this.button_Ejecutar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.button_Ejecutar.TabIndex = 2;
-            this.button_Ejecutar.TabStop = false;
-            this.button_Ejecutar.Click += new System.EventHandler(this.pictureBox29_Click);
+            this.button_EjecutarQuery.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button_EjecutarQuery.Image = ((System.Drawing.Image)(resources.GetObject("button_EjecutarQuery.Image")));
+            this.button_EjecutarQuery.Location = new System.Drawing.Point(112, 5);
+            this.button_EjecutarQuery.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button_EjecutarQuery.Name = "button_EjecutarQuery";
+            this.button_EjecutarQuery.Size = new System.Drawing.Size(46, 31);
+            this.button_EjecutarQuery.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.button_EjecutarQuery.TabIndex = 2;
+            this.button_EjecutarQuery.TabStop = false;
+            this.button_EjecutarQuery.Click += new System.EventHandler(this.button_EjecutarQuery_Click);
             // 
-            // pictureBox30
+            // pictureBox_GuardarDocumento
             // 
-            this.pictureBox30.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox30.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox30.Image")));
-            this.pictureBox30.Location = new System.Drawing.Point(58, 5);
-            this.pictureBox30.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.pictureBox30.Name = "pictureBox30";
-            this.pictureBox30.Size = new System.Drawing.Size(46, 31);
-            this.pictureBox30.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox30.TabIndex = 1;
-            this.pictureBox30.TabStop = false;
-            this.pictureBox30.Click += new System.EventHandler(this.pictureBox30_Click);
+            this.pictureBox_GuardarDocumento.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox_GuardarDocumento.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox_GuardarDocumento.Image")));
+            this.pictureBox_GuardarDocumento.Location = new System.Drawing.Point(58, 5);
+            this.pictureBox_GuardarDocumento.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pictureBox_GuardarDocumento.Name = "pictureBox_GuardarDocumento";
+            this.pictureBox_GuardarDocumento.Size = new System.Drawing.Size(46, 31);
+            this.pictureBox_GuardarDocumento.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox_GuardarDocumento.TabIndex = 1;
+            this.pictureBox_GuardarDocumento.TabStop = false;
+            this.pictureBox_GuardarDocumento.Click += new System.EventHandler(this.pictureBox_GuardarDocumento_Click);
             // 
-            // pictureBox31
+            // pictureBox_AbrirDocumento
             // 
-            this.pictureBox31.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox31.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox31.Image")));
-            this.pictureBox31.Location = new System.Drawing.Point(4, 6);
-            this.pictureBox31.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.pictureBox31.Name = "pictureBox31";
-            this.pictureBox31.Size = new System.Drawing.Size(46, 31);
-            this.pictureBox31.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox31.TabIndex = 0;
-            this.pictureBox31.TabStop = false;
-            this.pictureBox31.Click += new System.EventHandler(this.pictureBox31_Click);
+            this.pictureBox_AbrirDocumento.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox_AbrirDocumento.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox_AbrirDocumento.Image")));
+            this.pictureBox_AbrirDocumento.Location = new System.Drawing.Point(4, 6);
+            this.pictureBox_AbrirDocumento.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pictureBox_AbrirDocumento.Name = "pictureBox_AbrirDocumento";
+            this.pictureBox_AbrirDocumento.Size = new System.Drawing.Size(46, 31);
+            this.pictureBox_AbrirDocumento.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox_AbrirDocumento.TabIndex = 0;
+            this.pictureBox_AbrirDocumento.TabStop = false;
+            this.pictureBox_AbrirDocumento.Click += new System.EventHandler(this.pictureBox_AbrirDocumento_Click);
             // 
             // panel1
             // 
@@ -700,7 +702,7 @@
             this.panel1.Controls.Add(this.textBox_Query);
             this.panel1.Controls.Add(this.panel6);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.textBox_RecibeBD);
+            this.panel1.Controls.Add(this.textBox_Connection);
             this.panel1.Location = new System.Drawing.Point(281, 71);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(968, 510);
@@ -726,13 +728,14 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "CONNECTION";
             // 
-            // textBox_RecibeBD
+            // textBox_Connection
             // 
-            this.textBox_RecibeBD.Font = new System.Drawing.Font("Consolas", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_RecibeBD.Location = new System.Drawing.Point(201, 55);
-            this.textBox_RecibeBD.Name = "textBox_RecibeBD";
-            this.textBox_RecibeBD.Size = new System.Drawing.Size(746, 38);
-            this.textBox_RecibeBD.TabIndex = 0;
+            this.textBox_Connection.Enabled = false;
+            this.textBox_Connection.Font = new System.Drawing.Font("Consolas", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_Connection.Location = new System.Drawing.Point(201, 55);
+            this.textBox_Connection.Name = "textBox_Connection";
+            this.textBox_Connection.Size = new System.Drawing.Size(746, 31);
+            this.textBox_Connection.TabIndex = 0;
             // 
             // panel2
             // 
@@ -787,7 +790,7 @@
             // panel11
             // 
             this.panel11.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.panel11.Controls.Add(this.comboBox2);
+            this.panel11.Controls.Add(this.comboBox_Asistente);
             this.panel11.Controls.Add(this.pictureBox5);
             this.panel11.Controls.Add(this.pictureBox4);
             this.panel11.Controls.Add(this.pictureBox2);
@@ -798,10 +801,10 @@
             this.panel11.Size = new System.Drawing.Size(364, 40);
             this.panel11.TabIndex = 45;
             // 
-            // comboBox2
+            // comboBox_Asistente
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.comboBox_Asistente.FormattingEnabled = true;
+            this.comboBox_Asistente.Items.AddRange(new object[] {
             "Jump to",
             "SELECT",
             "UPDATE",
@@ -812,12 +815,12 @@
             "CREATE PROCEDURE",
             "CREATE FUNCTION",
             "ALTER TABLE"});
-            this.comboBox2.Location = new System.Drawing.Point(168, 5);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(180, 28);
-            this.comboBox2.TabIndex = 50;
-            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+            this.comboBox_Asistente.Location = new System.Drawing.Point(168, 5);
+            this.comboBox_Asistente.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.comboBox_Asistente.Name = "comboBox_Asistente";
+            this.comboBox_Asistente.Size = new System.Drawing.Size(180, 28);
+            this.comboBox_Asistente.TabIndex = 50;
+            this.comboBox_Asistente.SelectedIndexChanged += new System.EventHandler(this.comboBox_Asistente_SelectedIndexChanged);
             // 
             // pictureBox5
             // 
@@ -865,24 +868,24 @@
             // 
             // panel12
             // 
-            this.panel12.Controls.Add(this.textBox1);
+            this.panel12.Controls.Add(this.textBox_Asistente);
             this.panel12.Location = new System.Drawing.Point(1251, 151);
             this.panel12.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(364, 430);
             this.panel12.TabIndex = 46;
             // 
-            // textBox1
+            // textBox_Asistente
             // 
-            this.textBox1.Location = new System.Drawing.Point(4, 6);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox1.Size = new System.Drawing.Size(354, 424);
-            this.textBox1.TabIndex = 0;
-            this.textBox1.Text = "Automatic context help is disabled. Use the toolbar to manually get help for the " +
+            this.textBox_Asistente.Location = new System.Drawing.Point(4, 6);
+            this.textBox_Asistente.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBox_Asistente.Multiline = true;
+            this.textBox_Asistente.Name = "textBox_Asistente";
+            this.textBox_Asistente.ReadOnly = true;
+            this.textBox_Asistente.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBox_Asistente.Size = new System.Drawing.Size(354, 424);
+            this.textBox_Asistente.TabIndex = 0;
+            this.textBox_Asistente.Text = "Automatic context help is disabled. Use the toolbar to manually get help for the " +
     "current caret position or to toggle automatic help.";
             // 
             // panel7
@@ -906,23 +909,23 @@
             this.label18.TabIndex = 4;
             this.label18.Text = "SCHEMAS";
             // 
-            // treeView2
+            // treeView_Schemas
             // 
-            this.treeView2.BackColor = System.Drawing.Color.Azure;
-            this.treeView2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.treeView2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.treeView2.ItemHeight = 20;
-            this.treeView2.Location = new System.Drawing.Point(8, 34);
-            this.treeView2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.treeView2.Name = "treeView2";
-            this.treeView2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.treeView2.Size = new System.Drawing.Size(248, 291);
-            this.treeView2.TabIndex = 29;
+            this.treeView_Schemas.BackColor = System.Drawing.Color.Azure;
+            this.treeView_Schemas.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.treeView_Schemas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.treeView_Schemas.ItemHeight = 20;
+            this.treeView_Schemas.Location = new System.Drawing.Point(8, 34);
+            this.treeView_Schemas.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.treeView_Schemas.Name = "treeView_Schemas";
+            this.treeView_Schemas.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.treeView_Schemas.Size = new System.Drawing.Size(248, 291);
+            this.treeView_Schemas.TabIndex = 29;
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.Azure;
-            this.panel4.Controls.Add(this.treeView2);
+            this.panel4.Controls.Add(this.treeView_Schemas);
             this.panel4.Controls.Add(this.panel7);
             this.panel4.Location = new System.Drawing.Point(10, 602);
             this.panel4.Name = "panel4";
@@ -962,23 +965,23 @@
             // 
             // panel9
             // 
-            this.panel9.Controls.Add(this.dataGridView1);
+            this.panel9.Controls.Add(this.dataGridView_Muestra);
             this.panel9.Location = new System.Drawing.Point(10, 78);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(1316, 242);
             this.panel9.TabIndex = 3;
             // 
-            // dataGridView1
+            // dataGridView_Muestra
             // 
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(1316, 242);
-            this.dataGridView1.TabIndex = 1;
+            this.dataGridView_Muestra.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView_Muestra.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_Muestra.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView_Muestra.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView_Muestra.Name = "dataGridView_Muestra";
+            this.dataGridView_Muestra.RowHeadersWidth = 62;
+            this.dataGridView_Muestra.RowTemplate.Height = 28;
+            this.dataGridView_Muestra.Size = new System.Drawing.Size(1316, 242);
+            this.dataGridView_Muestra.TabIndex = 1;
             // 
             // panel5
             // 
@@ -1026,7 +1029,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             this.panel6.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.button_Dinamico)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_FormDinamico)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox35)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox34)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox33)).EndInit();
@@ -1035,9 +1038,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox26)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox27)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox28)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.button_Ejecutar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox30)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox31)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.button_EjecutarQuery)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_GuardarDocumento)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_AbrirDocumento)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -1058,7 +1061,7 @@
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
             this.panel9.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Muestra)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.ResumeLayout(false);
@@ -1088,8 +1091,8 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label_AbrirDocumento;
+        private System.Windows.Forms.Label label_GuardarDocumento;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
@@ -1105,11 +1108,11 @@
         private System.Windows.Forms.PictureBox pictureBox26;
         private System.Windows.Forms.PictureBox pictureBox27;
         private System.Windows.Forms.PictureBox pictureBox28;
-        private System.Windows.Forms.PictureBox button_Ejecutar;
-        private System.Windows.Forms.PictureBox pictureBox30;
-        private System.Windows.Forms.PictureBox pictureBox31;
+        private System.Windows.Forms.PictureBox button_EjecutarQuery;
+        private System.Windows.Forms.PictureBox pictureBox_GuardarDocumento;
+        private System.Windows.Forms.PictureBox pictureBox_AbrirDocumento;
         private System.Windows.Forms.Panel panel1;
-        public System.Windows.Forms.TextBox textBox_RecibeBD;
+        public System.Windows.Forms.TextBox textBox_Connection;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox_Query;
         private System.Windows.Forms.Panel panel2;
@@ -1123,18 +1126,18 @@
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Panel panel12;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.PictureBox button_Dinamico;
+        private System.Windows.Forms.ComboBox comboBox_Asistente;
+        private System.Windows.Forms.TextBox textBox_Asistente;
+        private System.Windows.Forms.PictureBox pictureBox_FormDinamico;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TreeView treeView2;
+        private System.Windows.Forms.TreeView treeView_Schemas;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.TextBox textBox_Consola;
         private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridView_Muestra;
         private System.Windows.Forms.Panel panel5;
     }
 }

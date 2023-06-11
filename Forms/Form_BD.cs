@@ -1,16 +1,9 @@
-﻿//using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-//using System.Linq;
-//using System.Text;
-//using System.Threading.Tasks;
-//using System.Drawing;
-//using System.ComponentModel;
-using MySql.Data.MySqlClient;
+﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.IO;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace ProyectoSGBD_MySQL.Forms
 {
@@ -22,7 +15,8 @@ namespace ProyectoSGBD_MySQL.Forms
             InitializeComponent();
             this.MaximizeBox = false;
             Load += FormularioEsquemas_Load;
-            comboBox2.SelectedIndexChanged += comboBox2_SelectedIndexChanged;
+            comboBox_Asistente.SelectedIndexChanged += comboBox_Asistente_SelectedIndexChanged;
+            textBox_Connection.Text = cAux.CadenaConexion;
         }
 
 
@@ -36,7 +30,7 @@ namespace ProyectoSGBD_MySQL.Forms
         private void ObtenerEsquemas()
         {
             // Crearemos la cadena de conexión concatenando las variables
-            string cadenaConexion = textBox_RecibeBD.Text;
+            string cadenaConexion = cAux.CadenaConexion;
             using (MySqlConnection connection = new MySqlConnection(cadenaConexion))
             {
                 try
@@ -45,7 +39,7 @@ namespace ProyectoSGBD_MySQL.Forms
 
                     DataTable schemas = connection.GetSchema("Databases");
                     TreeNode nodoRaiz = new TreeNode("esquemas");
-                    treeView2.Nodes.Add(nodoRaiz);
+                    treeView_Schemas.Nodes.Add(nodoRaiz);
                     foreach (DataRow row in schemas.Rows)
                     {
                         string schemaName = row["database_name"].ToString();
@@ -252,10 +246,10 @@ namespace ProyectoSGBD_MySQL.Forms
             }
         }
 
-        private void pictureBox30_Click(object sender, EventArgs e)
+        private void pictureBox_GuardarDocumento_Click(object sender, EventArgs e)
         {
             // Limpiar el árbol antes de actualizar el esquema
-            treeView2.Nodes.Clear();
+            treeView_Schemas.Nodes.Clear();
             // Llamar al método para obtener y mostrar el esquema
             ObtenerEsquemas();
             SaveFileDialog saveFileDialog = new SaveFileDialog();
@@ -281,7 +275,7 @@ namespace ProyectoSGBD_MySQL.Forms
             }
         }
 
-        private void pictureBox31_Click(object sender, EventArgs e)
+        private void pictureBox_AbrirDocumento_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.Filter = "Archivos SQL (*.sql)|*.sql";
@@ -307,16 +301,16 @@ namespace ProyectoSGBD_MySQL.Forms
             }
         }
 
-        private void pictureBox29_Click(object sender, EventArgs e)
+        private void button_EjecutarQuery_Click(object sender, EventArgs e)
         {
             string sqlQuery = textBox_Query.Text;
             DataTable dataTable = new DataTable();
             List<string> mensajes = new List<string>();
             // Eliminar el contenido previo del DataGridView
-            dataGridView1.ClearSelection();
+            dataGridView_Muestra.ClearSelection();
 
             // Crearemos la cadena de conexión concatenando las variables
-            string cadenaConexion = textBox_RecibeBD.Text;
+            string cadenaConexion = textBox_Connection.Text;
 
             // Instancia para conexión a MySQL, recibe la cadena de conexión
             MySqlConnection conexionBD = new MySqlConnection(cadenaConexion);
@@ -336,14 +330,14 @@ namespace ProyectoSGBD_MySQL.Forms
                             using (MySqlDataReader reader = command.ExecuteReader())
                             {
                                 dataTable.Load(reader); // Crear un DataTable para almacenar los datos de la consulta
-                                dataGridView1.DataSource = dataTable; // Enlazar los datos al DataGridView
+                                dataGridView_Muestra.DataSource = dataTable; // Enlazar los datos al DataGridView
                             }
 
                             // Verificar que el DataTable contenga los datos esperados
                             if (dataTable.Rows.Count > 0)
                             {
                                 // Enlazar los datos al DataGridView
-                                dataGridView1.DataSource = dataTable;
+                                dataGridView_Muestra.DataSource = dataTable;
                             }
                             else
                             {
@@ -384,9 +378,9 @@ namespace ProyectoSGBD_MySQL.Forms
             }
         }
 
-        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        private void comboBox_Asistente_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string selectedItem = comboBox2.SelectedItem.ToString();
+            string selectedItem = comboBox_Asistente.SelectedItem.ToString();
 
             string generatedText = string.Empty;
 
@@ -429,10 +423,10 @@ namespace ProyectoSGBD_MySQL.Forms
                     break;
             }
 
-            textBox1.Text = generatedText;
+            textBox_Asistente.Text = generatedText;
         }
 
-        private void pictureBox6_Click(object sender, EventArgs e)
+        private void pictureBox_FormDinamico_Click(object sender, EventArgs e)
         {
             Forms.Form_Dinamico_BD_COL_TAB form_D = new Forms.Form_Dinamico_BD_COL_TAB();
             //AddOwnedForm(form_BD); //Establece una relación de propiedad entre formularios.
