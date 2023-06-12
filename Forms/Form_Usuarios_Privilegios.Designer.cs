@@ -30,15 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Usuarios_Privilegios));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.label_nombreUser = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridView_userView = new System.Windows.Forms.DataGridView();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabControl_accountLimits = new System.Windows.Forms.TabControl();
             this.tabPage_Login = new System.Windows.Forms.TabPage();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
@@ -48,15 +46,15 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox_Authentication_String = new System.Windows.Forms.TextBox();
+            this.textBox_authenticationString = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.button_Expire_Password = new System.Windows.Forms.Button();
-            this.comboBox_Authentication_Type = new System.Windows.Forms.ComboBox();
-            this.textBox_Confirm_Password = new System.Windows.Forms.TextBox();
+            this.button_expirePassword = new System.Windows.Forms.Button();
+            this.comboBox_authenticationType = new System.Windows.Forms.ComboBox();
+            this.textBox_confirmPassword = new System.Windows.Forms.TextBox();
             this.label34 = new System.Windows.Forms.Label();
-            this.text_Limit_Hosts_Matching = new System.Windows.Forms.TextBox();
+            this.text_limitHostsMatching = new System.Windows.Forms.TextBox();
             this.text_Password = new System.Windows.Forms.TextBox();
-            this.text_Login_Name = new System.Windows.Forms.TextBox();
+            this.text_loginName = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -76,9 +74,9 @@
             this.label17 = new System.Windows.Forms.Label();
             this.tabPage_Administrative_Roles = new System.Windows.Forms.TabPage();
             this.groupBox_Global_Privileges = new System.Windows.Forms.GroupBox();
-            this.checkedListBox2 = new System.Windows.Forms.CheckedListBox();
+            this.checkedListBox_globalPrivilegios = new System.Windows.Forms.CheckedListBox();
             this.groupBox_Roles = new System.Windows.Forms.GroupBox();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
+            this.checkedListBox_roles = new System.Windows.Forms.CheckedListBox();
             this.tabPage_Schema_Privileges = new System.Windows.Forms.TabPage();
             this.button_Select_ALL = new System.Windows.Forms.Button();
             this.button_Unselect_All = new System.Windows.Forms.Button();
@@ -96,7 +94,7 @@
             this.dataGridView_Scchema_Privileges = new System.Windows.Forms.DataGridView();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button_Add_Account = new System.Windows.Forms.Button();
+            this.button_addAccount = new System.Windows.Forms.Button();
             this.button_Delete = new System.Windows.Forms.Button();
             this.button_Refresh = new System.Windows.Forms.Button();
             this.button_Apply = new System.Windows.Forms.Button();
@@ -104,9 +102,9 @@
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_userView)).BeginInit();
             this.groupBox3.SuspendLayout();
-            this.tabControl1.SuspendLayout();
+            this.tabControl_accountLimits.SuspendLayout();
             this.tabPage_Login.SuspendLayout();
             this.tabPage_Account_Limits.SuspendLayout();
             this.tabPage_Administrative_Roles.SuspendLayout();
@@ -121,27 +119,27 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.label_nombreUser);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.pictureBox1);
             this.groupBox1.Location = new System.Drawing.Point(6, 5);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBox1.Size = new System.Drawing.Size(1546, 120);
+            this.groupBox1.Size = new System.Drawing.Size(1673, 120);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
-            // label2
+            // label_nombreUser
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(123, 49);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(249, 20);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Nobre de la BD que me conecte";
+            this.label_nombreUser.AutoSize = true;
+            this.label_nombreUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_nombreUser.Location = new System.Drawing.Point(123, 49);
+            this.label_nombreUser.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label_nombreUser.Name = "label_nombreUser";
+            this.label_nombreUser.Size = new System.Drawing.Size(249, 20);
+            this.label_nombreUser.TabIndex = 2;
+            this.label_nombreUser.Text = "Nobre de la BD que me conecte";
             // 
             // label1
             // 
@@ -167,69 +165,53 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.dataGridView1);
+            this.groupBox2.Controls.Add(this.dataGridView_userView);
             this.groupBox2.Location = new System.Drawing.Point(6, 134);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBox2.Size = new System.Drawing.Size(300, 705);
+            this.groupBox2.Size = new System.Drawing.Size(404, 705);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "User Accounts";
             // 
-            // dataGridView1
+            // dataGridView_userView
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2});
-            this.dataGridView1.Location = new System.Drawing.Point(10, 31);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.Size = new System.Drawing.Size(280, 662);
-            this.dataGridView1.TabIndex = 0;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "User";
-            this.Column1.MinimumWidth = 8;
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 150;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "From Host";
-            this.Column2.MinimumWidth = 8;
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 150;
+            this.dataGridView_userView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_userView.Location = new System.Drawing.Point(10, 31);
+            this.dataGridView_userView.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dataGridView_userView.Name = "dataGridView_userView";
+            this.dataGridView_userView.RowHeadersWidth = 62;
+            this.dataGridView_userView.Size = new System.Drawing.Size(386, 662);
+            this.dataGridView_userView.TabIndex = 0;
+            this.dataGridView_userView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_userView_CellClick);
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.tabControl1);
+            this.groupBox3.Controls.Add(this.tabControl_accountLimits);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(315, 134);
+            this.groupBox3.Location = new System.Drawing.Point(418, 134);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBox3.Size = new System.Drawing.Size(1238, 706);
+            this.groupBox3.Size = new System.Drawing.Size(1255, 706);
             this.groupBox3.TabIndex = 1;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Details for account root@localhost";
             // 
-            // tabControl1
+            // tabControl_accountLimits
             // 
-            this.tabControl1.Controls.Add(this.tabPage_Login);
-            this.tabControl1.Controls.Add(this.tabPage_Account_Limits);
-            this.tabControl1.Controls.Add(this.tabPage_Administrative_Roles);
-            this.tabControl1.Controls.Add(this.tabPage_Schema_Privileges);
-            this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl1.Location = new System.Drawing.Point(10, 31);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1218, 666);
-            this.tabControl1.TabIndex = 0;
+            this.tabControl_accountLimits.Controls.Add(this.tabPage_Login);
+            this.tabControl_accountLimits.Controls.Add(this.tabPage_Account_Limits);
+            this.tabControl_accountLimits.Controls.Add(this.tabPage_Administrative_Roles);
+            this.tabControl_accountLimits.Controls.Add(this.tabPage_Schema_Privileges);
+            this.tabControl_accountLimits.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabControl_accountLimits.Location = new System.Drawing.Point(8, 31);
+            this.tabControl_accountLimits.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tabControl_accountLimits.Name = "tabControl_accountLimits";
+            this.tabControl_accountLimits.SelectedIndex = 0;
+            this.tabControl_accountLimits.Size = new System.Drawing.Size(1239, 666);
+            this.tabControl_accountLimits.TabIndex = 0;
             // 
             // tabPage_Login
             // 
@@ -241,15 +223,15 @@
             this.tabPage_Login.Controls.Add(this.label10);
             this.tabPage_Login.Controls.Add(this.label9);
             this.tabPage_Login.Controls.Add(this.label5);
-            this.tabPage_Login.Controls.Add(this.textBox_Authentication_String);
+            this.tabPage_Login.Controls.Add(this.textBox_authenticationString);
             this.tabPage_Login.Controls.Add(this.label4);
-            this.tabPage_Login.Controls.Add(this.button_Expire_Password);
-            this.tabPage_Login.Controls.Add(this.comboBox_Authentication_Type);
-            this.tabPage_Login.Controls.Add(this.textBox_Confirm_Password);
+            this.tabPage_Login.Controls.Add(this.button_expirePassword);
+            this.tabPage_Login.Controls.Add(this.comboBox_authenticationType);
+            this.tabPage_Login.Controls.Add(this.textBox_confirmPassword);
             this.tabPage_Login.Controls.Add(this.label34);
-            this.tabPage_Login.Controls.Add(this.text_Limit_Hosts_Matching);
+            this.tabPage_Login.Controls.Add(this.text_limitHostsMatching);
             this.tabPage_Login.Controls.Add(this.text_Password);
-            this.tabPage_Login.Controls.Add(this.text_Login_Name);
+            this.tabPage_Login.Controls.Add(this.text_loginName);
             this.tabPage_Login.Controls.Add(this.label8);
             this.tabPage_Login.Controls.Add(this.label7);
             this.tabPage_Login.Controls.Add(this.label6);
@@ -257,7 +239,7 @@
             this.tabPage_Login.Location = new System.Drawing.Point(4, 29);
             this.tabPage_Login.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tabPage_Login.Name = "tabPage_Login";
-            this.tabPage_Login.Size = new System.Drawing.Size(1210, 633);
+            this.tabPage_Login.Size = new System.Drawing.Size(1231, 633);
             this.tabPage_Login.TabIndex = 0;
             this.tabPage_Login.Text = "Login";
             this.tabPage_Login.UseVisualStyleBackColor = true;
@@ -344,14 +326,14 @@
             this.label5.Text = "You may create multiple accounts with the same name to connect from diferent host" +
     ";";
             // 
-            // textBox_Authentication_String
+            // textBox_authenticationString
             // 
-            this.textBox_Authentication_String.Enabled = false;
-            this.textBox_Authentication_String.Location = new System.Drawing.Point(204, 346);
-            this.textBox_Authentication_String.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox_Authentication_String.Name = "textBox_Authentication_String";
-            this.textBox_Authentication_String.Size = new System.Drawing.Size(214, 26);
-            this.textBox_Authentication_String.TabIndex = 48;
+            this.textBox_authenticationString.Enabled = false;
+            this.textBox_authenticationString.Location = new System.Drawing.Point(204, 346);
+            this.textBox_authenticationString.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBox_authenticationString.Name = "textBox_authenticationString";
+            this.textBox_authenticationString.Size = new System.Drawing.Size(214, 26);
+            this.textBox_authenticationString.TabIndex = 48;
             // 
             // label4
             // 
@@ -363,40 +345,36 @@
             this.label4.TabIndex = 47;
             this.label4.Text = "Authentication String:";
             // 
-            // button_Expire_Password
+            // button_expirePassword
             // 
-            this.button_Expire_Password.Location = new System.Drawing.Point(204, 302);
-            this.button_Expire_Password.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button_Expire_Password.Name = "button_Expire_Password";
-            this.button_Expire_Password.Size = new System.Drawing.Size(216, 35);
-            this.button_Expire_Password.TabIndex = 7;
-            this.button_Expire_Password.Text = "Expire Password";
-            this.button_Expire_Password.UseVisualStyleBackColor = true;
+            this.button_expirePassword.Location = new System.Drawing.Point(204, 302);
+            this.button_expirePassword.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button_expirePassword.Name = "button_expirePassword";
+            this.button_expirePassword.Size = new System.Drawing.Size(216, 35);
+            this.button_expirePassword.TabIndex = 7;
+            this.button_expirePassword.Text = "Expire Password";
+            this.button_expirePassword.UseVisualStyleBackColor = true;
             // 
-            // comboBox_Authentication_Type
+            // comboBox_authenticationType
             // 
-            this.comboBox_Authentication_Type.Enabled = false;
-            this.comboBox_Authentication_Type.FormattingEnabled = true;
-            this.comboBox_Authentication_Type.Items.AddRange(new object[] {
-            "No",
-            "If availabre",
-            "Require",
-            "Require and Verify CA",
-            "Require and Verify Identity"});
-            this.comboBox_Authentication_Type.Location = new System.Drawing.Point(204, 66);
-            this.comboBox_Authentication_Type.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.comboBox_Authentication_Type.Name = "comboBox_Authentication_Type";
-            this.comboBox_Authentication_Type.Size = new System.Drawing.Size(214, 28);
-            this.comboBox_Authentication_Type.TabIndex = 46;
+            this.comboBox_authenticationType.Enabled = false;
+            this.comboBox_authenticationType.FormattingEnabled = true;
+            this.comboBox_authenticationType.Items.AddRange(new object[] {
+            "Standard"});
+            this.comboBox_authenticationType.Location = new System.Drawing.Point(204, 66);
+            this.comboBox_authenticationType.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.comboBox_authenticationType.Name = "comboBox_authenticationType";
+            this.comboBox_authenticationType.Size = new System.Drawing.Size(214, 28);
+            this.comboBox_authenticationType.TabIndex = 46;
+            this.comboBox_authenticationType.Text = "Standard";
             // 
-            // textBox_Confirm_Password
+            // textBox_confirmPassword
             // 
-            this.textBox_Confirm_Password.Enabled = false;
-            this.textBox_Confirm_Password.Location = new System.Drawing.Point(204, 260);
-            this.textBox_Confirm_Password.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox_Confirm_Password.Name = "textBox_Confirm_Password";
-            this.textBox_Confirm_Password.Size = new System.Drawing.Size(214, 26);
-            this.textBox_Confirm_Password.TabIndex = 36;
+            this.textBox_confirmPassword.Location = new System.Drawing.Point(204, 260);
+            this.textBox_confirmPassword.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBox_confirmPassword.Name = "textBox_confirmPassword";
+            this.textBox_confirmPassword.Size = new System.Drawing.Size(214, 26);
+            this.textBox_confirmPassword.TabIndex = 36;
             // 
             // label34
             // 
@@ -408,13 +386,14 @@
             this.label34.TabIndex = 35;
             this.label34.Text = "Confirm Password:";
             // 
-            // text_Limit_Hosts_Matching
+            // text_limitHostsMatching
             // 
-            this.text_Limit_Hosts_Matching.Location = new System.Drawing.Point(204, 112);
-            this.text_Limit_Hosts_Matching.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.text_Limit_Hosts_Matching.Name = "text_Limit_Hosts_Matching";
-            this.text_Limit_Hosts_Matching.Size = new System.Drawing.Size(214, 26);
-            this.text_Limit_Hosts_Matching.TabIndex = 34;
+            this.text_limitHostsMatching.Location = new System.Drawing.Point(204, 112);
+            this.text_limitHostsMatching.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.text_limitHostsMatching.Name = "text_limitHostsMatching";
+            this.text_limitHostsMatching.Size = new System.Drawing.Size(214, 26);
+            this.text_limitHostsMatching.TabIndex = 34;
+            this.text_limitHostsMatching.Text = "localhost";
             // 
             // text_Password
             // 
@@ -424,13 +403,13 @@
             this.text_Password.Size = new System.Drawing.Size(214, 26);
             this.text_Password.TabIndex = 33;
             // 
-            // text_Login_Name
+            // text_loginName
             // 
-            this.text_Login_Name.Location = new System.Drawing.Point(204, 20);
-            this.text_Login_Name.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.text_Login_Name.Name = "text_Login_Name";
-            this.text_Login_Name.Size = new System.Drawing.Size(214, 26);
-            this.text_Login_Name.TabIndex = 27;
+            this.text_loginName.Location = new System.Drawing.Point(204, 20);
+            this.text_loginName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.text_loginName.Name = "text_loginName";
+            this.text_loginName.Size = new System.Drawing.Size(214, 26);
+            this.text_loginName.TabIndex = 27;
             // 
             // label8
             // 
@@ -489,7 +468,7 @@
             this.tabPage_Account_Limits.Location = new System.Drawing.Point(4, 29);
             this.tabPage_Account_Limits.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tabPage_Account_Limits.Name = "tabPage_Account_Limits";
-            this.tabPage_Account_Limits.Size = new System.Drawing.Size(1210, 633);
+            this.tabPage_Account_Limits.Size = new System.Drawing.Size(1231, 633);
             this.tabPage_Account_Limits.TabIndex = 1;
             this.tabPage_Account_Limits.Text = "Account Limits";
             this.tabPage_Account_Limits.UseVisualStyleBackColor = true;
@@ -532,6 +511,7 @@
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(97, 26);
             this.textBox4.TabIndex = 59;
+            this.textBox4.Text = "0";
             // 
             // label23
             // 
@@ -550,6 +530,7 @@
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(97, 26);
             this.textBox3.TabIndex = 56;
+            this.textBox3.Text = "0";
             // 
             // label21
             // 
@@ -568,6 +549,7 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(97, 26);
             this.textBox2.TabIndex = 53;
+            this.textBox2.Text = "0";
             // 
             // label19
             // 
@@ -596,6 +578,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(97, 26);
             this.textBox1.TabIndex = 50;
+            this.textBox1.Text = "0";
             // 
             // label17
             // 
@@ -614,14 +597,14 @@
             this.tabPage_Administrative_Roles.Location = new System.Drawing.Point(4, 29);
             this.tabPage_Administrative_Roles.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tabPage_Administrative_Roles.Name = "tabPage_Administrative_Roles";
-            this.tabPage_Administrative_Roles.Size = new System.Drawing.Size(1210, 633);
+            this.tabPage_Administrative_Roles.Size = new System.Drawing.Size(1231, 633);
             this.tabPage_Administrative_Roles.TabIndex = 2;
             this.tabPage_Administrative_Roles.Text = "Administrative Roles";
             this.tabPage_Administrative_Roles.UseVisualStyleBackColor = true;
             // 
             // groupBox_Global_Privileges
             // 
-            this.groupBox_Global_Privileges.Controls.Add(this.checkedListBox2);
+            this.groupBox_Global_Privileges.Controls.Add(this.checkedListBox_globalPrivilegios);
             this.groupBox_Global_Privileges.Location = new System.Drawing.Point(834, 18);
             this.groupBox_Global_Privileges.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox_Global_Privileges.Name = "groupBox_Global_Privileges";
@@ -631,10 +614,10 @@
             this.groupBox_Global_Privileges.TabStop = false;
             this.groupBox_Global_Privileges.Text = "Global Privileges";
             // 
-            // checkedListBox2
+            // checkedListBox_globalPrivilegios
             // 
-            this.checkedListBox2.FormattingEnabled = true;
-            this.checkedListBox2.Items.AddRange(new object[] {
+            this.checkedListBox_globalPrivilegios.FormattingEnabled = true;
+            this.checkedListBox_globalPrivilegios.Items.AddRange(new object[] {
             "ALTER",
             "ALTER ROUTINE",
             "CREATE",
@@ -664,15 +647,15 @@
             "SUPER",
             "TRIGGER",
             "UPDATE"});
-            this.checkedListBox2.Location = new System.Drawing.Point(12, 31);
-            this.checkedListBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.checkedListBox2.Name = "checkedListBox2";
-            this.checkedListBox2.Size = new System.Drawing.Size(332, 556);
-            this.checkedListBox2.TabIndex = 0;
+            this.checkedListBox_globalPrivilegios.Location = new System.Drawing.Point(12, 31);
+            this.checkedListBox_globalPrivilegios.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.checkedListBox_globalPrivilegios.Name = "checkedListBox_globalPrivilegios";
+            this.checkedListBox_globalPrivilegios.Size = new System.Drawing.Size(332, 556);
+            this.checkedListBox_globalPrivilegios.TabIndex = 0;
             // 
             // groupBox_Roles
             // 
-            this.groupBox_Roles.Controls.Add(this.checkedListBox1);
+            this.groupBox_Roles.Controls.Add(this.checkedListBox_roles);
             this.groupBox_Roles.Location = new System.Drawing.Point(21, 18);
             this.groupBox_Roles.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox_Roles.Name = "groupBox_Roles";
@@ -682,10 +665,10 @@
             this.groupBox_Roles.TabStop = false;
             this.groupBox_Roles.Text = "Roles";
             // 
-            // checkedListBox1
+            // checkedListBox_roles
             // 
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Items.AddRange(new object[] {
+            this.checkedListBox_roles.FormattingEnabled = true;
+            this.checkedListBox_roles.Items.AddRange(new object[] {
             "DBA   => Grants the rights to perform all tasks.",
             "MaintenanceAdmin   => Grants rights needed to maintain server.",
             "ProcessAdmin   => Rights needed to assess, monitor, and kill any user process run" +
@@ -699,11 +682,11 @@
             "ReplicationAdmin    => Rights needed to setup and manage replication.",
             "BackupAdmin   => Minimal rights needed to backup any database.",
             "Custom   => Custom role."});
-            this.checkedListBox1.Location = new System.Drawing.Point(10, 32);
-            this.checkedListBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(782, 257);
-            this.checkedListBox1.TabIndex = 0;
+            this.checkedListBox_roles.Location = new System.Drawing.Point(10, 32);
+            this.checkedListBox_roles.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.checkedListBox_roles.Name = "checkedListBox_roles";
+            this.checkedListBox_roles.Size = new System.Drawing.Size(782, 257);
+            this.checkedListBox_roles.TabIndex = 0;
             // 
             // tabPage_Schema_Privileges
             // 
@@ -721,7 +704,7 @@
             this.tabPage_Schema_Privileges.Location = new System.Drawing.Point(4, 29);
             this.tabPage_Schema_Privileges.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tabPage_Schema_Privileges.Name = "tabPage_Schema_Privileges";
-            this.tabPage_Schema_Privileges.Size = new System.Drawing.Size(1210, 633);
+            this.tabPage_Schema_Privileges.Size = new System.Drawing.Size(1231, 633);
             this.tabPage_Schema_Privileges.TabIndex = 3;
             this.tabPage_Schema_Privileges.Text = "Schema Privileges";
             this.tabPage_Schema_Privileges.UseVisualStyleBackColor = true;
@@ -914,15 +897,16 @@
             this.Column4.Name = "Column4";
             this.Column4.Width = 150;
             // 
-            // button_Add_Account
+            // button_addAccount
             // 
-            this.button_Add_Account.Location = new System.Drawing.Point(10, 849);
-            this.button_Add_Account.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button_Add_Account.Name = "button_Add_Account";
-            this.button_Add_Account.Size = new System.Drawing.Size(158, 35);
-            this.button_Add_Account.TabIndex = 2;
-            this.button_Add_Account.Text = "Add Account";
-            this.button_Add_Account.UseVisualStyleBackColor = true;
+            this.button_addAccount.Location = new System.Drawing.Point(10, 849);
+            this.button_addAccount.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button_addAccount.Name = "button_addAccount";
+            this.button_addAccount.Size = new System.Drawing.Size(158, 35);
+            this.button_addAccount.TabIndex = 2;
+            this.button_addAccount.Text = "Add Account";
+            this.button_addAccount.UseVisualStyleBackColor = true;
+            this.button_addAccount.Click += new System.EventHandler(this.button_addAccount_Click);
             // 
             // button_Delete
             // 
@@ -933,6 +917,7 @@
             this.button_Delete.TabIndex = 3;
             this.button_Delete.Text = "Delete";
             this.button_Delete.UseVisualStyleBackColor = true;
+            this.button_Delete.Click += new System.EventHandler(this.button_Delete_Click);
             // 
             // button_Refresh
             // 
@@ -943,51 +928,56 @@
             this.button_Refresh.TabIndex = 4;
             this.button_Refresh.Text = "Refresh";
             this.button_Refresh.UseVisualStyleBackColor = true;
+            this.button_Refresh.Click += new System.EventHandler(this.button_Refresh_Click);
             // 
             // button_Apply
             // 
-            this.button_Apply.Location = new System.Drawing.Point(1442, 849);
+            this.button_Apply.Location = new System.Drawing.Point(1549, 849);
             this.button_Apply.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button_Apply.Name = "button_Apply";
             this.button_Apply.Size = new System.Drawing.Size(112, 35);
             this.button_Apply.TabIndex = 6;
             this.button_Apply.Text = "Apply";
             this.button_Apply.UseVisualStyleBackColor = true;
+            this.button_Apply.Click += new System.EventHandler(this.button_Apply_Click);
             // 
             // button_Revert
             // 
-            this.button_Revert.Location = new System.Drawing.Point(1320, 849);
+            this.button_Revert.Location = new System.Drawing.Point(1429, 849);
             this.button_Revert.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button_Revert.Name = "button_Revert";
             this.button_Revert.Size = new System.Drawing.Size(112, 35);
             this.button_Revert.TabIndex = 5;
             this.button_Revert.Text = "Revert";
             this.button_Revert.UseVisualStyleBackColor = true;
+            this.button_Revert.Click += new System.EventHandler(this.button_Revert_Click);
             // 
             // Form_Usuarios_Privilegios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1570, 892);
+            this.ClientSize = new System.Drawing.Size(1686, 892);
             this.Controls.Add(this.button_Apply);
             this.Controls.Add(this.button_Revert);
             this.Controls.Add(this.button_Refresh);
             this.Controls.Add(this.button_Delete);
-            this.Controls.Add(this.button_Add_Account);
+            this.Controls.Add(this.button_addAccount);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Form_Usuarios_Privilegios";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form_Usuarios_Privilegios";
+            this.Load += new System.EventHandler(this.Form_Usuarios_Privilegios_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_userView)).EndInit();
             this.groupBox3.ResumeLayout(false);
-            this.tabControl1.ResumeLayout(false);
+            this.tabControl_accountLimits.ResumeLayout(false);
             this.tabPage_Login.ResumeLayout(false);
             this.tabPage_Login.PerformLayout();
             this.tabPage_Account_Limits.ResumeLayout(false);
@@ -1012,35 +1002,33 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.Label label_nombreUser;
+        private System.Windows.Forms.DataGridView dataGridView_userView;
+        private System.Windows.Forms.TabControl tabControl_accountLimits;
         private System.Windows.Forms.TabPage tabPage_Login;
         private System.Windows.Forms.TabPage tabPage_Account_Limits;
         private System.Windows.Forms.TabPage tabPage_Administrative_Roles;
         private System.Windows.Forms.TabPage tabPage_Schema_Privileges;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.Button button_Add_Account;
+        private System.Windows.Forms.Button button_addAccount;
         private System.Windows.Forms.Button button_Delete;
         private System.Windows.Forms.Button button_Refresh;
         private System.Windows.Forms.Button button_Apply;
         private System.Windows.Forms.Button button_Revert;
-        private System.Windows.Forms.TextBox textBox_Confirm_Password;
+        private System.Windows.Forms.TextBox textBox_confirmPassword;
         private System.Windows.Forms.Label label34;
-        private System.Windows.Forms.TextBox text_Limit_Hosts_Matching;
+        private System.Windows.Forms.TextBox text_limitHostsMatching;
         private System.Windows.Forms.TextBox text_Password;
-        private System.Windows.Forms.TextBox text_Login_Name;
+        private System.Windows.Forms.TextBox text_loginName;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBox_Authentication_Type;
+        private System.Windows.Forms.ComboBox comboBox_authenticationType;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox_Authentication_String;
+        private System.Windows.Forms.TextBox textBox_authenticationString;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button_Expire_Password;
+        private System.Windows.Forms.Button button_expirePassword;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
@@ -1061,8 +1049,8 @@
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.GroupBox groupBox_Global_Privileges;
         private System.Windows.Forms.GroupBox groupBox_Roles;
-        private System.Windows.Forms.CheckedListBox checkedListBox1;
-        private System.Windows.Forms.CheckedListBox checkedListBox2;
+        private System.Windows.Forms.CheckedListBox checkedListBox_roles;
+        private System.Windows.Forms.CheckedListBox checkedListBox_globalPrivilegios;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.DataGridView dataGridView_Scchema_Privileges;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;

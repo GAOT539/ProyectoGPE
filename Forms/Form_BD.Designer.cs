@@ -732,10 +732,10 @@
             // textBox_Connection
             // 
             this.textBox_Connection.Enabled = false;
-            this.textBox_Connection.Font = new System.Drawing.Font("Consolas", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_Connection.Location = new System.Drawing.Point(201, 55);
+            this.textBox_Connection.Font = new System.Drawing.Font("Consolas", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_Connection.Location = new System.Drawing.Point(207, 55);
             this.textBox_Connection.Name = "textBox_Connection";
-            this.textBox_Connection.Size = new System.Drawing.Size(746, 31);
+            this.textBox_Connection.Size = new System.Drawing.Size(740, 40);
             this.textBox_Connection.TabIndex = 0;
             // 
             // panel2
