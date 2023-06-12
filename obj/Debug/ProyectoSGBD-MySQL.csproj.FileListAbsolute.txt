@@ -125,3 +125,34 @@ C:\Users\34641\source\repos\GAOT539\ProyectoGPE\obj\Debug\ProyectoSGBD-MySQL.pdb
 C:\Users\34641\source\repos\GAOT539\ProyectoGPE\bin\Debug\Newtonsoft.Json.dll
 C:\Users\34641\source\repos\GAOT539\ProyectoGPE\bin\Debug\Newtonsoft.Json.xml
 C:\Users\34641\source\repos\GAOT539\ProyectoGPE\obj\Debug\ProyectoSGBD_MySQL.Forms.Form_ChatGPT.resources
+D:\Respaldo Elian\UTA\5 A TI\Sistemas de Bases de Datos Distribuidos\Proyecto I v2\bin\Debug\ProyectoSGBD-MySQL.exe.config
+D:\Respaldo Elian\UTA\5 A TI\Sistemas de Bases de Datos Distribuidos\Proyecto I v2\bin\Debug\ProyectoSGBD-MySQL.exe
+D:\Respaldo Elian\UTA\5 A TI\Sistemas de Bases de Datos Distribuidos\Proyecto I v2\bin\Debug\ProyectoSGBD-MySQL.pdb
+D:\Respaldo Elian\UTA\5 A TI\Sistemas de Bases de Datos Distribuidos\Proyecto I v2\bin\Debug\MySql.Data.dll
+D:\Respaldo Elian\UTA\5 A TI\Sistemas de Bases de Datos Distribuidos\Proyecto I v2\bin\Debug\Newtonsoft.Json.dll
+D:\Respaldo Elian\UTA\5 A TI\Sistemas de Bases de Datos Distribuidos\Proyecto I v2\bin\Debug\Google.Protobuf.dll
+D:\Respaldo Elian\UTA\5 A TI\Sistemas de Bases de Datos Distribuidos\Proyecto I v2\bin\Debug\ZstdNet.dll
+D:\Respaldo Elian\UTA\5 A TI\Sistemas de Bases de Datos Distribuidos\Proyecto I v2\bin\Debug\K4os.Compression.LZ4.Streams.dll
+D:\Respaldo Elian\UTA\5 A TI\Sistemas de Bases de Datos Distribuidos\Proyecto I v2\bin\Debug\BouncyCastle.Crypto.dll
+D:\Respaldo Elian\UTA\5 A TI\Sistemas de Bases de Datos Distribuidos\Proyecto I v2\bin\Debug\System.Memory.dll
+D:\Respaldo Elian\UTA\5 A TI\Sistemas de Bases de Datos Distribuidos\Proyecto I v2\bin\Debug\System.Buffers.dll
+D:\Respaldo Elian\UTA\5 A TI\Sistemas de Bases de Datos Distribuidos\Proyecto I v2\bin\Debug\K4os.Compression.LZ4.dll
+D:\Respaldo Elian\UTA\5 A TI\Sistemas de Bases de Datos Distribuidos\Proyecto I v2\bin\Debug\K4os.Hash.xxHash.dll
+D:\Respaldo Elian\UTA\5 A TI\Sistemas de Bases de Datos Distribuidos\Proyecto I v2\bin\Debug\System.Numerics.Vectors.dll
+D:\Respaldo Elian\UTA\5 A TI\Sistemas de Bases de Datos Distribuidos\Proyecto I v2\bin\Debug\MySql.Data.xml
+D:\Respaldo Elian\UTA\5 A TI\Sistemas de Bases de Datos Distribuidos\Proyecto I v2\bin\Debug\Newtonsoft.Json.xml
+D:\Respaldo Elian\UTA\5 A TI\Sistemas de Bases de Datos Distribuidos\Proyecto I v2\obj\Debug\ProyectoSGBD-MySQL.csproj.AssemblyReference.cache
+D:\Respaldo Elian\UTA\5 A TI\Sistemas de Bases de Datos Distribuidos\Proyecto I v2\obj\Debug\ProyectoSGBD-MySQL.csproj.SuggestedBindingRedirects.cache
+D:\Respaldo Elian\UTA\5 A TI\Sistemas de Bases de Datos Distribuidos\Proyecto I v2\obj\Debug\ProyectoSGBD-MySQL.exe.config
+D:\Respaldo Elian\UTA\5 A TI\Sistemas de Bases de Datos Distribuidos\Proyecto I v2\obj\Debug\ProyectoSGBD_MySQL.Forms.Form_BD.resources
+D:\Respaldo Elian\UTA\5 A TI\Sistemas de Bases de Datos Distribuidos\Proyecto I v2\obj\Debug\ProyectoSGBD_MySQL.Forms.Form_ChatGPT.resources
+D:\Respaldo Elian\UTA\5 A TI\Sistemas de Bases de Datos Distribuidos\Proyecto I v2\obj\Debug\ProyectoSGBD_MySQL.Forms.Form_Dinamico_BD_COL_TAB.resources
+D:\Respaldo Elian\UTA\5 A TI\Sistemas de Bases de Datos Distribuidos\Proyecto I v2\obj\Debug\ProyectoSGBD_MySQL.Forms.Form_Login.resources
+D:\Respaldo Elian\UTA\5 A TI\Sistemas de Bases de Datos Distribuidos\Proyecto I v2\obj\Debug\ProyectoSGBD_MySQL.Forms.Form_Principal.resources
+D:\Respaldo Elian\UTA\5 A TI\Sistemas de Bases de Datos Distribuidos\Proyecto I v2\obj\Debug\ProyectoSGBD_MySQL.Forms.Form_Usuarios_Privilegios.resources
+D:\Respaldo Elian\UTA\5 A TI\Sistemas de Bases de Datos Distribuidos\Proyecto I v2\obj\Debug\ProyectoSGBD_MySQL.Properties.Resources.resources
+D:\Respaldo Elian\UTA\5 A TI\Sistemas de Bases de Datos Distribuidos\Proyecto I v2\obj\Debug\ProyectoSGBD-MySQL.csproj.GenerateResource.cache
+D:\Respaldo Elian\UTA\5 A TI\Sistemas de Bases de Datos Distribuidos\Proyecto I v2\obj\Debug\ProyectoSGBD-MySQL.csproj.CoreCompileInputs.cache
+D:\Respaldo Elian\UTA\5 A TI\Sistemas de Bases de Datos Distribuidos\Proyecto I v2\obj\Debug\ProyectoSGBD-MySQL.csproj.CopyComplete
+D:\Respaldo Elian\UTA\5 A TI\Sistemas de Bases de Datos Distribuidos\Proyecto I v2\obj\Debug\ProyectoSGBD-MySQL.exe
+D:\Respaldo Elian\UTA\5 A TI\Sistemas de Bases de Datos Distribuidos\Proyecto I v2\obj\Debug\ProyectoSGBD-MySQL.pdb

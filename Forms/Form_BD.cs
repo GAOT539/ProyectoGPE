@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 
@@ -9,7 +10,8 @@ namespace ProyectoSGBD_MySQL.Forms
 {
     public partial class Form_BD : Form
     {
-        public Form_BD()
+        private bool isDarkModeEnabled;
+        public Form_BD(bool isDarkModeEnabled)
         {
             InitializeComponent();
             this.MaximizeBox = false;
@@ -17,6 +19,8 @@ namespace ProyectoSGBD_MySQL.Forms
             comboBox_Asistente.SelectedIndexChanged += comboBox_Asistente_SelectedIndexChanged;
             textBox_Connection.Text = cAux.CadenaConexion;
             comboBox_Asistente.DropDownStyle = ComboBoxStyle.DropDownList;
+            this.isDarkModeEnabled = isDarkModeEnabled;
+            SetTheme();
         }
 
         // Evento Load del formulario
@@ -436,7 +440,7 @@ namespace ProyectoSGBD_MySQL.Forms
 
         private void pictureBox_FormDinamico_Click(object sender, EventArgs e)
         {
-            Forms.Form_Dinamico_BD_COL_TAB form_D = new Forms.Form_Dinamico_BD_COL_TAB();
+            Forms.Form_Dinamico_BD_COL_TAB form_D = new Forms.Form_Dinamico_BD_COL_TAB(isDarkModeEnabled);
             cAux cAux = new cAux();
             this.Hide();
             form_D.ShowDialog();
@@ -445,11 +449,40 @@ namespace ProyectoSGBD_MySQL.Forms
 
         private void label_Users_Click(object sender, EventArgs e)
         {
-            Forms.Form_Usuarios_Privilegios form_Usuarios_Privilegios = new Forms.Form_Usuarios_Privilegios();
+            Forms.Form_Usuarios_Privilegios form_Usuarios_Privilegios = new Forms.Form_Usuarios_Privilegios(isDarkModeEnabled);
             cAux cAux = new cAux();
             this.Hide();
             form_Usuarios_Privilegios.ShowDialog();
             this.Show();
+        }
+
+        private Color originalBackgroundColor;
+        private Color originalTextColor;
+        private Color darkBackgroundColor = Color.FromArgb(30, 30, 30);
+        private Color darkTextColor = Color.Black;
+        private void SetTheme()
+        {
+            if (isDarkModeEnabled)
+            {
+
+                // Cambiar a modo oscuro
+                originalBackgroundColor = BackColor;
+                originalTextColor = ForeColor;
+                BackColor = darkBackgroundColor;
+                ForeColor = darkTextColor;
+                // Establecer los colores oscuros para otros controles según sea necesario
+
+
+            }
+            else
+            {
+                // Cambiar a modo claro
+                BackColor = originalBackgroundColor;
+                ForeColor = originalTextColor;
+                // Restablecer los colores claros para otros controles según sea necesario
+
+
+            }
         }
     }
 }
