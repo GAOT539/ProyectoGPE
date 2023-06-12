@@ -490,7 +490,7 @@ namespace ProyectoSGBD_MySQL.Forms
                             // Mostrar mensaje dependiendo de los privilegios del usuario
                             if (hasPrivileges)
                             {
-                                MessageBox.Show("El usuario tiene los privilegios suficientes para crear otros usuarios.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                //MessageBox.Show("El usuario tiene los privilegios suficientes para crear otros usuarios.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 Forms.Form_Usuarios_Privilegios form_Usuarios_Privilegios = new Forms.Form_Usuarios_Privilegios();
                                 cAux cAux = new cAux();
                                 this.Hide();
