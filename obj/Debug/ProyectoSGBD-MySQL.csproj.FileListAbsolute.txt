@@ -86,10 +86,6 @@ C:\Users\HP\Source\Repos\GAOT539\ProyectoGPE\obj\Debug\ProyectoSGBD-MySQL.csproj
 C:\Users\HP\Source\Repos\GAOT539\ProyectoGPE\obj\Debug\ProyectoSGBD-MySQL.csproj.SuggestedBindingRedirects.cache
 C:\Users\HP\Source\Repos\GAOT539\ProyectoGPE\obj\Debug\ProyectoSGBD-MySQL.exe.config
 C:\Users\HP\Source\Repos\GAOT539\ProyectoGPE\obj\Debug\ProyectoSGBD_MySQL.Forms.Form_BD.resources
-C:\Users\HP\Source\Repos\GAOT539\ProyectoGPE\obj\Debug\ProyectoSGBD_MySQL.Forms.Form_CreateBD.resources
-C:\Users\HP\Source\Repos\GAOT539\ProyectoGPE\obj\Debug\ProyectoSGBD_MySQL.Forms.Form_CreateColumna.resources
-C:\Users\HP\Source\Repos\GAOT539\ProyectoGPE\obj\Debug\ProyectoSGBD_MySQL.Forms.Form_CreateTabla.resources
-C:\Users\HP\Source\Repos\GAOT539\ProyectoGPE\obj\Debug\ProyectoSGBD_MySQL.Forms.Form_Dinamico.resources
 C:\Users\HP\Source\Repos\GAOT539\ProyectoGPE\obj\Debug\ProyectoSGBD_MySQL.Forms.Form_Login.resources
 C:\Users\HP\Source\Repos\GAOT539\ProyectoGPE\obj\Debug\ProyectoSGBD_MySQL.Forms.Form_Principal.resources
 C:\Users\HP\Source\Repos\GAOT539\ProyectoGPE\obj\Debug\ProyectoSGBD_MySQL.Properties.Resources.resources
@@ -125,3 +121,6 @@ C:\Users\34641\source\repos\GAOT539\ProyectoGPE\obj\Debug\ProyectoSGBD-MySQL.pdb
 C:\Users\34641\source\repos\GAOT539\ProyectoGPE\bin\Debug\Newtonsoft.Json.dll
 C:\Users\34641\source\repos\GAOT539\ProyectoGPE\bin\Debug\Newtonsoft.Json.xml
 C:\Users\34641\source\repos\GAOT539\ProyectoGPE\obj\Debug\ProyectoSGBD_MySQL.Forms.Form_ChatGPT.resources
+C:\Users\HP\source\repos\GAOT539\ProyectoGPE\bin\Debug\Newtonsoft.Json.dll
+C:\Users\HP\source\repos\GAOT539\ProyectoGPE\bin\Debug\Newtonsoft.Json.xml
+C:\Users\HP\source\repos\GAOT539\ProyectoGPE\obj\Debug\ProyectoSGBD_MySQL.Forms.Form_ChatGPT.resources
