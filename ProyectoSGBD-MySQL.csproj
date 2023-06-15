@@ -90,6 +90,12 @@
     <Compile Include="Forms\Form_Usuarios_Privilegios.Designer.cs">
       <DependentUpon>Form_Usuarios_Privilegios.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Form_Creacion_Tabla.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Form_Creacion_Tabla.Designer.cs">
+      <DependentUpon>Form_Creacion_Tabla.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\Form_BD.resx">
@@ -97,6 +103,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Form_ChatGPT.resx">
       <DependentUpon>Form_ChatGPT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form_Creacion_Tabla.resx">
+      <DependentUpon>Form_Creacion_Tabla.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Form_Dinamico_BD_COL_TAB.resx">
       <DependentUpon>Form_Dinamico_BD_COL_TAB.cs</DependentUpon>
