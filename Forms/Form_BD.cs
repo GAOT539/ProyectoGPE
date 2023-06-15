@@ -14,14 +14,16 @@ namespace ProyectoSGBD_MySQL.Forms
         public Form_BD(bool isDarkModeEnabled)
         {
             InitializeComponent();
-            this.MaximizeBox = false;
+            //this.MaximizeBox = false;
             Load += FormularioEsquemas_Load;
             comboBox_Asistente.SelectedIndexChanged += comboBox_Asistente_SelectedIndexChanged;
             textBox_Connection.Text = cAux.CadenaConexion;
             comboBox_Asistente.DropDownStyle = ComboBoxStyle.DropDownList;
             this.isDarkModeEnabled = isDarkModeEnabled;
             SetTheme();
+            Resize += Form_BD_Resize;
         }
+
 
         // Evento Load del formulario
         private void FormularioEsquemas_Load(object sender, EventArgs e)
@@ -483,6 +485,38 @@ namespace ProyectoSGBD_MySQL.Forms
 
 
             }
+
+
         }
+
+
+        private void Form_BD_Resize(object sender, EventArgs e)
+        {
+            if (WindowState == FormWindowState.Maximized)
+            {
+                int yCoord = dataGridView_Muestra.Location.Y; // Obtener la coordenada Y actual del componente
+                int xCoord = (this.ClientSize.Width - dataGridView_Muestra.Width) / 2; // Calcular la coordenada X centrada
+
+                dataGridView_Muestra.Location = new Point(xCoord, yCoord);
+
+                label19.Text = "OUTPUT::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::" +
+                "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::";
+
+                //dataGridView_Muestra.Left = 500;
+                //dataGridView_Muestra.Size = new System.Drawing.Size(1700,194);
+
+                
+            }
+            else
+            {
+                
+                dataGridView_Muestra.Left = 0;
+                //dataGridView_Muestra.Size = new System.Drawing.Size(1203, 194);
+                panel7.Top = 0;
+
+
+            }
+        }
+
     }
 }

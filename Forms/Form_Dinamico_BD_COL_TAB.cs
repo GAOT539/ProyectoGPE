@@ -424,16 +424,41 @@ namespace ProyectoSGBD_MySQL.Forms
         
         private void Form_Dinamico_BD_COL_TAB_Resize(object sender, EventArgs e)
         {
-            label19.Width = ClientSize.Width; // Ajustar el ancho del Label al ancho del formulario
+          //  label19.Width = ClientSize.Width; // Ajustar el ancho del Label al ancho del formulario
 
             // Agregar más texto al Label para que se ajuste hasta el final hacia la derecha
             string labelText = "OUTPUT ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::" +
                 "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::";
-            while (label19.Width < TextRenderer.MeasureText(labelText, label19.Font).Width)
+            // while (label19.Width < TextRenderer.MeasureText(labelText, label19.Font).Width)
+            //  {
+            //      labelText = labelText.Substring(0, labelText.Length - 1);
+            // }
+            //label19.Text = labelText;
+
+            if (WindowState == FormWindowState.Maximized)
             {
-                labelText = labelText.Substring(0, labelText.Length - 1);
+                int yCoord = dataGridView_Muestra.Location.Y; // Obtener la coordenada Y actual del componente
+                int xCoord = (this.ClientSize.Width - dataGridView_Muestra.Width) / 2; // Calcular la coordenada X centrada
+
+                dataGridView_Muestra.Location = new Point(xCoord, yCoord);
+
+                label19.Size = new System.Drawing.Size(2000, 20);
+                label19.Text = "OUTPUT::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::" +
+                "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::";
+
+
+
+                //dataGridView_Muestra.Left = 500;
+                //dataGridView_Muestra.Size = new System.Drawing.Size(1700,194);
+            } else
+            {
+                label19.Size = new System.Drawing.Size(1373, 20);
+                dataGridView_Muestra.Left = 0;
+                //dataGridView_Muestra.Size = new System.Drawing.Size(1203, 194);
+                label19.Left = 0;
+
             }
-            label19.Text = labelText;
+
         }
 
     }
