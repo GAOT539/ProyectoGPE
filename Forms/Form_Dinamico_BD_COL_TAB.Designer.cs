@@ -82,6 +82,8 @@
             // 
             // panel2
             // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.Gainsboro;
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Controls.Add(this.label17);
@@ -92,6 +94,7 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(1316, 0);
             this.pictureBox1.Name = "pictureBox1";
@@ -112,6 +115,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.groupBox1.Controls.Add(this.pictureBox2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.button_CreateDataBase);
@@ -127,6 +132,7 @@
             // 
             // pictureBox2
             // 
+            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.pictureBox2.Image = global::ProyectoSGBD_MySQL.Properties.Resources._30393;
             this.pictureBox2.Location = new System.Drawing.Point(44, 46);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -138,6 +144,7 @@
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(38, 292);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -148,6 +155,7 @@
             // 
             // button_CreateDataBase
             // 
+            this.button_CreateDataBase.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.button_CreateDataBase.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_CreateDataBase.Location = new System.Drawing.Point(90, 392);
             this.button_CreateDataBase.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -160,6 +168,7 @@
             // 
             // textBox_CreateDataBase
             // 
+            this.textBox_CreateDataBase.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.textBox_CreateDataBase.Location = new System.Drawing.Point(38, 322);
             this.textBox_CreateDataBase.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBox_CreateDataBase.Name = "textBox_CreateDataBase";
@@ -168,6 +177,9 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Controls.Add(this.pictureBox3);
             this.groupBox2.Controls.Add(this.textBox_Nombre_Tabla);
             this.groupBox2.Controls.Add(this.comboBox_DataBase_Tabla);
@@ -178,7 +190,6 @@
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.comboBox_TipoDato_Tabla);
             this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.groupBox2.Location = new System.Drawing.Point(472, 77);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox2.Name = "groupBox2";
@@ -190,6 +201,7 @@
             // 
             // pictureBox3
             // 
+            this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox3.Image = global::ProyectoSGBD_MySQL.Properties.Resources._981402;
             this.pictureBox3.Location = new System.Drawing.Point(736, 46);
             this.pictureBox3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -289,6 +301,9 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox3.Controls.Add(this.checkBox_Null_Columna);
             this.groupBox3.Controls.Add(this.comboBox_DataBase_Columna);
             this.groupBox3.Controls.Add(this.pictureBox4);
@@ -331,6 +346,7 @@
             // 
             // pictureBox4
             // 
+            this.pictureBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox4.Image = global::ProyectoSGBD_MySQL.Properties.Resources._1239779;
             this.pictureBox4.Location = new System.Drawing.Point(736, 29);
             this.pictureBox4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -353,6 +369,7 @@
             // 
             // button_Añadir_Columna
             // 
+            this.button_Añadir_Columna.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button_Añadir_Columna.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_Añadir_Columna.Location = new System.Drawing.Point(736, 174);
             this.button_Añadir_Columna.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -422,6 +439,8 @@
             // 
             // panel5
             // 
+            this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel5.BackColor = System.Drawing.Color.Gainsboro;
             this.panel5.Controls.Add(this.panel9);
             this.panel5.Controls.Add(this.textBox_Consola);
@@ -433,6 +452,8 @@
             // 
             // panel9
             // 
+            this.panel9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel9.Controls.Add(this.dataGridView_Muestra);
             this.panel9.Location = new System.Drawing.Point(10, 78);
             this.panel9.Name = "panel9";
@@ -454,6 +475,8 @@
             // 
             // textBox_Consola
             // 
+            this.textBox_Consola.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox_Consola.Font = new System.Drawing.Font("Consolas", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_Consola.Location = new System.Drawing.Point(10, 32);
             this.textBox_Consola.Name = "textBox_Consola";
@@ -462,6 +485,8 @@
             // 
             // panel8
             // 
+            this.panel8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel8.BackColor = System.Drawing.Color.Gray;
             this.panel8.Controls.Add(this.label19);
             this.panel8.Location = new System.Drawing.Point(0, 0);
@@ -477,9 +502,11 @@
             this.label19.Location = new System.Drawing.Point(-2, 0);
             this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(1605, 25);
+            this.label19.Size = new System.Drawing.Size(1374, 25);
             this.label19.TabIndex = 5;
-            this.label19.Text = resources.GetString("label19.Text");
+            this.label19.Text = "OUTPUT ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::" +
+    "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::" +
+    ":::::::::::::::::::::::::::";
             // 
             // Form_Dinamico_BD_COL_TAB
             // 

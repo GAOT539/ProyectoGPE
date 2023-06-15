@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 
@@ -9,15 +10,19 @@ namespace ProyectoSGBD_MySQL.Forms
 {
     public partial class Form_BD : Form
     {
-        public Form_BD()
+        private bool isDarkModeEnabled;
+        public Form_BD(bool isDarkModeEnabled)
         {
             InitializeComponent();
-            this.MaximizeBox = false;
+            //this.MaximizeBox = false;
             Load += FormularioEsquemas_Load;
             comboBox_Asistente.SelectedIndexChanged += comboBox_Asistente_SelectedIndexChanged;
             textBox_Connection.Text = cAux.NombreConexion;
             comboBox_Asistente.SelectedIndex = 0;
             comboBox_Asistente.DropDownStyle = ComboBoxStyle.DropDownList;
+            this.isDarkModeEnabled = isDarkModeEnabled;
+            SetTheme();
+            Resize += Form_BD_Resize;
         }
 
         // Evento Load del formulario
@@ -446,7 +451,7 @@ namespace ProyectoSGBD_MySQL.Forms
 
         private void pictureBox_FormDinamico_Click(object sender, EventArgs e)
         {
-            Forms.Form_Dinamico_BD_COL_TAB form_D = new Forms.Form_Dinamico_BD_COL_TAB();
+            Forms.Form_Dinamico_BD_COL_TAB form_D = new Forms.Form_Dinamico_BD_COL_TAB(isDarkModeEnabled);
             cAux cAux = new cAux();
             this.Hide();
             form_D.ShowDialog();
@@ -491,7 +496,7 @@ namespace ProyectoSGBD_MySQL.Forms
                             if (hasPrivileges)
                             {
                                 //MessageBox.Show("El usuario tiene los privilegios suficientes para crear otros usuarios.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                Forms.Form_Usuarios_Privilegios form_Usuarios_Privilegios = new Forms.Form_Usuarios_Privilegios();
+                                Forms.Form_Usuarios_Privilegios form_Usuarios_Privilegios = new Forms.Form_Usuarios_Privilegios(isDarkModeEnabled);
                                 cAux cAux = new cAux();
                                 this.Hide();
                                 form_Usuarios_Privilegios.ShowDialog();
@@ -514,5 +519,68 @@ namespace ProyectoSGBD_MySQL.Forms
                 MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private Color originalBackgroundColor;
+        private Color originalTextColor;
+        private Color darkBackgroundColor = Color.FromArgb(30, 30, 30);
+        private Color darkTextColor = Color.Black;
+        private void SetTheme()
+        {
+            if (isDarkModeEnabled)
+            {
+
+                // Cambiar a modo oscuro
+                originalBackgroundColor = BackColor;
+                originalTextColor = ForeColor;
+                BackColor = darkBackgroundColor;
+                ForeColor = darkTextColor;
+                // Establecer los colores oscuros para otros controles según sea necesario
+
+
+            }
+            else
+            {
+                // Cambiar a modo claro
+                BackColor = originalBackgroundColor;
+                ForeColor = originalTextColor;
+                // Restablecer los colores claros para otros controles según sea necesario
+
+
+            }
+
+
+        }
+
+
+        private void Form_BD_Resize(object sender, EventArgs e)
+        {
+            if (WindowState == FormWindowState.Maximized)
+            {
+                int yCoord = dataGridView_Muestra.Location.Y; // Obtener la coordenada Y actual del componente
+                int xCoord = (this.ClientSize.Width - dataGridView_Muestra.Width) / 2; // Calcular la coordenada X centrada
+
+                dataGridView_Muestra.Location = new Point(xCoord, yCoord);
+
+                label19.Text = "OUTPUT::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::" +
+                "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::";
+
+                //dataGridView_Muestra.Left = 500;
+                //dataGridView_Muestra.Size = new System.Drawing.Size(1700,194);
+
+
+            }
+            else
+            {
+
+                dataGridView_Muestra.Left = 0;
+                //dataGridView_Muestra.Size = new System.Drawing.Size(1203, 194);
+                panel7.Top = 0;
+
+
+            }
+        }
+
+
+
     }
 }

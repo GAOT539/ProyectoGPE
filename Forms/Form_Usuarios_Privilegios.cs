@@ -11,16 +11,22 @@ using System.Windows.Forms;
 
 namespace ProyectoSGBD_MySQL.Forms
 {
+    
     public partial class Form_Usuarios_Privilegios : Form
     {
-        public Form_Usuarios_Privilegios()
+
+        private bool isDarkModeEnabled;
+        public Form_Usuarios_Privilegios(bool isDarkModeEnabled)
         {
             InitializeComponent();
-            this.MaximizeBox = false;
+            //this.MaximizeBox = false;
             bloquearLogin();//Bloquear el registro login
             label_nombreUser.Text = cAux.NombreConexion;
             //comboBox_authenticationType.SelectedIndex = 0;
             comboBox_authenticationType.DropDownStyle = ComboBoxStyle.DropDownList;
+            this.isDarkModeEnabled = isDarkModeEnabled;
+            SetTheme();
+            dataGridView_userView.CellFormatting += dataGridView1_CellFormatting;
         }
         private void dataGridView_userView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -261,6 +267,109 @@ namespace ProyectoSGBD_MySQL.Forms
             //Desbloquea botones de Accion
             button_Delete.Enabled = true;
             button_Refresh.Enabled = true;
+        }
+
+        private Color originalBackgroundColor;
+        private Color originalTextColor;
+        private Color darkBackgroundColor = Color.FromArgb(30, 30, 30);
+        private Color darkTextColor = Color.White;
+        private void SetTheme()
+        {
+            if (isDarkModeEnabled)
+            {
+
+                // Cambiar a modo oscuro
+                BackColor = darkBackgroundColor;
+                //ForeColor = darkTextColor;
+                // Establecer los colores oscuros para otros controles según sea necesario
+
+                tabControl_accountLimits.BackColor = Color.FromArgb(30, 30, 30);
+
+                // Ajustar el color de las pestañas (TabPages) en el TabControl
+                foreach (TabPage tabPage in tabControl_accountLimits.TabPages)
+                {
+                    tabPage.BackColor = tabControl_accountLimits.BackColor;
+                    tabPage.ForeColor = Color.Black; // Color de fuente blanco para mejorar la legibilidad
+                }
+
+                // Ajustar el color de fuente del groupBox1-2
+                groupBox1.ForeColor = Color.White;
+                groupBox2.ForeColor = Color.White;
+
+                dataGridView_userView.ForeColor = originalTextColor;
+                
+
+                button_addAccount.ForeColor = darkTextColor;
+                button_addAccount.BackColor = darkBackgroundColor;
+
+                button_Delete.ForeColor = darkTextColor;
+                button_Delete.BackColor = darkBackgroundColor;
+
+                button_Refresh.ForeColor = darkTextColor;
+                button_Refresh.BackColor = darkBackgroundColor;
+
+                button_Revert.ForeColor = darkTextColor;
+                button_Revert.BackColor = darkBackgroundColor;
+
+                button_Apply.ForeColor = darkTextColor;
+                button_Apply.BackColor = darkBackgroundColor;
+
+                groupBox3.ForeColor = darkTextColor;
+                groupBox3.BackColor = SystemColors.ControlDarkDark;
+
+            }
+            else
+            {
+                // Cambiar a modo claro
+                BackColor = originalBackgroundColor;
+                ForeColor = originalTextColor;
+                // Restablecer los colores claros para otros controles según sea necesario
+
+                tabControl_accountLimits.BackColor = SystemColors.Control;
+
+                // Restaurar el color de las pestañas (TabPages) en el TabControl al color original
+                foreach (TabPage tabPage in tabControl_accountLimits.TabPages)
+                {
+                    tabPage.BackColor = tabControl_accountLimits.BackColor;
+                    tabPage.ForeColor = SystemColors.ControlText; // Restaurar el color de fuente original
+                }
+
+                // Restaurar el color de fuente original del groupBox1-2
+                groupBox1.ForeColor = SystemColors.ControlText;
+                groupBox2.ForeColor = SystemColors.ControlText;
+                groupBox3.ForeColor = originalTextColor;
+                groupBox3.BackColor = SystemColors.ControlText;
+
+
+                button_addAccount.ForeColor = originalTextColor;
+                button_addAccount.BackColor = originalBackgroundColor;
+
+                button_Delete.ForeColor = originalTextColor;
+                button_Delete.BackColor = originalBackgroundColor;
+
+                button_Refresh.ForeColor = originalTextColor;
+                button_Refresh.BackColor = originalBackgroundColor;
+
+                button_Revert.ForeColor = originalTextColor;
+                button_Revert.BackColor = originalBackgroundColor;
+
+                button_Apply.ForeColor = originalTextColor;
+                button_Apply.BackColor = originalBackgroundColor;
+            }
+        }
+
+        private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (isDarkModeEnabled)
+            {
+                // Establecer el color de fuente de las celdas en negro
+                e.CellStyle.ForeColor = Color.Black;
+            }
+            else
+            {
+                // Restaurar el color de fuente predeterminado
+                e.CellStyle.ForeColor = dataGridView_userView.DefaultCellStyle.ForeColor;
+            }
         }
 
     }

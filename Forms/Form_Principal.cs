@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace ProyectoSGBD_MySQL.Forms
@@ -26,7 +27,7 @@ namespace ProyectoSGBD_MySQL.Forms
             // Muestra el formulario de inicio de sesión.
             // Agrega un controlador de eventos para el evento FormClosed, que se ejecuta cuando se cierra el formulario de inicio de sesión.
             // Oculta el formulario actual.
-            Form_Login login = new Form_Login();
+            Form_Login login = new Form_Login(isDarkModeEnabled);
             cAux cAux = new cAux();
             login.Show();
             login.FormClosed += cAux.cerrarFormulario;
@@ -84,5 +85,37 @@ namespace ProyectoSGBD_MySQL.Forms
             }
         }
 
+        private bool isDarkModeEnabled = false;
+        private Color originalBackgroundColor;
+        private Color originalTextColor;
+        private Color darkBackgroundColor = Color.FromArgb(30, 30, 30);
+        private Color darkTextColor = Color.White;
+
+        private void button_Dark_Click(object sender, EventArgs e)
+        {
+            if (isDarkModeEnabled)
+            {
+                // Cambiar a modo claro
+                BackColor = originalBackgroundColor;
+                ForeColor = originalTextColor;
+                // Restablecer los colores claros para otros controles según sea necesario
+                button_Dark.ForeColor = originalTextColor;
+                button_Dark.BackColor = originalBackgroundColor;
+                isDarkModeEnabled = false;
+
+            }
+            else
+            {
+                // Cambiar a modo oscuro
+                originalBackgroundColor = BackColor;
+                originalTextColor = ForeColor;
+                BackColor = darkBackgroundColor;
+                ForeColor = darkTextColor;
+                button_Dark.ForeColor = darkTextColor;
+                button_Dark.BackColor = darkBackgroundColor;
+                // Establecer los colores oscuros para otros controles según sea necesario
+                isDarkModeEnabled = true;
+            }
+        }
     }
 }

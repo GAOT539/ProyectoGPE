@@ -119,6 +119,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.label_nombreUser);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.pictureBox1);
@@ -165,6 +167,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.groupBox2.Controls.Add(this.dataGridView_userView);
             this.groupBox2.Location = new System.Drawing.Point(6, 134);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -177,6 +181,8 @@
             // 
             // dataGridView_userView
             // 
+            this.dataGridView_userView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.dataGridView_userView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_userView.Location = new System.Drawing.Point(10, 31);
             this.dataGridView_userView.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -188,6 +194,9 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox3.Controls.Add(this.tabControl_accountLimits);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(418, 134);
@@ -201,6 +210,9 @@
             // 
             // tabControl_accountLimits
             // 
+            this.tabControl_accountLimits.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl_accountLimits.Controls.Add(this.tabPage_Login);
             this.tabControl_accountLimits.Controls.Add(this.tabPage_Account_Limits);
             this.tabControl_accountLimits.Controls.Add(this.tabPage_Administrative_Roles);
@@ -899,6 +911,7 @@
             // 
             // button_addAccount
             // 
+            this.button_addAccount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.button_addAccount.Location = new System.Drawing.Point(10, 849);
             this.button_addAccount.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button_addAccount.Name = "button_addAccount";
@@ -910,6 +923,7 @@
             // 
             // button_Delete
             // 
+            this.button_Delete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.button_Delete.Location = new System.Drawing.Point(177, 849);
             this.button_Delete.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button_Delete.Name = "button_Delete";
@@ -921,6 +935,7 @@
             // 
             // button_Refresh
             // 
+            this.button_Refresh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.button_Refresh.Location = new System.Drawing.Point(298, 849);
             this.button_Refresh.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button_Refresh.Name = "button_Refresh";
@@ -932,6 +947,7 @@
             // 
             // button_Apply
             // 
+            this.button_Apply.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button_Apply.Location = new System.Drawing.Point(1549, 849);
             this.button_Apply.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button_Apply.Name = "button_Apply";
@@ -943,6 +959,7 @@
             // 
             // button_Revert
             // 
+            this.button_Revert.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button_Revert.Location = new System.Drawing.Point(1429, 849);
             this.button_Revert.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button_Revert.Name = "button_Revert";

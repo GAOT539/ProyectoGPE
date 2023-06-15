@@ -47,6 +47,7 @@
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.button_Dark = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -62,6 +63,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.panel1.Controls.Add(this.button_Dark);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.pictureBox_Exit);
@@ -282,6 +284,19 @@
             this.label9.TabIndex = 17;
             this.label9.Text = "MySQL Connections";
             // 
+            // button_Dark
+            // 
+            this.button_Dark.BackColor = System.Drawing.SystemColors.Control;
+            this.button_Dark.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_Dark.Location = new System.Drawing.Point(1, 276);
+            this.button_Dark.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button_Dark.Name = "button_Dark";
+            this.button_Dark.Size = new System.Drawing.Size(89, 35);
+            this.button_Dark.TabIndex = 18;
+            this.button_Dark.Text = "Añadir Tabla";
+            this.button_Dark.UseVisualStyleBackColor = false;
+            this.button_Dark.Click += new System.EventHandler(this.button_Dark_Click);
+            // 
             // Form_Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -329,5 +344,6 @@
         private System.Windows.Forms.Label label_DiscussForums;
         private System.Windows.Forms.Label label_ReadBlog;
         private System.Windows.Forms.Label label_BrowseDocumentation;
+        private System.Windows.Forms.Button button_Dark;
     }
 }

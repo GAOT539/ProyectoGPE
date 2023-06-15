@@ -13,7 +13,9 @@ namespace ProyectoSGBD_MySQL.Forms
 {
     public partial class Form_Dinamico_BD_COL_TAB : Form
     {
-        public Form_Dinamico_BD_COL_TAB()
+
+        private bool isDarkModeEnabled;
+        public Form_Dinamico_BD_COL_TAB(bool isDarkModeEnabled)
         {
             InitializeComponent();
 
@@ -22,7 +24,11 @@ namespace ProyectoSGBD_MySQL.Forms
             comboBox_TipoDato_Columna.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox_DataBase_Columna.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox_DataBase_Tabla.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBox_Tabla_Columna.DropDownStyle= ComboBoxStyle.DropDownList;
+            comboBox_Tabla_Columna.DropDownStyle = ComboBoxStyle.DropDownList;
+            this.isDarkModeEnabled = isDarkModeEnabled;
+            SetTheme();
+            Resize += Form_Dinamico_BD_COL_TAB_Resize;
+            dataGridView_Muestra.CellFormatting += dataGridView1_CellFormatting;
         }
 
         private void button_CreateDataBase_Click(object sender, EventArgs e)
@@ -372,5 +378,107 @@ namespace ProyectoSGBD_MySQL.Forms
                 MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private Color originalBackgroundColor;
+        private Color originalTextColor;
+        private Color darkBackgroundColor = Color.FromArgb(30, 30, 30);
+        private Color darkTextColor = Color.White;
+        private void SetTheme()
+        {
+            if (isDarkModeEnabled)
+            {
+
+                // Cambiar a modo oscuro
+                originalBackgroundColor = BackColor;
+                originalTextColor = ForeColor;
+                BackColor = darkBackgroundColor;
+                ForeColor = darkTextColor;
+                // Establecer los colores oscuros para otros controles según sea necesario
+
+                // Ajustar el color de fuente del groupBox1-2-3
+                groupBox1.ForeColor = darkTextColor;
+                groupBox1.BackColor = SystemColors.ControlDarkDark;
+
+                groupBox2.ForeColor = darkTextColor;
+                groupBox2.BackColor = SystemColors.ControlDarkDark;
+
+                groupBox3.ForeColor = darkTextColor;
+                groupBox3.BackColor = SystemColors.ControlDarkDark;
+
+
+
+            }
+            else
+            {
+                // Cambiar a modo claro
+                BackColor = originalBackgroundColor;
+                ForeColor = originalTextColor;
+                // Restablecer los colores claros para otros controles según sea necesario
+
+                // Restaurar el color de fuente original del groupBox1-2-3
+                groupBox1.ForeColor = SystemColors.ControlText;
+                groupBox2.ForeColor = SystemColors.ControlText;
+                groupBox3.ForeColor = SystemColors.ControlText;
+
+            }
+        }
+
+
+
+
+        private void Form_Dinamico_BD_COL_TAB_Resize(object sender, EventArgs e)
+        {
+            //  label19.Width = ClientSize.Width; // Ajustar el ancho del Label al ancho del formulario
+
+            // Agregar más texto al Label para que se ajuste hasta el final hacia la derecha
+            string labelText = "OUTPUT ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::" +
+                "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::";
+            // while (label19.Width < TextRenderer.MeasureText(labelText, label19.Font).Width)
+            //  {
+            //      labelText = labelText.Substring(0, labelText.Length - 1);
+            // }
+            //label19.Text = labelText;
+
+            if (WindowState == FormWindowState.Maximized)
+            {
+                int yCoord = dataGridView_Muestra.Location.Y; // Obtener la coordenada Y actual del componente
+                int xCoord = (this.ClientSize.Width - dataGridView_Muestra.Width) / 2; // Calcular la coordenada X centrada
+
+                dataGridView_Muestra.Location = new Point(xCoord, yCoord);
+
+                label19.Size = new System.Drawing.Size(2000, 20);
+                label19.Text = "OUTPUT::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::" +
+                "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::";
+
+
+
+                //dataGridView_Muestra.Left = 500;
+                //dataGridView_Muestra.Size = new System.Drawing.Size(1700,194);
+            }
+            else
+            {
+                label19.Size = new System.Drawing.Size(1373, 20);
+                dataGridView_Muestra.Left = 0;
+                //dataGridView_Muestra.Size = new System.Drawing.Size(1203, 194);
+                label19.Left = 0;
+
+            }
+
+        }
+
+        private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (isDarkModeEnabled)
+            {
+                // Establecer el color de fuente de las celdas en negro
+                e.CellStyle.ForeColor = Color.Black;
+            }
+            else
+            {
+                // Restaurar el color de fuente predeterminado
+                e.CellStyle.ForeColor = dataGridView_Muestra.DefaultCellStyle.ForeColor;
+            }
+        }
+
     }
 }
