@@ -94,6 +94,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox_ConnectionName = new System.Windows.Forms.ComboBox();
+            this.button_Saver = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -822,12 +823,29 @@
             this.comboBox_ConnectionName.Size = new System.Drawing.Size(451, 28);
             this.comboBox_ConnectionName.TabIndex = 23;
             this.comboBox_ConnectionName.Text = "Local instance MySQL80";
+            this.comboBox_ConnectionName.SelectedIndexChanged += new System.EventHandler(this.comboBox_ConnectionName_SelectedIndexChanged);
+            // 
+            // button_Saver
+            // 
+            this.button_Saver.FlatAppearance.BorderColor = System.Drawing.SystemColors.MenuHighlight;
+            this.button_Saver.FlatAppearance.BorderSize = 2;
+            this.button_Saver.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.button_Saver.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.button_Saver.Location = new System.Drawing.Point(496, 480);
+            this.button_Saver.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button_Saver.Name = "button_Saver";
+            this.button_Saver.Size = new System.Drawing.Size(112, 35);
+            this.button_Saver.TabIndex = 24;
+            this.button_Saver.Text = "Saver";
+            this.button_Saver.UseVisualStyleBackColor = true;
+            this.button_Saver.Click += new System.EventHandler(this.button_Saver_Click);
             // 
             // Form_Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1044, 536);
+            this.Controls.Add(this.button_Saver);
             this.Controls.Add(this.comboBox_ConnectionName);
             this.Controls.Add(this.button_TestConnection);
             this.Controls.Add(this.button_Exit);
@@ -842,6 +860,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form_Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.Form_Login_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -921,5 +940,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox comboBox_ConnectionName;
+        private System.Windows.Forms.Button button_Saver;
     }
 }
