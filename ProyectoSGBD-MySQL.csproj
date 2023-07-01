@@ -96,6 +96,12 @@
     <Compile Include="Forms\Form_Creacion_Tabla.Designer.cs">
       <DependentUpon>Form_Creacion_Tabla.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Form_Fragmentacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Form_Fragmentacion.Designer.cs">
+      <DependentUpon>Form_Fragmentacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\Form_BD.resx">
@@ -109,6 +115,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Form_Dinamico_BD_COL_TAB.resx">
       <DependentUpon>Form_Dinamico_BD_COL_TAB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form_Fragmentacion.resx">
+      <DependentUpon>Form_Fragmentacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Form_Login.resx">
       <DependentUpon>Form_Login.cs</DependentUpon>
