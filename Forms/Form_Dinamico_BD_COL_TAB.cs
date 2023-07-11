@@ -1,12 +1,8 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ProyectoSGBD_MySQL.Forms
@@ -300,7 +296,7 @@ namespace ProyectoSGBD_MySQL.Forms
 
         private void cargarDatosTabla_Tablas()
         {
-            string cadenaConexion = "Database="+comboBox_DataBase_Columna.Text+"; Data Source=localhost; Port=3306; User Id=root; Password=2001;";
+            string cadenaConexion = "Database=" + comboBox_DataBase_Columna.Text + "; Data Source=localhost; Port=3306; User Id=root; Password=2001;";
 
             try
             {
@@ -309,7 +305,7 @@ namespace ProyectoSGBD_MySQL.Forms
                     connection.Open();
 
                     // Obtener las bases de datos existentes
-                    string sqlQueryTabla = "SHOW TABLES FROM "+comboBox_DataBase_Columna.Text+";\r\n";
+                    string sqlQueryTabla = "SHOW TABLES FROM " + comboBox_DataBase_Columna.Text + ";\r\n";
                     //Limpia antes de añadir datos
                     comboBox_Tabla_Columna.Items.Clear();
 
@@ -366,7 +362,7 @@ namespace ProyectoSGBD_MySQL.Forms
                 {
                     connection.Open();
                     // Cargar los datos de la tabla en el dataGridView_Muestra
-                    string sqlQuery = "SELECT table_name FROM information_schema.tables WHERE table_schema = '" + comboBox_DataBase_Tabla.Text+"';";
+                    string sqlQuery = "SELECT table_name FROM information_schema.tables WHERE table_schema = '" + comboBox_DataBase_Tabla.Text + "';";
                     using (MySqlDataAdapter adapter = new MySqlDataAdapter(sqlQuery, connection))
                     {
                         DataTable dataTable = new DataTable();

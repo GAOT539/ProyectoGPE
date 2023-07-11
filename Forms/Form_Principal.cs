@@ -10,7 +10,7 @@ namespace ProyectoSGBD_MySQL.Forms
         {
             InitializeComponent();
             // Bloquea la maximización del formulario
-            this.MaximizeBox = false; 
+            this.MaximizeBox = false;
         }
 
         private void pictureBox_Exit_Click(object sender, EventArgs e)

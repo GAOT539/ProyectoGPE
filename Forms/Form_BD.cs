@@ -6,7 +6,6 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
-using FastColoredTextBoxNS;
 
 namespace ProyectoSGBD_MySQL.Forms
 {
@@ -277,7 +276,7 @@ namespace ProyectoSGBD_MySQL.Forms
                     // Guardar el contenido en el archivo SQL
                     using (StreamWriter writer = new StreamWriter(saveFileDialog.FileName))
                     {
-                        writer.Write(textBox_Query.Text);
+                        writer.Write(fastColoredTextBox_Query.Text);//textBox_Query.Text;
                     }
 
                     MessageBox.Show("Archivo guardado exitosamente.", "Guardar archivo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -303,7 +302,7 @@ namespace ProyectoSGBD_MySQL.Forms
                     using (StreamReader reader = new StreamReader(openFileDialog.FileName))
                     {
                         string contenido = reader.ReadToEnd();
-                        textBox_Query.Text = contenido;
+                        fastColoredTextBox_Query.Text = contenido; //textBox_Query.Text;
                     }
 
                     MessageBox.Show("Archivo cargado exitosamente.", "Cargar archivo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -317,7 +316,7 @@ namespace ProyectoSGBD_MySQL.Forms
 
         private void button_EjecutarQuery_Click(object sender, EventArgs e)
         {
-            string sqlQuery = textBox_Query.Text;
+            string sqlQuery = fastColoredTextBox_Query.Text;//textBox_Query.Text;
 
             // Controla que el campo no esté vacío.
             if (string.IsNullOrEmpty(sqlQuery))
@@ -355,7 +354,7 @@ namespace ProyectoSGBD_MySQL.Forms
                             using (MySqlCommand command = new MySqlCommand(line, connection))
                             {
                                 if (!line.ToUpper().Contains("CREATE") && !line.ToUpper().Contains("INSERT")
-                                    && !line.ToUpper().Contains("UPDATE") && !line.ToUpper().Contains("DELETE") 
+                                    && !line.ToUpper().Contains("UPDATE") && !line.ToUpper().Contains("DELETE")
                                     && !line.ToUpper().Contains("USE") && !line.ToUpper().Contains("BEGIN")
                                     && !line.ToUpper().Contains("COMMIT"))
                                 {
@@ -375,12 +374,12 @@ namespace ProyectoSGBD_MySQL.Forms
                                     {
                                         // No se encontraron datos, mostrar un mensaje de error
                                         MessageBox.Show("Error al mostrar los datos en la tabla. " +
-                                            "\r\nNota: El sistema solo omite sentencias (CREATE, INSERT, UPDATE, DELETE, USE, BEGIN, COMMIT)...", 
+                                            "\r\nNota: El sistema solo omite sentencias (CREATE, INSERT, UPDATE, DELETE, USE, BEGIN, COMMIT)...",
                                             "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                     }
                                 }
 
-                                // Obtener los estados del SQL y mostrarlos en el TextBox
+                                // Obtener los estados del SQL y mostrarlos en el TextBox 
                                 using (MySqlDataReader reader = command.ExecuteReader())
                                 {
                                     while (reader.Read())
@@ -388,7 +387,8 @@ namespace ProyectoSGBD_MySQL.Forms
                                         for (int i = 0; i < reader.FieldCount; i++)
                                         {
                                             string estado = reader[i].ToString();
-                                            textBox_Consola.AppendText(estado + Environment.NewLine);
+                                            //temporizador
+                                            //textBox_Consola.AppendText(estado + Environment.NewLine);
                                         }
                                     }
                                 }
@@ -451,7 +451,7 @@ namespace ProyectoSGBD_MySQL.Forms
                     generatedText = cAux.CreateTableText;
                     break;
                 case "CREATE VIEW":
-                    generatedText = cAux.CreateViewText; 
+                    generatedText = cAux.CreateViewText;
                     break;
                 case "CREATE PROCEDURE":
                     generatedText = cAux.CreateProcedureText;
@@ -588,16 +588,16 @@ namespace ProyectoSGBD_MySQL.Forms
             }
         }
 
-        private void fastColoredTextBox_Query_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            fastColoredTextBox_Query.TextChanged -= fastColoredTextBox_Query_TextChanged;
-            textBox_Query.Text = fastColoredTextBox_Query.Text;
-            fastColoredTextBox_Query.TextChanged += fastColoredTextBox_Query_TextChanged;
-        }
-
-        private void textBox_Query_TextChanged(object sender, EventArgs e)
-        {
-            fastColoredTextBox_Query.Text = textBox_Query.Text;
-        }
+        //EN caso de falla descomentar esto y eliminar el fastColoredTextBox_Query y modificar lineas()
+        //private void fastColoredTextBox_Query_TextChanged(object sender, TextChangedEventArgs e)
+        //{
+        //    fastColoredTextBox_Query.TextChanged -= fastColoredTextBox_Query_TextChanged;
+        //    textBox_Query.Text = fastColoredTextBox_Query.Text;
+        //    fastColoredTextBox_Query.TextChanged += fastColoredTextBox_Query_TextChanged;
+        //}
+        //private void textBox_Query_TextChanged(object sender, EventArgs e)
+        //{
+        //    fastColoredTextBox_Query.Text = textBox_Query.Text;
+        //}
     }
 }

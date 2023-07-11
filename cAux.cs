@@ -261,6 +261,6 @@ namespace ProyectoSGBD_MySQL
             "how many rows were copied by ALTER TABLE. See mysql-info.\r\n\r\n\r\n\r\nSee also: : Online help alter-table";
 
         public static string AutomaticText { get; } = "Automatic context help is disabled. Use the toolbar to manually get help for the current caret position or to toggle automatic help.";
-    
+
     }
 }

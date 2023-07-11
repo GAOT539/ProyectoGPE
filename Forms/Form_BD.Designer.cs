@@ -760,7 +760,6 @@
             this.fastColoredTextBox_Query.Size = new System.Drawing.Size(935, 402);
             this.fastColoredTextBox_Query.TabIndex = 44;
             this.fastColoredTextBox_Query.Zoom = 100;
-            this.fastColoredTextBox_Query.TextChanged += new System.EventHandler<FastColoredTextBoxNS.TextChangedEventArgs>(this.fastColoredTextBox_Query_TextChanged);
             // 
             // textBox_Query
             // 
@@ -772,7 +771,6 @@
             this.textBox_Query.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textBox_Query.Size = new System.Drawing.Size(16, 10);
             this.textBox_Query.TabIndex = 43;
-            this.textBox_Query.TextChanged += new System.EventHandler(this.textBox_Query_TextChanged);
             // 
             // label1
             // 
@@ -1022,7 +1020,7 @@
             this.label19.AutoSize = true;
             this.label19.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(-1, 1);
+            this.label19.Location = new System.Drawing.Point(-1, 0);
             this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(1325, 25);
@@ -1034,6 +1032,7 @@
             // textBox_Consola
             // 
             this.textBox_Consola.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox_Consola.Enabled = false;
             this.textBox_Consola.Font = new System.Drawing.Font("Consolas", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_Consola.Location = new System.Drawing.Point(11, 4);
             this.textBox_Consola.Name = "textBox_Consola";
