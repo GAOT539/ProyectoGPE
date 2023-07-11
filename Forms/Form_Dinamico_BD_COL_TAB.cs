@@ -386,26 +386,21 @@ namespace ProyectoSGBD_MySQL.Forms
         {
             if (isDarkModeEnabled)
             {
-
                 // Cambiar a modo oscuro
                 originalBackgroundColor = BackColor;
                 originalTextColor = ForeColor;
                 BackColor = darkBackgroundColor;
                 ForeColor = darkTextColor;
+                label_SGBDGPE.ForeColor = Color.Black;
                 // Establecer los colores oscuros para otros controles según sea necesario
 
                 // Ajustar el color de fuente del groupBox1-2-3
                 groupBox1.ForeColor = darkTextColor;
                 groupBox1.BackColor = SystemColors.ControlDarkDark;
-
                 groupBox2.ForeColor = darkTextColor;
                 groupBox2.BackColor = SystemColors.ControlDarkDark;
-
                 groupBox3.ForeColor = darkTextColor;
                 groupBox3.BackColor = SystemColors.ControlDarkDark;
-
-
-
             }
             else
             {
@@ -413,17 +408,12 @@ namespace ProyectoSGBD_MySQL.Forms
                 BackColor = originalBackgroundColor;
                 ForeColor = originalTextColor;
                 // Restablecer los colores claros para otros controles según sea necesario
-
                 // Restaurar el color de fuente original del groupBox1-2-3
                 groupBox1.ForeColor = SystemColors.ControlText;
                 groupBox2.ForeColor = SystemColors.ControlText;
                 groupBox3.ForeColor = SystemColors.ControlText;
-
             }
         }
-
-
-
 
         private void Form_Dinamico_BD_COL_TAB_Resize(object sender, EventArgs e)
         {
@@ -435,7 +425,7 @@ namespace ProyectoSGBD_MySQL.Forms
             // while (label19.Width < TextRenderer.MeasureText(labelText, label19.Font).Width)
             //  {
             //      labelText = labelText.Substring(0, labelText.Length - 1);
-            // }
+            //  }
             //label19.Text = labelText;
 
             if (WindowState == FormWindowState.Maximized)
@@ -448,9 +438,6 @@ namespace ProyectoSGBD_MySQL.Forms
                 label19.Size = new System.Drawing.Size(2000, 20);
                 label19.Text = "OUTPUT::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::" +
                 "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::";
-
-
-
                 //dataGridView_Muestra.Left = 500;
                 //dataGridView_Muestra.Size = new System.Drawing.Size(1700,194);
             }
@@ -460,7 +447,6 @@ namespace ProyectoSGBD_MySQL.Forms
                 dataGridView_Muestra.Left = 0;
                 //dataGridView_Muestra.Size = new System.Drawing.Size(1203, 194);
                 label19.Left = 0;
-
             }
 
         }

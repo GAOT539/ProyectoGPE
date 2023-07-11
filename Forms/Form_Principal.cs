@@ -89,13 +89,7 @@ namespace ProyectoSGBD_MySQL.Forms
         private bool isDarkModeEnabled = false;
         private Color originalBackgroundColor;
         private Color originalTextColor;
-        private Color darkBackgroundColor = Color.FromArgb(30, 30, 30);
         private Color darkTextColor = Color.White;
-
-        private void button_Dark_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void pictureBox_Darkmode_Click(object sender, EventArgs e)
         {
@@ -105,18 +99,16 @@ namespace ProyectoSGBD_MySQL.Forms
                 BackColor = originalBackgroundColor;
                 ForeColor = originalTextColor;
                 label_Connections.ForeColor = Color.Black;
-                // Restablecer los colores claros para otros controles según sea necesario
-                //pictureBox_Darkmode.ForeColor = originalTextColor;
-                //pictureBox_Darkmode.BackColor = originalBackgroundColor;
+                panel_BotonesExtra.BackColor = Color.FromArgb(169, 169, 169);
                 isDarkModeEnabled = false;
-
             }
             else
             {
                 // Cambiar a modo oscuro
                 originalBackgroundColor = BackColor;
                 originalTextColor = ForeColor;
-                BackColor = darkBackgroundColor;
+                BackColor = Color.Gray;
+                panel_BotonesExtra.BackColor = Color.FromArgb(65, 65, 65);
                 ForeColor = darkTextColor;
                 label_Connections.ForeColor = Color.White;
                 // Establecer los colores oscuros para otros controles según sea necesario

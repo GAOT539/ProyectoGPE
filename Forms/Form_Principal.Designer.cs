@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Principal));
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel_BotonesExtra = new System.Windows.Forms.Panel();
             this.pictureBox_Darkmode = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -48,7 +48,7 @@
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label_Connections = new System.Windows.Forms.Label();
-            this.panel1.SuspendLayout();
+            this.panel_BotonesExtra.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Darkmode)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -61,17 +61,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel1
+            // panel_BotonesExtra
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.panel1.Controls.Add(this.pictureBox_Darkmode);
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.pictureBox2);
-            this.panel1.Controls.Add(this.pictureBox_Exit);
-            this.panel1.Location = new System.Drawing.Point(12, 12);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(90, 382);
-            this.panel1.TabIndex = 16;
+            this.panel_BotonesExtra.BackColor = System.Drawing.Color.DarkGray;
+            this.panel_BotonesExtra.Controls.Add(this.pictureBox_Darkmode);
+            this.panel_BotonesExtra.Controls.Add(this.pictureBox1);
+            this.panel_BotonesExtra.Controls.Add(this.pictureBox2);
+            this.panel_BotonesExtra.Controls.Add(this.pictureBox_Exit);
+            this.panel_BotonesExtra.Location = new System.Drawing.Point(12, 12);
+            this.panel_BotonesExtra.Name = "panel_BotonesExtra";
+            this.panel_BotonesExtra.Size = new System.Drawing.Size(90, 382);
+            this.panel_BotonesExtra.TabIndex = 16;
             // 
             // pictureBox_Darkmode
             // 
@@ -304,12 +304,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(599, 408);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel_BotonesExtra);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form_Principal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.panel1.ResumeLayout(false);
+            this.panel_BotonesExtra.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Darkmode)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -328,7 +328,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel_BotonesExtra;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox_Exit;

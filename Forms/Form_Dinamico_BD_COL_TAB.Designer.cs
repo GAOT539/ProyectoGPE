@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Dinamico_BD_COL_TAB));
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label17 = new System.Windows.Forms.Label();
+            this.label_SGBDGPE = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -86,7 +86,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.Gainsboro;
             this.panel2.Controls.Add(this.pictureBox1);
-            this.panel2.Controls.Add(this.label17);
+            this.panel2.Controls.Add(this.label_SGBDGPE);
             this.panel2.Location = new System.Drawing.Point(16, 17);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1378, 52);
@@ -103,15 +103,15 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // label17
+            // label_SGBDGPE
             // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(3, 5);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(224, 44);
-            this.label17.TabIndex = 0;
-            this.label17.Text = "SGBD GPE";
+            this.label_SGBDGPE.AutoSize = true;
+            this.label_SGBDGPE.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_SGBDGPE.Location = new System.Drawing.Point(3, 5);
+            this.label_SGBDGPE.Name = "label_SGBDGPE";
+            this.label_SGBDGPE.Size = new System.Drawing.Size(224, 44);
+            this.label_SGBDGPE.TabIndex = 0;
+            this.label_SGBDGPE.Text = "SGBD GPE";
             // 
             // groupBox1
             // 
@@ -550,7 +550,7 @@
 
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label_SGBDGPE;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.PictureBox pictureBox2;

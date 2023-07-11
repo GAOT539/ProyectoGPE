@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Usuarios_Privilegios));
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox_Encabezado = new System.Windows.Forms.GroupBox();
             this.label_nombreUser = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox_UseAccounts = new System.Windows.Forms.GroupBox();
             this.dataGridView_userView = new System.Windows.Forms.DataGridView();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.groupBox_Details = new System.Windows.Forms.GroupBox();
             this.tabControl_accountLimits = new System.Windows.Forms.TabControl();
             this.tabPage_Login = new System.Windows.Forms.TabPage();
             this.label15 = new System.Windows.Forms.Label();
@@ -73,11 +73,14 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.tabPage_Administrative_Roles = new System.Windows.Forms.TabPage();
-            this.button_RolesAdmin = new System.Windows.Forms.Button();
+            this.button_CargarRoles = new System.Windows.Forms.Button();
+            this.button_AsignarRoles = new System.Windows.Forms.Button();
+            this.button_CargarPermisos = new System.Windows.Forms.Button();
+            this.button_AsignarPermisosUsuarios = new System.Windows.Forms.Button();
             this.groupBox_Global_Privileges = new System.Windows.Forms.GroupBox();
             this.checkedListBox_globalPrivilegios = new System.Windows.Forms.CheckedListBox();
             this.groupBox_Roles = new System.Windows.Forms.GroupBox();
-            this.checkedListBox_roles = new System.Windows.Forms.CheckedListBox();
+            this.checkedListBox_Roles = new System.Windows.Forms.CheckedListBox();
             this.tabPage_Schema_Privileges = new System.Windows.Forms.TabPage();
             this.button_Select_ALL = new System.Windows.Forms.Button();
             this.button_Unselect_All = new System.Windows.Forms.Button();
@@ -100,12 +103,12 @@
             this.button_Refresh = new System.Windows.Forms.Button();
             this.button_Apply = new System.Windows.Forms.Button();
             this.button_Revert = new System.Windows.Forms.Button();
-            this.button_CargarRoles = new System.Windows.Forms.Button();
-            this.groupBox1.SuspendLayout();
+            this.panel_Fondo = new System.Windows.Forms.Panel();
+            this.groupBox_Encabezado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.groupBox2.SuspendLayout();
+            this.groupBox_UseAccounts.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_userView)).BeginInit();
-            this.groupBox3.SuspendLayout();
+            this.groupBox_Details.SuspendLayout();
             this.tabControl_accountLimits.SuspendLayout();
             this.tabPage_Login.SuspendLayout();
             this.tabPage_Account_Limits.SuspendLayout();
@@ -117,22 +120,23 @@
             this.groupBox_DDL_Rights.SuspendLayout();
             this.groupBox_Object_Rights.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Scchema_Privileges)).BeginInit();
+            this.panel_Fondo.SuspendLayout();
             this.SuspendLayout();
             // 
-            // groupBox1
+            // groupBox_Encabezado
             // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.groupBox_Encabezado.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.Controls.Add(this.label_nombreUser);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.pictureBox1);
-            this.groupBox1.Location = new System.Drawing.Point(6, 5);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBox1.Size = new System.Drawing.Size(1673, 120);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
+            this.groupBox_Encabezado.Controls.Add(this.label_nombreUser);
+            this.groupBox_Encabezado.Controls.Add(this.label1);
+            this.groupBox_Encabezado.Controls.Add(this.pictureBox1);
+            this.groupBox_Encabezado.Location = new System.Drawing.Point(3, 5);
+            this.groupBox_Encabezado.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox_Encabezado.Name = "groupBox_Encabezado";
+            this.groupBox_Encabezado.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox_Encabezado.Size = new System.Drawing.Size(1674, 120);
+            this.groupBox_Encabezado.TabIndex = 0;
+            this.groupBox_Encabezado.TabStop = false;
             // 
             // label_nombreUser
             // 
@@ -167,19 +171,19 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // groupBox2
+            // groupBox_UseAccounts
             // 
-            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.groupBox_UseAccounts.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.groupBox2.Controls.Add(this.dataGridView_userView);
-            this.groupBox2.Location = new System.Drawing.Point(6, 134);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBox2.Size = new System.Drawing.Size(404, 705);
-            this.groupBox2.TabIndex = 1;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "User Accounts";
+            this.groupBox_UseAccounts.Controls.Add(this.dataGridView_userView);
+            this.groupBox_UseAccounts.Location = new System.Drawing.Point(3, 134);
+            this.groupBox_UseAccounts.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox_UseAccounts.Name = "groupBox_UseAccounts";
+            this.groupBox_UseAccounts.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox_UseAccounts.Size = new System.Drawing.Size(404, 700);
+            this.groupBox_UseAccounts.TabIndex = 1;
+            this.groupBox_UseAccounts.TabStop = false;
+            this.groupBox_UseAccounts.Text = "User Accounts";
             // 
             // dataGridView_userView
             // 
@@ -190,25 +194,25 @@
             this.dataGridView_userView.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dataGridView_userView.Name = "dataGridView_userView";
             this.dataGridView_userView.RowHeadersWidth = 62;
-            this.dataGridView_userView.Size = new System.Drawing.Size(386, 662);
+            this.dataGridView_userView.Size = new System.Drawing.Size(386, 657);
             this.dataGridView_userView.TabIndex = 0;
             this.dataGridView_userView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_userView_CellClick);
             // 
-            // groupBox3
+            // groupBox_Details
             // 
-            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.groupBox_Details.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox3.Controls.Add(this.tabControl_accountLimits);
-            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(418, 134);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBox3.Size = new System.Drawing.Size(1255, 706);
-            this.groupBox3.TabIndex = 1;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Details for account root@localhost";
+            this.groupBox_Details.Controls.Add(this.tabControl_accountLimits);
+            this.groupBox_Details.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox_Details.Location = new System.Drawing.Point(415, 134);
+            this.groupBox_Details.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox_Details.Name = "groupBox_Details";
+            this.groupBox_Details.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox_Details.Size = new System.Drawing.Size(1256, 701);
+            this.groupBox_Details.TabIndex = 1;
+            this.groupBox_Details.TabStop = false;
+            this.groupBox_Details.Text = "Details for account root@localhost";
             // 
             // tabControl_accountLimits
             // 
@@ -224,7 +228,7 @@
             this.tabControl_accountLimits.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tabControl_accountLimits.Name = "tabControl_accountLimits";
             this.tabControl_accountLimits.SelectedIndex = 0;
-            this.tabControl_accountLimits.Size = new System.Drawing.Size(1239, 666);
+            this.tabControl_accountLimits.Size = new System.Drawing.Size(1240, 661);
             this.tabControl_accountLimits.TabIndex = 0;
             // 
             // tabPage_Login
@@ -253,7 +257,7 @@
             this.tabPage_Login.Location = new System.Drawing.Point(4, 29);
             this.tabPage_Login.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tabPage_Login.Name = "tabPage_Login";
-            this.tabPage_Login.Size = new System.Drawing.Size(1231, 633);
+            this.tabPage_Login.Size = new System.Drawing.Size(1232, 628);
             this.tabPage_Login.TabIndex = 0;
             this.tabPage_Login.Text = "Login";
             this.tabPage_Login.UseVisualStyleBackColor = true;
@@ -482,7 +486,7 @@
             this.tabPage_Account_Limits.Location = new System.Drawing.Point(4, 29);
             this.tabPage_Account_Limits.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tabPage_Account_Limits.Name = "tabPage_Account_Limits";
-            this.tabPage_Account_Limits.Size = new System.Drawing.Size(1231, 633);
+            this.tabPage_Account_Limits.Size = new System.Drawing.Size(1232, 628);
             this.tabPage_Account_Limits.TabIndex = 1;
             this.tabPage_Account_Limits.Text = "Account Limits";
             this.tabPage_Account_Limits.UseVisualStyleBackColor = true;
@@ -607,26 +611,58 @@
             // tabPage_Administrative_Roles
             // 
             this.tabPage_Administrative_Roles.Controls.Add(this.button_CargarRoles);
-            this.tabPage_Administrative_Roles.Controls.Add(this.button_RolesAdmin);
+            this.tabPage_Administrative_Roles.Controls.Add(this.button_AsignarRoles);
+            this.tabPage_Administrative_Roles.Controls.Add(this.button_CargarPermisos);
+            this.tabPage_Administrative_Roles.Controls.Add(this.button_AsignarPermisosUsuarios);
             this.tabPage_Administrative_Roles.Controls.Add(this.groupBox_Global_Privileges);
             this.tabPage_Administrative_Roles.Controls.Add(this.groupBox_Roles);
             this.tabPage_Administrative_Roles.Location = new System.Drawing.Point(4, 29);
             this.tabPage_Administrative_Roles.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tabPage_Administrative_Roles.Name = "tabPage_Administrative_Roles";
-            this.tabPage_Administrative_Roles.Size = new System.Drawing.Size(1231, 633);
+            this.tabPage_Administrative_Roles.Size = new System.Drawing.Size(1232, 628);
             this.tabPage_Administrative_Roles.TabIndex = 2;
             this.tabPage_Administrative_Roles.Text = "Administrative Roles";
             this.tabPage_Administrative_Roles.UseVisualStyleBackColor = true;
             // 
-            // button_RolesAdmin
+            // button_CargarRoles
             // 
-            this.button_RolesAdmin.Location = new System.Drawing.Point(834, 581);
-            this.button_RolesAdmin.Name = "button_RolesAdmin";
-            this.button_RolesAdmin.Size = new System.Drawing.Size(346, 35);
-            this.button_RolesAdmin.TabIndex = 2;
-            this.button_RolesAdmin.Text = "Permisos";
-            this.button_RolesAdmin.UseVisualStyleBackColor = true;
-            this.button_RolesAdmin.Click += new System.EventHandler(this.button_RolesAdmin_Click);
+            this.button_CargarRoles.Location = new System.Drawing.Point(467, 338);
+            this.button_CargarRoles.Name = "button_CargarRoles";
+            this.button_CargarRoles.Size = new System.Drawing.Size(346, 35);
+            this.button_CargarRoles.TabIndex = 5;
+            this.button_CargarRoles.Text = "Cargar Roles";
+            this.button_CargarRoles.UseVisualStyleBackColor = true;
+            this.button_CargarRoles.Click += new System.EventHandler(this.button_CargarRoles_Click);
+            // 
+            // button_AsignarRoles
+            // 
+            this.button_AsignarRoles.Location = new System.Drawing.Point(31, 338);
+            this.button_AsignarRoles.Name = "button_AsignarRoles";
+            this.button_AsignarRoles.Size = new System.Drawing.Size(346, 35);
+            this.button_AsignarRoles.TabIndex = 4;
+            this.button_AsignarRoles.Text = "Asignar Roles";
+            this.button_AsignarRoles.UseVisualStyleBackColor = true;
+            this.button_AsignarRoles.Click += new System.EventHandler(this.button_AsignarRoles_Click);
+            // 
+            // button_CargarPermisos
+            // 
+            this.button_CargarPermisos.Location = new System.Drawing.Point(834, 532);
+            this.button_CargarPermisos.Name = "button_CargarPermisos";
+            this.button_CargarPermisos.Size = new System.Drawing.Size(346, 36);
+            this.button_CargarPermisos.TabIndex = 3;
+            this.button_CargarPermisos.Text = "Cargar Permisos";
+            this.button_CargarPermisos.UseVisualStyleBackColor = true;
+            this.button_CargarPermisos.Click += new System.EventHandler(this.button_CargarPermisos_Click);
+            // 
+            // button_AsignarPermisosUsuarios
+            // 
+            this.button_AsignarPermisosUsuarios.Location = new System.Drawing.Point(834, 581);
+            this.button_AsignarPermisosUsuarios.Name = "button_AsignarPermisosUsuarios";
+            this.button_AsignarPermisosUsuarios.Size = new System.Drawing.Size(346, 35);
+            this.button_AsignarPermisosUsuarios.TabIndex = 2;
+            this.button_AsignarPermisosUsuarios.Text = "Asignar Permisos";
+            this.button_AsignarPermisosUsuarios.UseVisualStyleBackColor = true;
+            this.button_AsignarPermisosUsuarios.Click += new System.EventHandler(this.button_RolesAdmin_Click);
             // 
             // groupBox_Global_Privileges
             // 
@@ -669,11 +705,11 @@
             "RELOAD",
             "REPLICATION CLIENT",
             "REPLICATION SLAVE",
-            "SELECT",
             "SHOW DATABASES",
             "SHOW VIEW",
             "SHUTDOWN",
             "SUPER",
+            "SELECT",
             "TRIGGER",
             "UPDATE"});
             this.checkedListBox_globalPrivilegios.Location = new System.Drawing.Point(12, 31);
@@ -684,7 +720,7 @@
             // 
             // groupBox_Roles
             // 
-            this.groupBox_Roles.Controls.Add(this.checkedListBox_roles);
+            this.groupBox_Roles.Controls.Add(this.checkedListBox_Roles);
             this.groupBox_Roles.Location = new System.Drawing.Point(21, 18);
             this.groupBox_Roles.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox_Roles.Name = "groupBox_Roles";
@@ -694,10 +730,10 @@
             this.groupBox_Roles.TabStop = false;
             this.groupBox_Roles.Text = "Roles";
             // 
-            // checkedListBox_roles
+            // checkedListBox_Roles
             // 
-            this.checkedListBox_roles.FormattingEnabled = true;
-            this.checkedListBox_roles.Items.AddRange(new object[] {
+            this.checkedListBox_Roles.FormattingEnabled = true;
+            this.checkedListBox_Roles.Items.AddRange(new object[] {
             "DBA => Grants the rights to perform all tasks.",
             "MaintenanceAdmin => Grants rights needed to maintain server.",
             "ProcessAdmin => Rights needed to assess, monitor, and kill any user process runni" +
@@ -711,11 +747,11 @@
             "ReplicationAdmin => Rights needed to setup and manage replication.",
             "BackupAdmin => Minimal rights needed to backup any database.",
             "Custom => Custom role."});
-            this.checkedListBox_roles.Location = new System.Drawing.Point(10, 32);
-            this.checkedListBox_roles.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.checkedListBox_roles.Name = "checkedListBox_roles";
-            this.checkedListBox_roles.Size = new System.Drawing.Size(782, 280);
-            this.checkedListBox_roles.TabIndex = 0;
+            this.checkedListBox_Roles.Location = new System.Drawing.Point(10, 32);
+            this.checkedListBox_Roles.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.checkedListBox_Roles.Name = "checkedListBox_Roles";
+            this.checkedListBox_Roles.Size = new System.Drawing.Size(782, 280);
+            this.checkedListBox_Roles.TabIndex = 0;
             // 
             // tabPage_Schema_Privileges
             // 
@@ -733,7 +769,7 @@
             this.tabPage_Schema_Privileges.Location = new System.Drawing.Point(4, 29);
             this.tabPage_Schema_Privileges.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tabPage_Schema_Privileges.Name = "tabPage_Schema_Privileges";
-            this.tabPage_Schema_Privileges.Size = new System.Drawing.Size(1231, 633);
+            this.tabPage_Schema_Privileges.Size = new System.Drawing.Size(1232, 628);
             this.tabPage_Schema_Privileges.TabIndex = 3;
             this.tabPage_Schema_Privileges.Text = "Schema Privileges";
             this.tabPage_Schema_Privileges.UseVisualStyleBackColor = true;
@@ -929,7 +965,7 @@
             // button_addAccount
             // 
             this.button_addAccount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button_addAccount.Location = new System.Drawing.Point(10, 849);
+            this.button_addAccount.Location = new System.Drawing.Point(7, 844);
             this.button_addAccount.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button_addAccount.Name = "button_addAccount";
             this.button_addAccount.Size = new System.Drawing.Size(158, 35);
@@ -941,7 +977,7 @@
             // button_Delete
             // 
             this.button_Delete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button_Delete.Location = new System.Drawing.Point(177, 849);
+            this.button_Delete.Location = new System.Drawing.Point(174, 844);
             this.button_Delete.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button_Delete.Name = "button_Delete";
             this.button_Delete.Size = new System.Drawing.Size(112, 35);
@@ -953,7 +989,7 @@
             // button_Refresh
             // 
             this.button_Refresh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button_Refresh.Location = new System.Drawing.Point(298, 849);
+            this.button_Refresh.Location = new System.Drawing.Point(295, 844);
             this.button_Refresh.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button_Refresh.Name = "button_Refresh";
             this.button_Refresh.Size = new System.Drawing.Size(112, 35);
@@ -965,7 +1001,7 @@
             // button_Apply
             // 
             this.button_Apply.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button_Apply.Location = new System.Drawing.Point(1549, 849);
+            this.button_Apply.Location = new System.Drawing.Point(1547, 844);
             this.button_Apply.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button_Apply.Name = "button_Apply";
             this.button_Apply.Size = new System.Drawing.Size(112, 35);
@@ -977,7 +1013,7 @@
             // button_Revert
             // 
             this.button_Revert.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button_Revert.Location = new System.Drawing.Point(1429, 849);
+            this.button_Revert.Location = new System.Drawing.Point(1427, 844);
             this.button_Revert.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button_Revert.Name = "button_Revert";
             this.button_Revert.Size = new System.Drawing.Size(112, 35);
@@ -986,41 +1022,39 @@
             this.button_Revert.UseVisualStyleBackColor = true;
             this.button_Revert.Click += new System.EventHandler(this.button_Revert_Click);
             // 
-            // button_CargarRoles
+            // panel_Fondo
             // 
-            this.button_CargarRoles.Location = new System.Drawing.Point(834, 532);
-            this.button_CargarRoles.Name = "button_CargarRoles";
-            this.button_CargarRoles.Size = new System.Drawing.Size(346, 36);
-            this.button_CargarRoles.TabIndex = 3;
-            this.button_CargarRoles.Text = "Cargar Permisos";
-            this.button_CargarRoles.UseVisualStyleBackColor = true;
-            this.button_CargarRoles.Click += new System.EventHandler(this.button_CargarRoles_Click);
+            this.panel_Fondo.Controls.Add(this.button_Apply);
+            this.panel_Fondo.Controls.Add(this.button_Revert);
+            this.panel_Fondo.Controls.Add(this.button_Refresh);
+            this.panel_Fondo.Controls.Add(this.button_Delete);
+            this.panel_Fondo.Controls.Add(this.button_addAccount);
+            this.panel_Fondo.Controls.Add(this.groupBox_Details);
+            this.panel_Fondo.Controls.Add(this.groupBox_UseAccounts);
+            this.panel_Fondo.Controls.Add(this.groupBox_Encabezado);
+            this.panel_Fondo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel_Fondo.Location = new System.Drawing.Point(0, 0);
+            this.panel_Fondo.Name = "panel_Fondo";
+            this.panel_Fondo.Size = new System.Drawing.Size(1686, 892);
+            this.panel_Fondo.TabIndex = 7;
             // 
             // Form_Usuarios_Privilegios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1686, 892);
-            this.Controls.Add(this.button_Apply);
-            this.Controls.Add(this.button_Revert);
-            this.Controls.Add(this.button_Refresh);
-            this.Controls.Add(this.button_Delete);
-            this.Controls.Add(this.button_addAccount);
-            this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.panel_Fondo);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Form_Usuarios_Privilegios";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form_Usuarios_Privilegios";
             this.Load += new System.EventHandler(this.Form_Usuarios_Privilegios_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.groupBox_Encabezado.ResumeLayout(false);
+            this.groupBox_Encabezado.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.groupBox2.ResumeLayout(false);
+            this.groupBox_UseAccounts.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_userView)).EndInit();
-            this.groupBox3.ResumeLayout(false);
+            this.groupBox_Details.ResumeLayout(false);
             this.tabControl_accountLimits.ResumeLayout(false);
             this.tabPage_Login.ResumeLayout(false);
             this.tabPage_Login.PerformLayout();
@@ -1035,15 +1069,16 @@
             this.groupBox_DDL_Rights.ResumeLayout(false);
             this.groupBox_Object_Rights.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Scchema_Privileges)).EndInit();
+            this.panel_Fondo.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.GroupBox groupBox_Encabezado;
+        private System.Windows.Forms.GroupBox groupBox_UseAccounts;
+        private System.Windows.Forms.GroupBox groupBox_Details;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label_nombreUser;
@@ -1093,7 +1128,7 @@
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.GroupBox groupBox_Global_Privileges;
         private System.Windows.Forms.GroupBox groupBox_Roles;
-        private System.Windows.Forms.CheckedListBox checkedListBox_roles;
+        private System.Windows.Forms.CheckedListBox checkedListBox_Roles;
         private System.Windows.Forms.CheckedListBox checkedListBox_globalPrivilegios;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.DataGridView dataGridView_Scchema_Privileges;
@@ -1111,7 +1146,10 @@
         private System.Windows.Forms.CheckedListBox checkedListBox5;
         private System.Windows.Forms.Button button_Select_ALL;
         private System.Windows.Forms.Button button_Unselect_All;
-        private System.Windows.Forms.Button button_RolesAdmin;
+        private System.Windows.Forms.Button button_AsignarPermisosUsuarios;
+        private System.Windows.Forms.Button button_CargarPermisos;
         private System.Windows.Forms.Button button_CargarRoles;
+        private System.Windows.Forms.Button button_AsignarRoles;
+        private System.Windows.Forms.Panel panel_Fondo;
     }
 }

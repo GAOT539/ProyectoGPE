@@ -21,6 +21,7 @@ namespace ProyectoSGBD_MySQL.Forms
 
         public Form_Login()
         {
+            //Ignorar
         }
 
         private void checkBoxPassword_CheckedChanged(object sender, EventArgs e)
@@ -108,65 +109,6 @@ namespace ProyectoSGBD_MySQL.Forms
         private void button_Connection_Click(object sender, EventArgs e)
         {
 
-        }
-
-        private Color originalBackgroundColor;
-        private Color originalTextColor;
-        private Color darkBackgroundColor = Color.FromArgb(30, 30, 30);
-        private Color darkTextColor = Color.White;
-        private void SetTheme()
-        {
-            if (isDarkModeEnabled)
-            {
-
-                // Cambiar a modo oscuro
-                originalBackgroundColor = BackColor;
-                originalTextColor = ForeColor;
-                BackColor = darkBackgroundColor;
-                ForeColor = darkTextColor;
-                // Establecer los colores oscuros para otros controles según sea necesario
-
-                // Ajustar el color de fondo del TabControl
-                tabControl1.BackColor = Color.DarkGray;
-
-                // Ajustar el color de las pestañas (TabPages) en el TabControl
-                foreach (TabPage tabPage in tabControl1.TabPages)
-                {
-                    tabPage.BackColor = tabControl1.BackColor;
-                    tabPage.ForeColor = Color.Black; // Color de fuente negro para mejorar la legibilidad
-                }
-
-                button_Exit.BackColor = darkBackgroundColor;
-                button_Exit.ForeColor = darkTextColor;
-                button_TestConnection.BackColor = darkBackgroundColor;
-                button_TestConnection.ForeColor = darkTextColor;
-                button_Connection.BackColor = darkBackgroundColor;
-                button_Connection.ForeColor = darkTextColor;
-
-            }
-            else
-            {
-                // Cambiar a modo claro
-                BackColor = originalBackgroundColor;
-                ForeColor = originalTextColor;
-                // Restablecer los colores claros para otros controles según sea necesario
-
-                tabControl1.BackColor = SystemColors.Control;
-
-                // Restaurar el color de las pestañas (TabPages) en el TabControl al color original
-                foreach (TabPage tabPage in tabControl1.TabPages)
-                {
-                    tabPage.BackColor = tabControl1.BackColor;
-                    tabPage.ForeColor = SystemColors.ControlText; // Restaurar el color de fuente original
-                }
-                button_Exit.BackColor = originalBackgroundColor;
-                button_Exit.ForeColor = originalTextColor;
-                button_TestConnection.BackColor = originalBackgroundColor;
-                button_TestConnection.ForeColor = originalTextColor;
-                button_Connection.BackColor = originalBackgroundColor;
-                button_Connection.ForeColor = originalTextColor;
-
-            }
         }
 
         private void button_Saver_Click(object sender, EventArgs e)
@@ -319,6 +261,40 @@ namespace ProyectoSGBD_MySQL.Forms
                 textBox_Username.Text = usuario;
                 textBox_Password.Text = password;
                 textBox_NameBD.Text = bd;
+            }
+        }
+
+        private Color originalBackgroundColor;
+        private Color originalTextColor;
+        private Color darkBackgroundColor = Color.FromArgb(120, 120, 120);
+        private Color darkTextColor = Color.White;
+        
+        private void SetTheme()
+        {
+            if (isDarkModeEnabled)
+            {
+
+                // Cambiar a modo oscuro
+                originalBackgroundColor = BackColor;
+                originalTextColor = ForeColor;
+                BackColor = darkBackgroundColor;
+                ForeColor = darkTextColor;
+                // Establecer los colores oscuros para otros controles según sea necesario
+
+                // Ajustar el color de fondo del TabControl
+                tabControl1.BackColor = Color.DarkGray;
+
+                // Ajustar el color de las pestañas (TabPages) en el TabControl
+                foreach (TabPage tabPage in tabControl1.TabPages)
+                {
+                    tabPage.BackColor = tabControl1.BackColor;
+                    tabPage.ForeColor = Color.Black; // Color de fuente negro para mejorar la legibilidad
+                }
+
+                button_Exit.ForeColor = Color.Black;
+                button_TestConnection.ForeColor = Color.Black;
+                button_Connection.ForeColor = Color.Black;
+                button_Saver.ForeColor = Color.Black;
             }
         }
     }
