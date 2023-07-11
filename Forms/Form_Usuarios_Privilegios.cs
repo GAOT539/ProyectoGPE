@@ -1,7 +1,9 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace ProyectoSGBD_MySQL.Forms
@@ -38,17 +40,125 @@ namespace ProyectoSGBD_MySQL.Forms
                 // Mostrar los valores en los campos de texto
                 text_loginName.Text = loginName;
                 text_limitHostsMatching.Text = host;
+                CargarPermisosAdmin();
             }
+        }
+        private void CargarPermisosAdmin()
+        {
+            string nombreUsuario = text_loginName.Text;
+            string host = text_limitHostsMatching.Text;
+            string cadenaConexion = cAux.CadenaConexion;
+
+            // Desmarcar todos los elementos del checkedListBox_globalPrivilegios
+            for (int i = 0; i < checkedListBox_globalPrivilegios.Items.Count; i++)
+            {
+                checkedListBox_globalPrivilegios.SetItemChecked(i, false);
+            }
+
+            // Crear la consulta SQL para obtener los permisos del usuario
+            string sqlQuery = $"SHOW GRANTS FOR '{nombreUsuario}'@'{host}';";
+
+            try
+            {
+                // Establecer la cadena de conexión y crear una instancia de MySqlConnection
+                using (MySqlConnection connection = new MySqlConnection(cadenaConexion))
+                {
+                    connection.Open();
+
+                    // Ejecutar la consulta SQL y leer los resultados
+                    using (MySqlCommand command = new MySqlCommand(sqlQuery, connection))
+                    {
+                        using (MySqlDataReader reader = command.ExecuteReader())
+                        {
+                            // Crear una lista para almacenar los permisos obtenidos de la consulta
+                            List<string> permisosUsuario = new List<string>();
+
+                            while (reader.Read())
+                            {
+                                string permiso = reader.GetString(0);
+
+                                // Separar los permisos por comas y espacios
+                                string[] permisos = permiso.Split(new char[] { ',', ' ' }, StringSplitOptions.RemoveEmptyEntries);
+
+                                // Agregar solo los permisos válidos a la lista
+                                foreach (string p in permisos)
+                                {
+                                    if (EsPermisoValido(p))
+                                    {
+                                        permisosUsuario.Add(p);
+                                    }
+                                }
+                            }
+
+                            // Recorrer los elementos del checkedListBox_globalPrivilegios y seleccionar los que coincidan con los permisos del usuario
+                            for (int i = 0; i < checkedListBox_globalPrivilegios.Items.Count; i++)
+                            {
+                                string permisoItem = checkedListBox_globalPrivilegios.Items[i].ToString();
+
+                                if (permisosUsuario.Contains(permisoItem))
+                                {
+                                    checkedListBox_globalPrivilegios.SetItemChecked(i, true);
+                                }
+                            }
+                        }
+                    }
+
+                    connection.Close();
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("Error al cargar los permisos: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        // Método para verificar si un permiso es válido
+        private bool EsPermisoValido(string permiso)
+        {
+            string[] permisosValidos =
+            {
+                "ALTER",
+                "ALTER ROUTINE",
+                "CREATE",
+                "CREATE ROUTINE",
+                "CREATE TABLESPACE",
+                "CREATE TEMPORARY TABLES",
+                "CREATE USER",
+                "CREATE VIEW",
+                "DELETE",
+                "DROP",
+                "EVENT",
+                "EXECUTE",
+                "FILE",
+                "GRANT OPTION",
+                "INDEX",
+                "INSERT",
+                "LOCK TABLES",
+                "PROCESS",
+                "REFERENCES",
+                "RELOAD",
+                "REPLICATION CLIENT",
+                "REPLICATION SLAVE",
+                "SELECT",
+                "SHOW DATABASES",
+                "SHOW VIEW",
+                "SHUTDOWN",
+                "SUPER",
+                "TRIGGER",
+                "UPDATE"
+            };
+
+            return permisosValidos.Contains(permiso);
         }
 
         private void Form_Usuarios_Privilegios_Load(object sender, EventArgs e)
         {
             CargaraDatosView();
         }
-
+        
         private void CargaraDatosView()
         {
-            string cadenaConexion = "Database=mysql; Data Source=localhost; Port=3306; User Id=root; Password=2001;";
+            string cadenaConexion = cAux.CadenaConexion;
             string sqlQuery = "SELECT User, Host FROM mysql.user WHERE User <> 'root' AND User NOT LIKE 'mysql%';";
             //dataGridView_userView.Rows.Clear();
 
@@ -79,24 +189,23 @@ namespace ProyectoSGBD_MySQL.Forms
             {
                 MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
         }
-
+        
         private void button_addAccount_Click(object sender, EventArgs e)
         {
             desbloquearLogin();
         }
-
+        
         private void button_Refresh_Click(object sender, EventArgs e)
         {
             CargaraDatosView();
         }
-
+        
         private void button_Revert_Click(object sender, EventArgs e)
         {
             bloquearLogin();
         }
-
+        
         private void button_Delete_Click(object sender, EventArgs e)
         {
             string cadenaConexion = cAux.CadenaConexion;
@@ -141,23 +250,62 @@ namespace ProyectoSGBD_MySQL.Forms
                 MessageBox.Show("Por favor, seleccione un usuario para eliminar.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
-
-
-
+        
         private void button_Apply_Click(object sender, EventArgs e)
         {
             loginUserCA();
             CargaraDatosView();
+            RolesAdmin();
             limpiarLogin();
+            bloquearLogin();
         }
+        
+        private void RolesAdmin()
+        {
+            // Obtener el nombre de usuario del texto del control TextBox
+            string loginName = text_loginName.Text;
+            string host = text_limitHostsMatching.Text;
 
+            // Obtener los permisos seleccionados del CheckedListBox
+            List<string> permisosSeleccionados = new List<string>();
+            foreach (object itemChecked in checkedListBox_globalPrivilegios.CheckedItems)
+            {
+                permisosSeleccionados.Add(itemChecked.ToString());
+            }
+
+            // Crear la cadena de conexión a MySQL
+            string cadenaConexion = cAux.CadenaConexion;
+
+            // Crear la consulta SQL para asignar los permisos al usuario
+            string sqlQuery = $"GRANT {string.Join(", ", permisosSeleccionados)} ON *.* TO '{loginName}'@'{host}' WITH GRANT OPTION;";
+
+            // Ejecutar la consulta SQL
+            try
+            {
+                using (MySqlConnection connection = new MySqlConnection(cadenaConexion))
+                {
+                    connection.Open();
+                    using (MySqlCommand command = new MySqlCommand(sqlQuery, connection))
+                    {
+                        command.ExecuteNonQuery();
+                    }
+                    connection.Close();
+                }
+                MessageBox.Show("Permisos asignados correctamente.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("Error al asignar permisos: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        
         private void limpiarLogin()
         {
             text_loginName.Clear();
             text_Password.Clear();
             textBox_confirmPassword.Clear();
         }
-
+        
         private void loginUserCA()
         {
             string cadenaConexion = cAux.CadenaConexion;
@@ -214,8 +362,7 @@ namespace ProyectoSGBD_MySQL.Forms
                 MessageBox.Show("Error al crear o actualizar el usuario: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-
+        
         private bool CheckUserExists(string userName)
         {
             string cadenaConexion = cAux.CadenaConexion;
@@ -237,7 +384,7 @@ namespace ProyectoSGBD_MySQL.Forms
                 }
             }
         }
-
+        
         private void desbloquearLogin()
         {
             //Desbloquear el registro login
@@ -250,8 +397,9 @@ namespace ProyectoSGBD_MySQL.Forms
             //Bloquea botones de Accion
             button_Delete.Enabled = false;
             button_Refresh.Enabled = false;
+            button_addAccount.Enabled = false;
         }
-
+        
         private void bloquearLogin()
         {
             //Bloquear el registro login
@@ -264,12 +412,17 @@ namespace ProyectoSGBD_MySQL.Forms
             //Desbloquea botones de Accion
             button_Delete.Enabled = true;
             button_Refresh.Enabled = true;
+            button_addAccount.Enabled = true;
         }
-
+        
         private Color originalBackgroundColor;
+        
         private Color originalTextColor;
+        
         private Color darkBackgroundColor = Color.FromArgb(30, 30, 30);
+        
         private Color darkTextColor = Color.White;
+        
         private void SetTheme()
         {
             if (isDarkModeEnabled)
@@ -335,7 +488,7 @@ namespace ProyectoSGBD_MySQL.Forms
                 groupBox1.ForeColor = SystemColors.ControlText;
                 groupBox2.ForeColor = SystemColors.ControlText;
                 groupBox3.ForeColor = originalTextColor;
-                groupBox3.BackColor = SystemColors.ControlText;
+                groupBox3.BackColor = SystemColors.Control;
 
 
                 button_addAccount.ForeColor = originalTextColor;
@@ -354,7 +507,7 @@ namespace ProyectoSGBD_MySQL.Forms
                 button_Apply.BackColor = originalBackgroundColor;
             }
         }
-
+        
         private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             if (isDarkModeEnabled)
@@ -368,6 +521,15 @@ namespace ProyectoSGBD_MySQL.Forms
                 e.CellStyle.ForeColor = dataGridView_userView.DefaultCellStyle.ForeColor;
             }
         }
+        
+        private void button_RolesAdmin_Click(object sender, EventArgs e)
+        {
+            RolesAdmin();
+        }
 
+        private void button_CargarRoles_Click(object sender, EventArgs e)
+        {
+            CargarPermisosAdmin();
+        }
     }
 }

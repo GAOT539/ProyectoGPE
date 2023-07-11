@@ -73,6 +73,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.tabPage_Administrative_Roles = new System.Windows.Forms.TabPage();
+            this.button_RolesAdmin = new System.Windows.Forms.Button();
             this.groupBox_Global_Privileges = new System.Windows.Forms.GroupBox();
             this.checkedListBox_globalPrivilegios = new System.Windows.Forms.CheckedListBox();
             this.groupBox_Roles = new System.Windows.Forms.GroupBox();
@@ -99,6 +100,7 @@
             this.button_Refresh = new System.Windows.Forms.Button();
             this.button_Apply = new System.Windows.Forms.Button();
             this.button_Revert = new System.Windows.Forms.Button();
+            this.button_CargarRoles = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -604,6 +606,8 @@
             // 
             // tabPage_Administrative_Roles
             // 
+            this.tabPage_Administrative_Roles.Controls.Add(this.button_CargarRoles);
+            this.tabPage_Administrative_Roles.Controls.Add(this.button_RolesAdmin);
             this.tabPage_Administrative_Roles.Controls.Add(this.groupBox_Global_Privileges);
             this.tabPage_Administrative_Roles.Controls.Add(this.groupBox_Roles);
             this.tabPage_Administrative_Roles.Location = new System.Drawing.Point(4, 29);
@@ -614,6 +618,16 @@
             this.tabPage_Administrative_Roles.Text = "Administrative Roles";
             this.tabPage_Administrative_Roles.UseVisualStyleBackColor = true;
             // 
+            // button_RolesAdmin
+            // 
+            this.button_RolesAdmin.Location = new System.Drawing.Point(834, 581);
+            this.button_RolesAdmin.Name = "button_RolesAdmin";
+            this.button_RolesAdmin.Size = new System.Drawing.Size(346, 35);
+            this.button_RolesAdmin.TabIndex = 2;
+            this.button_RolesAdmin.Text = "Permisos";
+            this.button_RolesAdmin.UseVisualStyleBackColor = true;
+            this.button_RolesAdmin.Click += new System.EventHandler(this.button_RolesAdmin_Click);
+            // 
             // groupBox_Global_Privileges
             // 
             this.groupBox_Global_Privileges.Controls.Add(this.checkedListBox_globalPrivilegios);
@@ -621,13 +635,16 @@
             this.groupBox_Global_Privileges.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox_Global_Privileges.Name = "groupBox_Global_Privileges";
             this.groupBox_Global_Privileges.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBox_Global_Privileges.Size = new System.Drawing.Size(346, 575);
+            this.groupBox_Global_Privileges.Size = new System.Drawing.Size(346, 506);
             this.groupBox_Global_Privileges.TabIndex = 1;
             this.groupBox_Global_Privileges.TabStop = false;
             this.groupBox_Global_Privileges.Text = "Global Privileges";
             // 
             // checkedListBox_globalPrivilegios
             // 
+            this.checkedListBox_globalPrivilegios.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.checkedListBox_globalPrivilegios.FormattingEnabled = true;
             this.checkedListBox_globalPrivilegios.Items.AddRange(new object[] {
             "ALTER",
@@ -662,7 +679,7 @@
             this.checkedListBox_globalPrivilegios.Location = new System.Drawing.Point(12, 31);
             this.checkedListBox_globalPrivilegios.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.checkedListBox_globalPrivilegios.Name = "checkedListBox_globalPrivilegios";
-            this.checkedListBox_globalPrivilegios.Size = new System.Drawing.Size(332, 556);
+            this.checkedListBox_globalPrivilegios.Size = new System.Drawing.Size(326, 487);
             this.checkedListBox_globalPrivilegios.TabIndex = 0;
             // 
             // groupBox_Roles
@@ -681,23 +698,23 @@
             // 
             this.checkedListBox_roles.FormattingEnabled = true;
             this.checkedListBox_roles.Items.AddRange(new object[] {
-            "DBA   => Grants the rights to perform all tasks.",
-            "MaintenanceAdmin   => Grants rights needed to maintain server.",
-            "ProcessAdmin   => Rights needed to assess, monitor, and kill any user process run" +
-                "ning in server.",
-            "UserAdmin   => Grants rights to create users logins and reset passwords.",
-            "SecurityAdmin   => Rights to manager logins and grant and revoke server and datab" +
-                "ase level permission.",
-            "MonitorAdmin   => Minimum set of rights needed to monitor server.",
-            "DBManager   => Grants full rights on all databases.",
-            "DBDesiger   => Rights to create and reverse engineer any database schema.",
-            "ReplicationAdmin    => Rights needed to setup and manage replication.",
-            "BackupAdmin   => Minimal rights needed to backup any database.",
-            "Custom   => Custom role."});
+            "DBA => Grants the rights to perform all tasks.",
+            "MaintenanceAdmin => Grants rights needed to maintain server.",
+            "ProcessAdmin => Rights needed to assess, monitor, and kill any user process runni" +
+                "ng in server.",
+            "UserAdmin => Grants rights to create users logins and reset passwords.",
+            "SecurityAdmin => Rights to manager logins and grant and revoke server and databas" +
+                "e level permission.",
+            "MonitorAdmin => Minimum set of rights needed to monitor server.",
+            "DBManager => Grants full rights on all databases.",
+            "DBDesiger => Rights to create and reverse engineer any database schema.",
+            "ReplicationAdmin => Rights needed to setup and manage replication.",
+            "BackupAdmin => Minimal rights needed to backup any database.",
+            "Custom => Custom role."});
             this.checkedListBox_roles.Location = new System.Drawing.Point(10, 32);
             this.checkedListBox_roles.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.checkedListBox_roles.Name = "checkedListBox_roles";
-            this.checkedListBox_roles.Size = new System.Drawing.Size(782, 257);
+            this.checkedListBox_roles.Size = new System.Drawing.Size(782, 280);
             this.checkedListBox_roles.TabIndex = 0;
             // 
             // tabPage_Schema_Privileges
@@ -969,6 +986,16 @@
             this.button_Revert.UseVisualStyleBackColor = true;
             this.button_Revert.Click += new System.EventHandler(this.button_Revert_Click);
             // 
+            // button_CargarRoles
+            // 
+            this.button_CargarRoles.Location = new System.Drawing.Point(834, 532);
+            this.button_CargarRoles.Name = "button_CargarRoles";
+            this.button_CargarRoles.Size = new System.Drawing.Size(346, 36);
+            this.button_CargarRoles.TabIndex = 3;
+            this.button_CargarRoles.Text = "Cargar Permisos";
+            this.button_CargarRoles.UseVisualStyleBackColor = true;
+            this.button_CargarRoles.Click += new System.EventHandler(this.button_CargarRoles_Click);
+            // 
             // Form_Usuarios_Privilegios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -1084,5 +1111,7 @@
         private System.Windows.Forms.CheckedListBox checkedListBox5;
         private System.Windows.Forms.Button button_Select_ALL;
         private System.Windows.Forms.Button button_Unselect_All;
+        private System.Windows.Forms.Button button_RolesAdmin;
+        private System.Windows.Forms.Button button_CargarRoles;
     }
 }
