@@ -151,3 +151,4 @@ C:\Users\gabri\Source\Repos\GAOT539\ProyectoGPE\obj\Debug\ProyectoSGBD-MySQL.csp
 C:\Users\gabri\Source\Repos\GAOT539\ProyectoGPE\obj\Debug\ProyectoSGBD-MySQL.csproj.CopyComplete
 C:\Users\gabri\Source\Repos\GAOT539\ProyectoGPE\obj\Debug\ProyectoSGBD-MySQL.exe
 C:\Users\gabri\Source\Repos\GAOT539\ProyectoGPE\obj\Debug\ProyectoSGBD-MySQL.pdb
+C:\Users\gabri\Source\Repos\GAOT539\ProyectoGPE\bin\Debug\FastColoredTextBox.dll

@@ -6,6 +6,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
+using FastColoredTextBoxNS;
 
 namespace ProyectoSGBD_MySQL.Forms
 {
@@ -550,15 +551,12 @@ namespace ProyectoSGBD_MySQL.Forms
         {
             if (isDarkModeEnabled)
             {
-
                 // Cambiar a modo oscuro
                 originalBackgroundColor = BackColor;
                 originalTextColor = ForeColor;
                 BackColor = darkBackgroundColor;
                 ForeColor = darkTextColor;
                 // Establecer los colores oscuros para otros controles según sea necesario
-
-
             }
             else
             {
@@ -566,11 +564,7 @@ namespace ProyectoSGBD_MySQL.Forms
                 BackColor = originalBackgroundColor;
                 ForeColor = originalTextColor;
                 // Restablecer los colores claros para otros controles según sea necesario
-
-
             }
-
-
         }
 
 
@@ -580,29 +574,30 @@ namespace ProyectoSGBD_MySQL.Forms
             {
                 int yCoord = dataGridView_Muestra.Location.Y; // Obtener la coordenada Y actual del componente
                 int xCoord = (this.ClientSize.Width - dataGridView_Muestra.Width) / 2; // Calcular la coordenada X centrada
-
                 dataGridView_Muestra.Location = new Point(xCoord, yCoord);
-
                 label19.Text = "OUTPUT::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::" +
                 "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::";
-
                 //dataGridView_Muestra.Left = 500;
                 //dataGridView_Muestra.Size = new System.Drawing.Size(1700,194);
-
-
             }
             else
             {
-
                 dataGridView_Muestra.Left = 0;
                 //dataGridView_Muestra.Size = new System.Drawing.Size(1203, 194);
                 panel7.Top = 0;
-
-
             }
         }
 
+        private void fastColoredTextBox_Query_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            fastColoredTextBox_Query.TextChanged -= fastColoredTextBox_Query_TextChanged;
+            textBox_Query.Text = fastColoredTextBox_Query.Text;
+            fastColoredTextBox_Query.TextChanged += fastColoredTextBox_Query_TextChanged;
+        }
 
-
+        private void textBox_Query_TextChanged(object sender, EventArgs e)
+        {
+            fastColoredTextBox_Query.Text = textBox_Query.Text;
+        }
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_BD));
             this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox20 = new System.Windows.Forms.PictureBox();
@@ -72,6 +73,7 @@
             this.pictureBox_GuardarDocumento = new System.Windows.Forms.PictureBox();
             this.pictureBox_AbrirDocumento = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.fastColoredTextBox_Query = new FastColoredTextBoxNS.FastColoredTextBox();
             this.textBox_Query = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox_Connection = new System.Windows.Forms.TextBox();
@@ -126,6 +128,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_GuardarDocumento)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_AbrirDocumento)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.fastColoredTextBox_Query)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel10.SuspendLayout();
@@ -710,6 +713,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel1.Controls.Add(this.fastColoredTextBox_Query);
             this.panel1.Controls.Add(this.textBox_Query);
             this.panel1.Controls.Add(this.panel6);
             this.panel1.Controls.Add(this.label1);
@@ -719,18 +723,56 @@
             this.panel1.Size = new System.Drawing.Size(968, 510);
             this.panel1.TabIndex = 0;
             // 
-            // textBox_Query
+            // fastColoredTextBox_Query
             // 
-            this.textBox_Query.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.fastColoredTextBox_Query.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.fastColoredTextBox_Query.AutoCompleteBracketsList = new char[] {
+        '(',
+        ')',
+        '{',
+        '}',
+        '[',
+        ']',
+        '\"',
+        '\"',
+        '\'',
+        '\''};
+            this.fastColoredTextBox_Query.AutoIndentCharsPatterns = "";
+            this.fastColoredTextBox_Query.AutoScrollMinSize = new System.Drawing.Size(37, 28);
+            this.fastColoredTextBox_Query.BackBrush = null;
+            this.fastColoredTextBox_Query.CharHeight = 28;
+            this.fastColoredTextBox_Query.CharWidth = 13;
+            this.fastColoredTextBox_Query.CommentPrefix = "--";
+            this.fastColoredTextBox_Query.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.fastColoredTextBox_Query.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.fastColoredTextBox_Query.Font = new System.Drawing.Font("Consolas", 12F);
+            this.fastColoredTextBox_Query.IsReplaceMode = false;
+            this.fastColoredTextBox_Query.Language = FastColoredTextBoxNS.Language.SQL;
+            this.fastColoredTextBox_Query.LeftBracket = '(';
+            this.fastColoredTextBox_Query.Location = new System.Drawing.Point(11, 103);
+            this.fastColoredTextBox_Query.Name = "fastColoredTextBox_Query";
+            this.fastColoredTextBox_Query.Paddings = new System.Windows.Forms.Padding(0);
+            this.fastColoredTextBox_Query.RightBracket = ')';
+            this.fastColoredTextBox_Query.SelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(255)))));
+            this.fastColoredTextBox_Query.ServiceColors = ((FastColoredTextBoxNS.ServiceColors)(resources.GetObject("fastColoredTextBox_Query.ServiceColors")));
+            this.fastColoredTextBox_Query.Size = new System.Drawing.Size(935, 402);
+            this.fastColoredTextBox_Query.TabIndex = 44;
+            this.fastColoredTextBox_Query.Zoom = 100;
+            this.fastColoredTextBox_Query.TextChanged += new System.EventHandler<FastColoredTextBoxNS.TextChangedEventArgs>(this.fastColoredTextBox_Query_TextChanged);
+            // 
+            // textBox_Query
+            // 
+            this.textBox_Query.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox_Query.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_Query.Location = new System.Drawing.Point(22, 103);
+            this.textBox_Query.Location = new System.Drawing.Point(949, 497);
             this.textBox_Query.Multiline = true;
             this.textBox_Query.Name = "textBox_Query";
             this.textBox_Query.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox_Query.Size = new System.Drawing.Size(925, 384);
+            this.textBox_Query.Size = new System.Drawing.Size(16, 10);
             this.textBox_Query.TabIndex = 43;
+            this.textBox_Query.TextChanged += new System.EventHandler(this.textBox_Query_TextChanged);
             // 
             // label1
             // 
@@ -1063,7 +1105,6 @@
             this.Name = "Form_BD";
             this.Padding = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form_BD";
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).EndInit();
@@ -1093,6 +1134,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_AbrirDocumento)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.fastColoredTextBox_Query)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -1191,5 +1233,6 @@
         private System.Windows.Forms.DataGridView dataGridView_Muestra;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel_fondoArbol;
+        private FastColoredTextBoxNS.FastColoredTextBox fastColoredTextBox_Query;
     }
 }
