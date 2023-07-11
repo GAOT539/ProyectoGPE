@@ -522,7 +522,6 @@ namespace ProyectoSGBD_MySQL.Forms
                                 cAux cAux = new cAux();
                                 //this.Hide();
                                 form_Usuarios_Privilegios.ShowDialog();
-                                ActualizarEsquma();
                                 //this.Show();
                             }
                             else

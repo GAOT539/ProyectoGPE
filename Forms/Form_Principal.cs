@@ -104,6 +104,7 @@ namespace ProyectoSGBD_MySQL.Forms
                 // Cambiar a modo claro
                 BackColor = originalBackgroundColor;
                 ForeColor = originalTextColor;
+                label_Connections.ForeColor = Color.Black;
                 // Restablecer los colores claros para otros controles según sea necesario
                 //pictureBox_Darkmode.ForeColor = originalTextColor;
                 //pictureBox_Darkmode.BackColor = originalBackgroundColor;
@@ -117,6 +118,7 @@ namespace ProyectoSGBD_MySQL.Forms
                 originalTextColor = ForeColor;
                 BackColor = darkBackgroundColor;
                 ForeColor = darkTextColor;
+                label_Connections.ForeColor = Color.White;
                 // Establecer los colores oscuros para otros controles según sea necesario
                 isDarkModeEnabled = true;
             }

@@ -40,10 +40,10 @@ namespace ProyectoSGBD_MySQL.Forms
                 // Mostrar los valores en los campos de texto
                 text_loginName.Text = loginName;
                 text_limitHostsMatching.Text = host;
-                CargarPermisosAdmin();
+                CargarPermisosUsuarios();
             }
         }
-        private void CargarPermisosAdmin()
+        private void CargarPermisosUsuarios()
         {
             string nombreUsuario = text_loginName.Text;
             string host = text_limitHostsMatching.Text;
@@ -77,18 +77,21 @@ namespace ProyectoSGBD_MySQL.Forms
                             {
                                 string permiso = reader.GetString(0);
 
-                                // Separar los permisos por comas y espacios
-                                string[] permisos = permiso.Split(new char[] { ',', ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                                // Dividir los permisos por comas
+                                string[] permisos = permiso.Split(',');
 
                                 // Agregar solo los permisos válidos a la lista
                                 foreach (string p in permisos)
                                 {
-                                    if (EsPermisoValido(p))
+                                    string permisoLimpio = p.Trim(); // Eliminar espacios adicionales
+
+                                    if (EsPermisoValido(permisoLimpio))
                                     {
-                                        permisosUsuario.Add(p);
+                                        permisosUsuario.Add(permisoLimpio);
                                     }
                                 }
                             }
+
 
                             // Recorrer los elementos del checkedListBox_globalPrivilegios y seleccionar los que coincidan con los permisos del usuario
                             for (int i = 0; i < checkedListBox_globalPrivilegios.Items.Count; i++)
@@ -117,38 +120,38 @@ namespace ProyectoSGBD_MySQL.Forms
         {
             string[] permisosValidos =
             {
-                "ALTER",
-                "ALTER ROUTINE",
-                "CREATE",
-                "CREATE ROUTINE",
-                "CREATE TABLESPACE",
-                "CREATE TEMPORARY TABLES",
-                "CREATE USER",
-                "CREATE VIEW",
-                "DELETE",
-                "DROP",
-                "EVENT",
-                "EXECUTE",
-                "FILE",
-                "GRANT OPTION",
-                "INDEX",
-                "INSERT",
-                "LOCK TABLES",
-                "PROCESS",
-                "REFERENCES",
-                "RELOAD",
-                "REPLICATION CLIENT",
-                "REPLICATION SLAVE",
-                "SELECT",
-                "SHOW DATABASES",
-                "SHOW VIEW",
-                "SHUTDOWN",
-                "SUPER",
-                "TRIGGER",
-                "UPDATE"
-            };
+        "ALTER",
+        "ALTER ROUTINE",
+        "CREATE",
+        "CREATE ROUTINE",
+        "CREATE TABLESPACE",
+        "CREATE TEMPORARY TABLES",
+        "CREATE USER",
+        "CREATE VIEW",
+        "DELETE",
+        "DROP",
+        "EVENT",
+        "EXECUTE",
+        "FILE",
+        "GRANT OPTION",
+        "INDEX",
+        "INSERT",
+        "LOCK TABLES",
+        "PROCESS",
+        "REFERENCES",
+        "RELOAD",
+        "REPLICATION CLIENT",
+        "REPLICATION SLAVE",
+        "SELECT",
+        "SHOW DATABASES",
+        "SHOW VIEW",
+        "SHUTDOWN",
+        "SUPER",
+        "TRIGGER",
+        "UPDATE"
+    };
 
-            return permisosValidos.Contains(permiso);
+            return permisosValidos.Any(p => permiso.Contains(p));
         }
 
         private void Form_Usuarios_Privilegios_Load(object sender, EventArgs e)
@@ -255,12 +258,12 @@ namespace ProyectoSGBD_MySQL.Forms
         {
             loginUserCA();
             CargaraDatosView();
-            RolesAdmin();
+            PermisosUsuarios();
             limpiarLogin();
             bloquearLogin();
         }
-        
-        private void RolesAdmin()
+
+        private void PermisosUsuarios()
         {
             // Obtener el nombre de usuario del texto del control TextBox
             string loginName = text_loginName.Text;
@@ -273,11 +276,32 @@ namespace ProyectoSGBD_MySQL.Forms
                 permisosSeleccionados.Add(itemChecked.ToString());
             }
 
+            // Obtener los permisos deseleccionados del CheckedListBox
+            List<string> permisosDeseleccionados = new List<string>();
+            foreach (object itemUnchecked in checkedListBox_globalPrivilegios.Items)
+            {
+                string permiso = itemUnchecked.ToString();
+                if (!checkedListBox_globalPrivilegios.CheckedItems.Contains(itemUnchecked))
+                {
+                    permisosDeseleccionados.Add(permiso);
+                }
+            }
+
             // Crear la cadena de conexión a MySQL
             string cadenaConexion = cAux.CadenaConexion;
 
             // Crear la consulta SQL para asignar los permisos al usuario
-            string sqlQuery = $"GRANT {string.Join(", ", permisosSeleccionados)} ON *.* TO '{loginName}'@'{host}' WITH GRANT OPTION;";
+            string sqlQuery = "";
+
+            if (permisosSeleccionados.Count > 0)
+            {
+                sqlQuery += $"GRANT {string.Join(", ", permisosSeleccionados)} ON *.* TO '{loginName}'@'{host}' WITH GRANT OPTION;";
+            }
+
+            if (permisosDeseleccionados.Count > 0)
+            {
+                sqlQuery += $"REVOKE {string.Join(", ", permisosDeseleccionados)} ON *.* FROM '{loginName}'@'{host}';";
+            }
 
             // Ejecutar la consulta SQL
             try
@@ -298,7 +322,7 @@ namespace ProyectoSGBD_MySQL.Forms
                 MessageBox.Show("Error al asignar permisos: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        
+
         private void limpiarLogin()
         {
             text_loginName.Clear();
@@ -524,12 +548,12 @@ namespace ProyectoSGBD_MySQL.Forms
         
         private void button_RolesAdmin_Click(object sender, EventArgs e)
         {
-            RolesAdmin();
+            PermisosUsuarios();
         }
 
         private void button_CargarRoles_Click(object sender, EventArgs e)
         {
-            CargarPermisosAdmin();
+            CargarPermisosUsuarios();
         }
     }
 }

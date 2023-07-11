@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Principal));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox_Darkmode = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox_Exit = new System.Windows.Forms.PictureBox();
@@ -46,9 +47,9 @@
             this.label11 = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.pictureBox_Darkmode = new System.Windows.Forms.PictureBox();
+            this.label_Connections = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Darkmode)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Exit)).BeginInit();
@@ -58,7 +59,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Darkmode)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -72,6 +72,19 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(90, 382);
             this.panel1.TabIndex = 16;
+            // 
+            // pictureBox_Darkmode
+            // 
+            this.pictureBox_Darkmode.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox_Darkmode.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox_Darkmode.Image")));
+            this.pictureBox_Darkmode.Location = new System.Drawing.Point(6, 297);
+            this.pictureBox_Darkmode.Margin = new System.Windows.Forms.Padding(6);
+            this.pictureBox_Darkmode.Name = "pictureBox_Darkmode";
+            this.pictureBox_Darkmode.Size = new System.Drawing.Size(78, 74);
+            this.pictureBox_Darkmode.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox_Darkmode.TabIndex = 4;
+            this.pictureBox_Darkmode.TabStop = false;
+            this.pictureBox_Darkmode.Click += new System.EventHandler(this.pictureBox_Darkmode_Click);
             // 
             // pictureBox1
             // 
@@ -119,7 +132,7 @@
             this.panel2.Controls.Add(this.panel_Inicio);
             this.panel2.Controls.Add(this.pictureBox5);
             this.panel2.Controls.Add(this.pictureBox4);
-            this.panel2.Controls.Add(this.label9);
+            this.panel2.Controls.Add(this.label_Connections);
             this.panel2.Location = new System.Drawing.Point(121, 12);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(466, 382);
@@ -273,30 +286,17 @@
             this.pictureBox4.TabIndex = 18;
             this.pictureBox4.TabStop = false;
             // 
-            // label9
+            // label_Connections
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label9.Location = new System.Drawing.Point(104, 232);
-            this.label9.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(171, 20);
-            this.label9.TabIndex = 17;
-            this.label9.Text = "MySQL Connections";
-            // 
-            // pictureBox_Darkmode
-            // 
-            this.pictureBox_Darkmode.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_Darkmode.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox_Darkmode.Image")));
-            this.pictureBox_Darkmode.Location = new System.Drawing.Point(6, 297);
-            this.pictureBox_Darkmode.Margin = new System.Windows.Forms.Padding(6);
-            this.pictureBox_Darkmode.Name = "pictureBox_Darkmode";
-            this.pictureBox_Darkmode.Size = new System.Drawing.Size(78, 74);
-            this.pictureBox_Darkmode.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox_Darkmode.TabIndex = 4;
-            this.pictureBox_Darkmode.TabStop = false;
-            this.pictureBox_Darkmode.Click += new System.EventHandler(this.pictureBox_Darkmode_Click);
+            this.label_Connections.AutoSize = true;
+            this.label_Connections.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Connections.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label_Connections.Location = new System.Drawing.Point(104, 232);
+            this.label_Connections.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label_Connections.Name = "label_Connections";
+            this.label_Connections.Size = new System.Drawing.Size(171, 20);
+            this.label_Connections.TabIndex = 17;
+            this.label_Connections.Text = "MySQL Connections";
             // 
             // Form_Principal
             // 
@@ -310,6 +310,7 @@
             this.Name = "Form_Principal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Darkmode)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Exit)).EndInit();
@@ -321,7 +322,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Darkmode)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -339,7 +339,7 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label_Connections;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Label label1;
