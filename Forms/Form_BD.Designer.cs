@@ -98,6 +98,7 @@
             this.panel9 = new System.Windows.Forms.Panel();
             this.dataGridView_Muestra = new System.Windows.Forms.DataGridView();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.panel_fondoArbol = new System.Windows.Forms.Panel();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).BeginInit();
@@ -140,6 +141,7 @@
             this.panel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Muestra)).BeginInit();
             this.panel5.SuspendLayout();
+            this.panel_fondoArbol.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel3
@@ -727,7 +729,7 @@
             this.textBox_Query.Multiline = true;
             this.textBox_Query.Name = "textBox_Query";
             this.textBox_Query.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox_Query.Size = new System.Drawing.Size(925, 386);
+            this.textBox_Query.Size = new System.Drawing.Size(925, 384);
             this.textBox_Query.TabIndex = 43;
             // 
             // label1
@@ -908,19 +910,18 @@
             this.textBox_Asistente.Name = "textBox_Asistente";
             this.textBox_Asistente.ReadOnly = true;
             this.textBox_Asistente.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox_Asistente.Size = new System.Drawing.Size(354, 424);
+            this.textBox_Asistente.Size = new System.Drawing.Size(354, 422);
             this.textBox_Asistente.TabIndex = 0;
             this.textBox_Asistente.Text = "Automatic context help is disabled. Use the toolbar to manually get help for the " +
     "current caret position or to toggle automatic help.";
             // 
             // panel7
             // 
-            this.panel7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.panel7.BackColor = System.Drawing.Color.Teal;
             this.panel7.Controls.Add(this.label18);
             this.panel7.Location = new System.Drawing.Point(0, 0);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(290, 32);
+            this.panel7.Size = new System.Drawing.Size(268, 26);
             this.panel7.TabIndex = 0;
             // 
             // label18
@@ -929,7 +930,7 @@
             this.label18.AutoSize = true;
             this.label18.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(4, 5);
+            this.label18.Location = new System.Drawing.Point(6, 1);
             this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(120, 25);
@@ -938,26 +939,27 @@
             // 
             // treeView_Schemas
             // 
-            this.treeView_Schemas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.treeView_Schemas.BackColor = System.Drawing.Color.Azure;
             this.treeView_Schemas.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.treeView_Schemas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.treeView_Schemas.Dock = System.Windows.Forms.DockStyle.Fill;
             this.treeView_Schemas.ItemHeight = 20;
-            this.treeView_Schemas.Location = new System.Drawing.Point(8, 34);
+            this.treeView_Schemas.Location = new System.Drawing.Point(0, 0);
             this.treeView_Schemas.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.treeView_Schemas.Name = "treeView_Schemas";
             this.treeView_Schemas.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.treeView_Schemas.Size = new System.Drawing.Size(248, 291);
+            this.treeView_Schemas.Size = new System.Drawing.Size(268, 319);
             this.treeView_Schemas.TabIndex = 29;
             // 
             // panel4
             // 
+            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.panel4.BackColor = System.Drawing.Color.Azure;
             this.panel4.Controls.Add(this.treeView_Schemas);
-            this.panel4.Controls.Add(this.panel7);
-            this.panel4.Location = new System.Drawing.Point(10, 602);
+            this.panel4.Location = new System.Drawing.Point(0, 27);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(255, 329);
+            this.panel4.Size = new System.Drawing.Size(268, 319);
             this.panel4.TabIndex = 42;
             // 
             // panel8
@@ -966,9 +968,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel8.BackColor = System.Drawing.Color.Gray;
             this.panel8.Controls.Add(this.label19);
-            this.panel8.Location = new System.Drawing.Point(0, 0);
+            this.panel8.Location = new System.Drawing.Point(281, 587);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(1342, 26);
+            this.panel8.Size = new System.Drawing.Size(1333, 26);
             this.panel8.TabIndex = 0;
             // 
             // label19
@@ -978,7 +980,7 @@
             this.label19.AutoSize = true;
             this.label19.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(-2, 0);
+            this.label19.Location = new System.Drawing.Point(-1, 1);
             this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(1325, 25);
@@ -991,9 +993,9 @@
             // 
             this.textBox_Consola.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox_Consola.Font = new System.Drawing.Font("Consolas", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_Consola.Location = new System.Drawing.Point(10, 32);
+            this.textBox_Consola.Location = new System.Drawing.Point(11, 4);
             this.textBox_Consola.Name = "textBox_Consola";
-            this.textBox_Consola.Size = new System.Drawing.Size(1316, 31);
+            this.textBox_Consola.Size = new System.Drawing.Size(1313, 31);
             this.textBox_Consola.TabIndex = 2;
             // 
             // panel9
@@ -1001,9 +1003,9 @@
             this.panel9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel9.Controls.Add(this.dataGridView_Muestra);
-            this.panel9.Location = new System.Drawing.Point(10, 78);
+            this.panel9.Location = new System.Drawing.Point(11, 41);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(1316, 242);
+            this.panel9.Size = new System.Drawing.Size(1313, 270);
             this.panel9.TabIndex = 3;
             // 
             // dataGridView_Muestra
@@ -1015,7 +1017,7 @@
             this.dataGridView_Muestra.Name = "dataGridView_Muestra";
             this.dataGridView_Muestra.RowHeadersWidth = 62;
             this.dataGridView_Muestra.RowTemplate.Height = 28;
-            this.dataGridView_Muestra.Size = new System.Drawing.Size(1316, 242);
+            this.dataGridView_Muestra.Size = new System.Drawing.Size(1313, 270);
             this.dataGridView_Muestra.TabIndex = 1;
             // 
             // panel5
@@ -1025,11 +1027,21 @@
             this.panel5.BackColor = System.Drawing.Color.Gainsboro;
             this.panel5.Controls.Add(this.panel9);
             this.panel5.Controls.Add(this.textBox_Consola);
-            this.panel5.Controls.Add(this.panel8);
-            this.panel5.Location = new System.Drawing.Point(273, 605);
+            this.panel5.Location = new System.Drawing.Point(281, 615);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1342, 325);
+            this.panel5.Size = new System.Drawing.Size(1334, 318);
             this.panel5.TabIndex = 43;
+            // 
+            // panel_fondoArbol
+            // 
+            this.panel_fondoArbol.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.panel_fondoArbol.Controls.Add(this.panel7);
+            this.panel_fondoArbol.Controls.Add(this.panel4);
+            this.panel_fondoArbol.Location = new System.Drawing.Point(10, 588);
+            this.panel_fondoArbol.Name = "panel_fondoArbol";
+            this.panel_fondoArbol.Size = new System.Drawing.Size(268, 346);
+            this.panel_fondoArbol.TabIndex = 47;
             // 
             // Form_BD
             // 
@@ -1038,11 +1050,12 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1626, 945);
+            this.Controls.Add(this.panel_fondoArbol);
             this.Controls.Add(this.panel12);
+            this.Controls.Add(this.panel8);
             this.Controls.Add(this.panel11);
             this.Controls.Add(this.panel10);
             this.Controls.Add(this.panel5);
-            this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
@@ -1101,6 +1114,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Muestra)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
+            this.panel_fondoArbol.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1176,5 +1190,6 @@
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.DataGridView dataGridView_Muestra;
         private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel panel_fondoArbol;
     }
 }

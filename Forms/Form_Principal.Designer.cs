@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Principal));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button_Dark = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox_Exit = new System.Windows.Forms.PictureBox();
@@ -48,6 +47,7 @@
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.pictureBox_Darkmode = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -58,12 +58,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Darkmode)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.panel1.Controls.Add(this.button_Dark);
+            this.panel1.Controls.Add(this.pictureBox_Darkmode);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.pictureBox_Exit);
@@ -71,19 +72,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(90, 382);
             this.panel1.TabIndex = 16;
-            // 
-            // button_Dark
-            // 
-            this.button_Dark.BackColor = System.Drawing.SystemColors.Control;
-            this.button_Dark.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_Dark.Location = new System.Drawing.Point(1, 276);
-            this.button_Dark.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button_Dark.Name = "button_Dark";
-            this.button_Dark.Size = new System.Drawing.Size(89, 35);
-            this.button_Dark.TabIndex = 18;
-            this.button_Dark.Text = "Dark";
-            this.button_Dark.UseVisualStyleBackColor = false;
-            this.button_Dark.Click += new System.EventHandler(this.button_Dark_Click);
             // 
             // pictureBox1
             // 
@@ -101,7 +89,7 @@
             // 
             this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(6, 87);
+            this.pictureBox2.Location = new System.Drawing.Point(6, 97);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(6);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(78, 83);
@@ -113,7 +101,7 @@
             // 
             this.pictureBox_Exit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox_Exit.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox_Exit.Image")));
-            this.pictureBox_Exit.Location = new System.Drawing.Point(6, 180);
+            this.pictureBox_Exit.Location = new System.Drawing.Point(6, 200);
             this.pictureBox_Exit.Margin = new System.Windows.Forms.Padding(6);
             this.pictureBox_Exit.Name = "pictureBox_Exit";
             this.pictureBox_Exit.Size = new System.Drawing.Size(78, 74);
@@ -297,6 +285,19 @@
             this.label9.TabIndex = 17;
             this.label9.Text = "MySQL Connections";
             // 
+            // pictureBox_Darkmode
+            // 
+            this.pictureBox_Darkmode.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox_Darkmode.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox_Darkmode.Image")));
+            this.pictureBox_Darkmode.Location = new System.Drawing.Point(6, 297);
+            this.pictureBox_Darkmode.Margin = new System.Windows.Forms.Padding(6);
+            this.pictureBox_Darkmode.Name = "pictureBox_Darkmode";
+            this.pictureBox_Darkmode.Size = new System.Drawing.Size(78, 74);
+            this.pictureBox_Darkmode.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox_Darkmode.TabIndex = 4;
+            this.pictureBox_Darkmode.TabStop = false;
+            this.pictureBox_Darkmode.Click += new System.EventHandler(this.pictureBox_Darkmode_Click);
+            // 
             // Form_Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -320,6 +321,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Darkmode)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -344,6 +346,6 @@
         private System.Windows.Forms.Label label_DiscussForums;
         private System.Windows.Forms.Label label_ReadBlog;
         private System.Windows.Forms.Label label_BrowseDocumentation;
-        private System.Windows.Forms.Button button_Dark;
+        private System.Windows.Forms.PictureBox pictureBox_Darkmode;
     }
 }

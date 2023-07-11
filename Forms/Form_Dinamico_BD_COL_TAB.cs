@@ -29,6 +29,9 @@ namespace ProyectoSGBD_MySQL.Forms
             SetTheme();
             Resize += Form_Dinamico_BD_COL_TAB_Resize;
             dataGridView_Muestra.CellFormatting += dataGridView1_CellFormatting;
+
+            this.MaximizeBox = false; // Bloquea la maximización del formulario
+            this.FormBorderStyle = FormBorderStyle.FixedSingle; // Bloquea el cambio de tamaño del formulario
         }
 
         private void button_CreateDataBase_Click(object sender, EventArgs e)

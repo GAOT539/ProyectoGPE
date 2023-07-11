@@ -106,6 +106,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\Form_BD.resx">
       <DependentUpon>Form_BD.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Form_ChatGPT.resx">
       <DependentUpon>Form_ChatGPT.cs</DependentUpon>

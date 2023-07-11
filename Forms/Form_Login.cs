@@ -26,6 +26,10 @@ namespace ProyectoSGBD_MySQL.Forms
             SetTheme();
         }
 
+        public Form_Login()
+        {
+        }
+
         private void checkBoxPassword_CheckedChanged(object sender, EventArgs e)
         {
             textBox_Password.UseSystemPasswordChar = !checkBox_Password.Checked; // Muestra u oculta la contraseña según el estado del checkbox
@@ -82,6 +86,7 @@ namespace ProyectoSGBD_MySQL.Forms
             // Asigna el valor de la cadena de conexión a la propiedad CadenaConexion de cAux.cs
             cAux.CadenaConexion = "Database=" + bd + "; Data Source=" + servidor + "; Port=" + puerto + "; User Id=" +
                 usuario + "; Password=" + password + ";";
+            //cAux.CadenaConexion = "Database=" + bd + "; Data Source=" + servidor + "; Port=" + puerto + "; User Id=" + usuario + "; Password=" + password + ";";
             string cadenaConexion = cAux.CadenaConexion;
 
             // Instancia para conexión a MySQL, recibe la cadena de conexión

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
 using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace ProyectoSGBD_MySQL.Forms
@@ -263,10 +264,7 @@ namespace ProyectoSGBD_MySQL.Forms
 
         private void pictureBox_GuardarDocumento_Click(object sender, EventArgs e)
         {
-            // Limpiar el árbol antes de actualizar el esquema
-            treeView_Schemas.Nodes.Clear();
-            // Llamar al método para obtener y mostrar el esquema
-            ObtenerEsquemas();
+            ActualizarEsquma();
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             saveFileDialog.Filter = "Archivos SQL (*.sql)|*.sql";
             saveFileDialog.Title = "Guardar archivo SQL";
@@ -320,7 +318,7 @@ namespace ProyectoSGBD_MySQL.Forms
         {
             string sqlQuery = textBox_Query.Text;
 
-            //Controla que el campo no este vacio.
+            // Controla que el campo no esté vacío.
             if (string.IsNullOrEmpty(sqlQuery))
             {
                 MessageBox.Show("Por favor, ingresa datos en el campo Query.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -345,49 +343,64 @@ namespace ProyectoSGBD_MySQL.Forms
                     {
                         connection.Open(); // Abre la conexión
 
-                        using (MySqlCommand command = new MySqlCommand(sqlQuery, connection))
+                        // Eliminar espacios en blanco innecesarios y separar las consultas
+                        List<string> queryLines = sqlQuery.Split(';')
+                            .Select(line => line.Trim())
+                            .Where(line => !string.IsNullOrEmpty(line))
+                            .ToList();
+
+                        foreach (string line in queryLines)
                         {
-                            if (!sqlQuery.ToUpper().Contains("CREATE") && !sqlQuery.ToUpper().Contains("INSERT")
-                                && !sqlQuery.ToUpper().Contains("UPDATE") && !sqlQuery.ToUpper().Contains("DELETE"))
+                            using (MySqlCommand command = new MySqlCommand(line, connection))
                             {
+                                if (!line.ToUpper().Contains("CREATE") && !line.ToUpper().Contains("INSERT")
+                                    && !line.ToUpper().Contains("UPDATE") && !line.ToUpper().Contains("DELETE") 
+                                    && !line.ToUpper().Contains("USE") && !line.ToUpper().Contains("BEGIN")
+                                    && !line.ToUpper().Contains("COMMIT"))
+                                {
+                                    using (MySqlDataReader reader = command.ExecuteReader())
+                                    {
+                                        dataTable.Load(reader); // Crear un DataTable para almacenar los datos de la consulta
+                                        dataGridView_Muestra.DataSource = dataTable; // Enlazar los datos al DataGridView
+                                    }
+
+                                    // Verificar que el DataTable contenga los datos esperados
+                                    if (dataTable.Rows.Count > 0)
+                                    {
+                                        // Enlazar los datos al DataGridView
+                                        dataGridView_Muestra.DataSource = dataTable;
+                                    }
+                                    else
+                                    {
+                                        // No se encontraron datos, mostrar un mensaje de error
+                                        MessageBox.Show("Error al mostrar los datos en la tabla. " +
+                                            "\r\nNota: El sistema solo omite sentencias (CREATE, INSERT, UPDATE, DELETE, USE, BEGIN, COMMIT)...", 
+                                            "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    }
+                                }
+
+                                // Obtener los estados del SQL y mostrarlos en el TextBox
                                 using (MySqlDataReader reader = command.ExecuteReader())
                                 {
-                                    dataTable.Load(reader); // Crear un DataTable para almacenar los datos de la consulta
-                                    dataGridView_Muestra.DataSource = dataTable; // Enlazar los datos al DataGridView
-                                }
-
-                                // Verificar que el DataTable contenga los datos esperados
-                                if (dataTable.Rows.Count > 0)
-                                {
-                                    // Enlazar los datos al DataGridView
-                                    dataGridView_Muestra.DataSource = dataTable;
-                                }
-                                else
-                                {
-                                    // No se encontraron datos, mostrar un mensaje de error
-                                    MessageBox.Show("Error al mostrar los datos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                }
-                            }
-
-                            // Obtener los estados del SQL y mostrarlos en el TextBox
-                            using (MySqlDataReader reader = command.ExecuteReader())
-                            {
-                                while (reader.Read())
-                                {
-                                    for (int i = 0; i < reader.FieldCount; i++)
+                                    while (reader.Read())
                                     {
-                                        string estado = reader[i].ToString();
-                                        textBox_Consola.AppendText(estado + Environment.NewLine);
+                                        for (int i = 0; i < reader.FieldCount; i++)
+                                        {
+                                            string estado = reader[i].ToString();
+                                            textBox_Consola.AppendText(estado + Environment.NewLine);
+                                        }
                                     }
                                 }
                             }
                         }
                     }
+
                     if (mensajes.Count > 0)
                     {
                         string mensajeCompleto = string.Join("\n", mensajes);
                         MessageBox.Show(mensajeCompleto, "Mensajes de Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
+
                     // Mostrar MessageBox "EjecucionCompleta"
                     MessageBox.Show("Ejecución Completa", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -397,9 +410,16 @@ namespace ProyectoSGBD_MySQL.Forms
                 }
                 finally
                 {
+                    ActualizarEsquma();
                     conexionBD.Close(); // Cierra la conexión a MySQL
                 }
             }
+        }
+
+        private void ActualizarEsquma()
+        {
+            treeView_Schemas.Nodes.Clear(); // Limpiar el árbol antes de actualizar el esquema
+            ObtenerEsquemas(); // Llamar al método para obtener y mostrar el esquema
         }
 
         private void comboBox_Asistente_SelectedIndexChanged(object sender, EventArgs e)
@@ -453,9 +473,10 @@ namespace ProyectoSGBD_MySQL.Forms
         {
             Forms.Form_Dinamico_BD_COL_TAB form_D = new Forms.Form_Dinamico_BD_COL_TAB(isDarkModeEnabled);
             cAux cAux = new cAux();
-            this.Hide();
+            //this.Hide();
             form_D.ShowDialog();
-            this.Show();
+            ActualizarEsquma();
+            //this.Show();
         }
 
         private void label_Users_Click(object sender, EventArgs e)
@@ -498,9 +519,10 @@ namespace ProyectoSGBD_MySQL.Forms
                                 //MessageBox.Show("El usuario tiene los privilegios suficientes para crear otros usuarios.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 Forms.Form_Usuarios_Privilegios form_Usuarios_Privilegios = new Forms.Form_Usuarios_Privilegios(isDarkModeEnabled);
                                 cAux cAux = new cAux();
-                                this.Hide();
+                                //this.Hide();
                                 form_Usuarios_Privilegios.ShowDialog();
-                                this.Show();
+                                ActualizarEsquma();
+                                //this.Show();
                             }
                             else
                             {

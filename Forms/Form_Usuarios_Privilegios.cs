@@ -19,7 +19,6 @@ namespace ProyectoSGBD_MySQL.Forms
         public Form_Usuarios_Privilegios(bool isDarkModeEnabled)
         {
             InitializeComponent();
-            //this.MaximizeBox = false;
             bloquearLogin();//Bloquear el registro login
             label_nombreUser.Text = cAux.NombreConexion;
             //comboBox_authenticationType.SelectedIndex = 0;
@@ -27,6 +26,9 @@ namespace ProyectoSGBD_MySQL.Forms
             this.isDarkModeEnabled = isDarkModeEnabled;
             SetTheme();
             dataGridView_userView.CellFormatting += dataGridView1_CellFormatting;
+
+            this.MaximizeBox = false; // Bloquea la maximización del formulario
+            this.FormBorderStyle = FormBorderStyle.FixedSingle; // Bloquea el cambio de tamaño del formulario
         }
         private void dataGridView_userView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -52,7 +54,7 @@ namespace ProyectoSGBD_MySQL.Forms
         private void CargaraDatosView()
         {
             string cadenaConexion = "Database=mysql; Data Source=localhost; Port=3306; User Id=root; Password=2001;";
-            string sqlQuery = "SELECT User, Host FROM mysql.user;";
+            string sqlQuery = "SELECT User, Host FROM mysql.user WHERE User <> 'root' AND User NOT LIKE 'mysql%';";
             //dataGridView_userView.Rows.Clear();
 
             try

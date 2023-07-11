@@ -27,6 +27,7 @@ namespace ProyectoSGBD_MySQL.Forms
             // Muestra el formulario de inicio de sesión.
             // Agrega un controlador de eventos para el evento FormClosed, que se ejecuta cuando se cierra el formulario de inicio de sesión.
             // Oculta el formulario actual.
+
             Form_Login login = new Form_Login(isDarkModeEnabled);
             cAux cAux = new cAux();
             login.Show();
@@ -93,14 +94,19 @@ namespace ProyectoSGBD_MySQL.Forms
 
         private void button_Dark_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void pictureBox_Darkmode_Click(object sender, EventArgs e)
+        {
             if (isDarkModeEnabled)
             {
                 // Cambiar a modo claro
                 BackColor = originalBackgroundColor;
                 ForeColor = originalTextColor;
                 // Restablecer los colores claros para otros controles según sea necesario
-                button_Dark.ForeColor = originalTextColor;
-                button_Dark.BackColor = originalBackgroundColor;
+                //pictureBox_Darkmode.ForeColor = originalTextColor;
+                //pictureBox_Darkmode.BackColor = originalBackgroundColor;
                 isDarkModeEnabled = false;
 
             }
@@ -111,8 +117,6 @@ namespace ProyectoSGBD_MySQL.Forms
                 originalTextColor = ForeColor;
                 BackColor = darkBackgroundColor;
                 ForeColor = darkTextColor;
-                button_Dark.ForeColor = darkTextColor;
-                button_Dark.BackColor = darkBackgroundColor;
                 // Establecer los colores oscuros para otros controles según sea necesario
                 isDarkModeEnabled = true;
             }
