@@ -127,8 +127,11 @@
   <data name="user_person_people_6100" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\user_person_people_6100.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="482490" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\482490.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="43452" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\43452.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="31491" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Recursos\Imagenes\31491.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="6367690" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\6367690.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -136,13 +139,13 @@
   <data name="981402" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Recursos\Imagenes\981402.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="43452" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\43452.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="482490" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\482490.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="1239779" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Recursos\Imagenes\1239779.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="31491" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Recursos\Imagenes\31491.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Fragmentacion" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Recursos\Imagenes\Fragmentacion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

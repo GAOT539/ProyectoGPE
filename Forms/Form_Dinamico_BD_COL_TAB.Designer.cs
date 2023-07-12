@@ -420,7 +420,7 @@
             // comboBox_Tabla_Columna
             // 
             this.comboBox_Tabla_Columna.FormattingEnabled = true;
-            this.comboBox_Tabla_Columna.Location = new System.Drawing.Point(211, 120);
+            this.comboBox_Tabla_Columna.Location = new System.Drawing.Point(208, 123);
             this.comboBox_Tabla_Columna.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.comboBox_Tabla_Columna.Name = "comboBox_Tabla_Columna";
             this.comboBox_Tabla_Columna.Size = new System.Drawing.Size(332, 28);

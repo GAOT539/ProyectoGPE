@@ -143,6 +143,16 @@ namespace ProyectoSGBD_MySQL.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Fragmentacion {
+            get {
+                object obj = ResourceManager.GetObject("Fragmentacion", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap user_person_people_6100 {
             get {
                 object obj = ResourceManager.GetObject("user_person_people_6100", resourceCulture);

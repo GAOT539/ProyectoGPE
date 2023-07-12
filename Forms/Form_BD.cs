@@ -587,6 +587,16 @@ namespace ProyectoSGBD_MySQL.Forms
             }
         }
 
+        private void pictureBox6_Click(object sender, EventArgs e)
+        {
+            Form_Fragmentacion form_D = new Form_Fragmentacion();
+            cAux cAux = new cAux();
+            //this.Hide();
+            form_D.ShowDialog();
+            ActualizarEsquma();
+            //this.Show();
+        }
+
         //EN caso de falla descomentar esto y eliminar el fastColoredTextBox_Query y modificar lineas()
         //private void fastColoredTextBox_Query_TextChanged(object sender, TextChangedEventArgs e)
         //{

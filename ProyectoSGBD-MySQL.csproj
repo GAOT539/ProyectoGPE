@@ -283,5 +283,8 @@
   <ItemGroup>
     <None Include="Recursos\Imagenes\31491.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Recursos\Imagenes\Fragmentacion.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
