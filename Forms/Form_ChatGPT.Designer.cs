@@ -55,7 +55,7 @@
             this.button_Enviar.Name = "button_Enviar";
             this.button_Enviar.Size = new System.Drawing.Size(168, 33);
             this.button_Enviar.TabIndex = 2;
-            this.button_Enviar.Text = "button_Enviar";
+            this.button_Enviar.Text = "Preguntar";
             this.button_Enviar.UseVisualStyleBackColor = true;
             this.button_Enviar.Click += new System.EventHandler(this.button_Enviar_Click);
             // 
@@ -63,7 +63,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(788, 450);
+            this.ClientSize = new System.Drawing.Size(788, 271);
             this.Controls.Add(this.button_Enviar);
             this.Controls.Add(this.textBox_Pregunta);
             this.Controls.Add(this.listBox_Respuesta);
