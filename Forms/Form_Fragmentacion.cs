@@ -260,10 +260,10 @@ namespace ProyectoSGBD_MySQL
                     connection.Close();
                 }
 
-                string[] columnasTablaPrincipal = ObtenerNombresColumnas(tableName);
+                string[] columnasTablaPrincipal = ObtenerNombresColumnasFH(tableName);
 
                 // Crear el trigger
-                CrearTrigger(tableName, newTableName1, newTableName2, columnasTablaPrincipal, columnName, separationAttr1, separationAttr2);
+                CrearTriggerFH(tableName, newTableName1, newTableName2, columnasTablaPrincipal, columnName, separationAttr1, separationAttr2);
 
                 MessageBox.Show("Tablas creadas exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -800,7 +800,7 @@ namespace ProyectoSGBD_MySQL
             textBox_NombreTablaFMM.Text = "";
         }
 
-        private string[] ObtenerNombresColumnas(string tablaPrincipal)
+        private string[] ObtenerNombresColumnasFH(string tablaPrincipal)
         {
             try
             {
@@ -842,7 +842,7 @@ namespace ProyectoSGBD_MySQL
             }
         }
 
-        private void CrearTrigger(string tablaPrincipal, string nombreTabla1, string nombreTabla2, string[] columnas, string columnName, string separationAttr1, string separationAttr2)
+        private void CrearTriggerFH(string tablaPrincipal, string nombreTabla1, string nombreTabla2, string[] columnas, string columnName, string separationAttr1, string separationAttr2)
         {
             try
             {
