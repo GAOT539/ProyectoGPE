@@ -341,7 +341,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(33, 29);
+            this.label2.Location = new System.Drawing.Point(43, 29);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(119, 20);
@@ -558,7 +558,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(12, 71);
+            this.label7.Location = new System.Drawing.Point(3, 71);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(150, 20);
@@ -568,7 +568,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(43, 29);
+            this.label8.Location = new System.Drawing.Point(34, 29);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(119, 20);
@@ -717,6 +717,7 @@
             this.button_Añadir_TablaFM.TabIndex = 10;
             this.button_Añadir_TablaFM.Text = "Generar Tabla";
             this.button_Añadir_TablaFM.UseVisualStyleBackColor = true;
+            this.button_Añadir_TablaFM.Click += new System.EventHandler(this.button_Añadir_TablaFM_Click);
             // 
             // groupBox_FM
             // 

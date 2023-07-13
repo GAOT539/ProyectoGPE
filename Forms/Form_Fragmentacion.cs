@@ -673,5 +673,122 @@ namespace ProyectoSGBD_MySQL
             textBox_NombreTabla1FV.Text = "";
             textBox_NombreTabla2FV.Text = "";
         }
+
+        private void button_Añadir_TablaFM_Click(object sender, EventArgs e)
+        {
+            // Verificar que todos los campos estén llenos
+            if (string.IsNullOrEmpty(comboBox_DataBaseFM.Text) ||
+                string.IsNullOrEmpty(comboBox_TablaFM.Text) ||
+                string.IsNullOrEmpty(comboBox_TablaFMH.Text) ||
+                string.IsNullOrEmpty(comboBox_TablaFMV.Text) ||
+                string.IsNullOrEmpty(textBox_NombreTablaFMM.Text))
+            {
+                MessageBox.Show("Por favor, completa todos los campos.", "Campos incompletos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            CrearFragmentacionM();
+            MostrarTablasEnDataGridViewFM();
+            LimpiarFM();
+        }
+
+        private void CrearFragmentacionM()
+        {
+            string cadenaConexion = "Database=" + comboBox_DataBaseFM.Text + "; Data Source=localhost; Port=3306; User Id=root; Password=2001;";
+            string nombreBaseDatos = comboBox_DataBaseFM.Text;
+            string nombreTabla1 = comboBox_TablaFMV.Text;
+            string nombreTabla2 = comboBox_TablaFMH.Text;
+            string nombreTablaCrear = textBox_NombreTablaFMM.Text;
+
+            using (MySqlConnection conexion = new MySqlConnection(cadenaConexion))
+            {
+                try
+                {
+                    conexion.Open();
+
+                    // Obtener los datos de la tabla2
+                    string consultaTabla2 = $"SELECT * FROM {nombreBaseDatos}.{nombreTabla2}";
+                    MySqlCommand comandoTabla2 = new MySqlCommand(consultaTabla2, conexion);
+                    MySqlDataAdapter adaptadorTabla2 = new MySqlDataAdapter(comandoTabla2);
+                    DataTable datosTabla2 = new DataTable();
+                    adaptadorTabla2.Fill(datosTabla2);
+
+                    // Crear la tabla3
+                    string consultaCrearTabla = $"CREATE TABLE {nombreBaseDatos}.{nombreTablaCrear} LIKE {nombreBaseDatos}.{nombreTabla1}";
+                    MySqlCommand comandoCrearTabla = new MySqlCommand(consultaCrearTabla, conexion);
+                    comandoCrearTabla.ExecuteNonQuery();
+
+                    // Insertar los datos de la tabla2 en la tabla3
+                    string sqlQueryColumnas1 = $"SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = '{nombreBaseDatos}' AND TABLE_NAME = '{nombreTabla1}' ORDER BY ORDINAL_POSITION;";
+                    MySqlCommand comandoColumnas1 = new MySqlCommand(sqlQueryColumnas1, conexion);
+                    MySqlDataReader readerColumnas1 = comandoColumnas1.ExecuteReader();
+                    List<string> columnas = new List<string>();
+                    while (readerColumnas1.Read())
+                    {
+                        string columna = readerColumnas1.GetString(0);
+                        columnas.Add(columna);
+                    }
+                    readerColumnas1.Close();
+                    string datoColumna = string.Join(", ", columnas.ToArray());
+                    datoColumna = datoColumna.TrimStart(',', ' ').TrimEnd(',', ' ');
+                    MessageBox.Show(datoColumna, "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    string consultaInsertarDatos = $"INSERT INTO {nombreBaseDatos}.{nombreTablaCrear} SELECT {datoColumna} FROM {nombreBaseDatos}.{nombreTabla2}";
+                    MySqlCommand comandoInsertarDatos = new MySqlCommand(consultaInsertarDatos, conexion);
+                    comandoInsertarDatos.ExecuteNonQuery();
+
+
+                    MessageBox.Show("Tabla creada exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Ocurrió un error al crear la tabla: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void MostrarTablasEnDataGridViewFM()
+        {
+            try
+            {
+                // Obtener los valores de los campos de texto
+                string databaseName = comboBox_DataBaseFM.Text;
+                string newTableName1 = textBox_NombreTablaFMM.Text;
+
+                // Cadena de conexión a MySQL
+                string connectionString = cAux.CadenaConexion;
+
+                // Consulta para obtener los datos de la tabla 1
+                string selectQuery1 = $"SELECT * FROM {databaseName}.{newTableName1}";
+
+                // Crear un DataTable para almacenar los datos de la tabla 1
+                DataTable table1 = new DataTable();
+
+                // Obtener los datos de la tabla 1
+                using (MySqlConnection connection = new MySqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    using (MySqlDataAdapter adapter1 = new MySqlDataAdapter(selectQuery1, connection))
+                    {
+                        adapter1.Fill(table1);
+                    }
+                    connection.Close();
+                }
+
+                // Mostrar los datos en los DataGridView
+                dataGridView_CamposFMM.DataSource = table1;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ocurrió un error al mostrar los datos en los DataGridView: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void LimpiarFM()
+        {
+            comboBox_TablaFM.Items.Clear();
+            comboBox_TablaFMH.Items.Clear();
+            comboBox_TablaFMV.Items.Clear();
+            textBox_NombreTablaFMM.Text = "";
+        }
     }
 }
