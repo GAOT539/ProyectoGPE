@@ -138,6 +138,18 @@ namespace ProyectoSGBD_MySQL
         
         private void button_Añadir_Tabla_Click(object sender, EventArgs e)
         {
+            // Verificar que todos los campos estén llenos
+            if (string.IsNullOrEmpty(comboBox_DataBaseFH.Text) ||
+                string.IsNullOrEmpty(comboBox_TablaFH.Text) ||
+                string.IsNullOrEmpty(comboBox_ColumnaFH.Text) ||
+                string.IsNullOrEmpty(comboBox_Separacion1FH.Text) ||
+                string.IsNullOrEmpty(comboBox_Separacion2FH.Text) ||
+                string.IsNullOrEmpty(textBox_NombreTabla1FH.Text) ||
+                string.IsNullOrEmpty(textBox_NombreTabla2FH.Text))
+            {
+                MessageBox.Show("Por favor, completa todos los campos.", "Campos incompletos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             CrearFragmentacionH();
             MostrarTablasEnDataGridViewFH();
             LimpiarFH();
