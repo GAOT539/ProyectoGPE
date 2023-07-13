@@ -418,41 +418,6 @@ namespace ProyectoSGBD_MySQL
         private void comboBox_Tabla_ColumnaFV_SelectedIndexChanged(object sender, EventArgs e)
         {
             cargarDatosDataGridViewFV();
-            cargarDatosColumnasFV();
-        }
-
-        private void cargarDatosColumnasFV()
-        {
-            string cadenaConexion = "Database=" + comboBox_DataBaseFV.Text + "; Data Source=localhost; Port=3306; User Id=root; Password=2001;";
-
-            try
-            {
-                using (MySqlConnection connection = new MySqlConnection(cadenaConexion))
-                {
-                    connection.Open();
-
-                    // Obtener las bases de datos existentes
-                    string sqlQueryTabla = "SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = '" + comboBox_DataBaseFV.Text + "' AND TABLE_NAME = '" + comboBox_TablaFV.Text + "';\r\n";
-                    //Limpia antes de añadir datos
-                    comboBox_ColumnaFH.Items.Clear();
-
-                    using (MySqlCommand commandBasesDatos = new MySqlCommand(sqlQueryTabla, connection))
-                    {
-                        using (MySqlDataReader readerBasesDatos = commandBasesDatos.ExecuteReader())
-                        {
-                            while (readerBasesDatos.Read())
-                            {
-                                string nombreTablas = readerBasesDatos.GetString(0);
-                                comboBox_ColumnaFV.Items.Add(nombreTablas);
-                            }
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
         }
 
         private void cargarDatosDataGridViewFV()
@@ -521,47 +486,6 @@ namespace ProyectoSGBD_MySQL
             }
         }
 
-        private void comboBox_ColumnaFV_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            CargarDatosAtributosFV();
-        }
-
-        private void CargarDatosAtributosFV()
-        {
-            string cadenaConexion = "Database=" + comboBox_DataBaseFV.Text + "; Data Source=localhost; Port=3306; User Id=root; Password=2001;";
-
-            try
-            {
-                using (MySqlConnection connection = new MySqlConnection(cadenaConexion))
-                {
-                    connection.Open();
-
-                    // Obtener las bases de datos existentes
-                    string sqlQueryTabla = $"SELECT DISTINCT {comboBox_ColumnaFV.Text} FROM {comboBox_DataBaseFV.Text}.{comboBox_TablaFV.Text};";
-                    //Limpia antes de añadir datos
-                    comboBox_Separacion1FV.Items.Clear();
-                    comboBox_Separacion2FV.Items.Clear();
-
-                    using (MySqlCommand commandBasesDatos = new MySqlCommand(sqlQueryTabla, connection))
-                    {
-                        using (MySqlDataReader readerBasesDatos = commandBasesDatos.ExecuteReader())
-                        {
-                            while (readerBasesDatos.Read())
-                            {
-                                string nombreTablas = readerBasesDatos.GetString(0);
-                                comboBox_Separacion1FV.Items.Add(nombreTablas);
-                                comboBox_Separacion2FV.Items.Add(nombreTablas);
-                            }
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
         private void comboBox_TablaFMH_SelectedIndexChanged(object sender, EventArgs e)
         {
             cargarDatosDataGridViewFMH();
@@ -576,8 +500,8 @@ namespace ProyectoSGBD_MySQL
                 {
                     connection.Open();
                     // Cargar los datos de la tabla en el dataGridView_Muestra
-                    string sqlQuery = "DESCRIBE " + comboBox_TablaFMH.Text;
-                    using (MySqlDataAdapter adapter = new MySqlDataAdapter(sqlQuery, connection))
+                    string selectQuery1 = $"SELECT * FROM {comboBox_DataBaseFM.Text}.{comboBox_TablaFMH.Text}";
+                    using (MySqlDataAdapter adapter = new MySqlDataAdapter(selectQuery1, connection))
                     {
                         DataTable dataTable = new DataTable();
                         adapter.Fill(dataTable);
@@ -606,8 +530,8 @@ namespace ProyectoSGBD_MySQL
                 {
                     connection.Open();
                     // Cargar los datos de la tabla en el dataGridView_Muestra
-                    string sqlQuery = "DESCRIBE " + comboBox_TablaFMV.Text;
-                    using (MySqlDataAdapter adapter = new MySqlDataAdapter(sqlQuery, connection))
+                    string selectQuery1 = $"SELECT * FROM {comboBox_DataBaseFM.Text}.{comboBox_TablaFMV.Text}";
+                    using (MySqlDataAdapter adapter = new MySqlDataAdapter(selectQuery1, connection))
                     {
                         DataTable dataTable = new DataTable();
                         adapter.Fill(dataTable);
@@ -620,6 +544,134 @@ namespace ProyectoSGBD_MySQL
             {
                 MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void button_Añadir_TablaFV_Click(object sender, EventArgs e)
+        {
+            // Verificar que todos los campos estén llenos
+            if (string.IsNullOrEmpty(comboBox_DataBaseFV.Text) ||
+                string.IsNullOrEmpty(comboBox_TablaFV.Text) ||
+                string.IsNullOrEmpty(textBox_Separacion1FV.Text) ||
+                string.IsNullOrEmpty(textBox_Separacion1FV.Text) ||
+                string.IsNullOrEmpty(textBox_NombreTabla1FV.Text) ||
+                string.IsNullOrEmpty(textBox_NombreTabla2FV.Text))
+            {
+                MessageBox.Show("Por favor, completa todos los campos.", "Campos incompletos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            CrearFragmentacionV();
+            MostrarTablasEnDataGridViewFV();
+            LimpiarFV();
+        }
+
+        private void CrearFragmentacionV()
+        {
+            try
+            {
+                // Obtener los valores de los campos de texto
+                string databaseName = comboBox_DataBaseFV.Text;
+                string tableName = comboBox_TablaFV.Text;
+                string separationAttr1 = textBox_Separacion1FV.Text;
+                string separationAttr2 = textBox_Separacion2FV.Text;
+                string newTableName1 = textBox_NombreTabla1FV.Text;
+                string newTableName2 = textBox_NombreTabla2FV.Text;
+
+                // Cadena de conexión a MySQL
+                // string connectionString = cAux.CadenaConexion;
+                string cadenaConexion = "Database=" + comboBox_DataBaseFV.Text + "; Data Source=localhost; Port=3306; User Id=root; Password=2001;";
+
+                // Consulta para crear la tabla 1
+                string createTableQuery1 = $"CREATE TABLE {databaseName}.{newTableName1} SELECT {separationAttr1} FROM {databaseName}.{tableName}";
+                // Consulta para crear la tabla 2 
+                string createTableQuery2 = $"CREATE TABLE {databaseName}.{newTableName2} SELECT {separationAttr2} FROM {databaseName}.{tableName}";
+
+                // Ejecutar las consultas
+                using (MySqlConnection connection = new MySqlConnection(cadenaConexion))
+                {
+                    connection.Open();
+
+                    // Crear tabla 1
+                    using (MySqlCommand command1 = new MySqlCommand(createTableQuery1, connection))
+                    {
+                        command1.ExecuteNonQuery();
+                    }
+
+                    // Crear tabla 2
+                    using (MySqlCommand command2 = new MySqlCommand(createTableQuery2, connection))
+                    {
+                        command2.ExecuteNonQuery();
+                    }
+
+                    connection.Close();
+                }
+
+                MessageBox.Show("Tablas creadas exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ocurrió un error al crear las tablas: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void MostrarTablasEnDataGridViewFV()
+        {
+            try
+            {
+                // Obtener los valores de los campos de texto
+                string databaseName = comboBox_DataBaseFV.Text;
+                string newTableName1 = textBox_NombreTabla1FV.Text;
+                string newTableName2 = textBox_NombreTabla2FV.Text;
+
+                // Cadena de conexión a MySQL
+                string connectionString = cAux.CadenaConexion;
+
+                // Consulta para obtener los datos de la tabla 1
+                string selectQuery1 = $"SELECT * FROM {databaseName}.{newTableName1}";
+
+                // Consulta para obtener los datos de la tabla 2
+                string selectQuery2 = $"SELECT * FROM {databaseName}.{newTableName2}";
+
+                // Crear un DataTable para almacenar los datos de la tabla 1
+                DataTable table1 = new DataTable();
+
+                // Crear un DataTable para almacenar los datos de la tabla 2
+                DataTable table2 = new DataTable();
+
+                // Obtener los datos de la tabla 1
+                using (MySqlConnection connection = new MySqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    using (MySqlDataAdapter adapter1 = new MySqlDataAdapter(selectQuery1, connection))
+                    {
+                        adapter1.Fill(table1);
+                    }
+
+                    using (MySqlDataAdapter adapter2 = new MySqlDataAdapter(selectQuery2, connection))
+                    {
+                        adapter2.Fill(table2);
+                    }
+
+                    connection.Close();
+                }
+
+                // Mostrar los datos en los DataGridView
+                dataGridView_CamposFV1.DataSource = table1;
+                dataGridView_CamposFV2.DataSource = table2;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ocurrió un error al mostrar los datos en los DataGridView: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void LimpiarFV()
+        {
+            comboBox_TablaFV.Items.Clear();
+            textBox_Separacion1FV.Text = "";
+            textBox_Separacion2FV.Text = "";
+            textBox_NombreTabla1FV.Text = "";
+            textBox_NombreTabla2FV.Text = "";
         }
     }
 }
