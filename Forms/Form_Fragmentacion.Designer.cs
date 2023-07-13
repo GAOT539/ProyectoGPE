@@ -29,13 +29,14 @@
         private void InitializeComponent()
         {
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label18 = new System.Windows.Forms.Label();
             this.textBox_NombreTabla2FH = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.textBox_NombreTabla1FH = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox_ColumnaFH = new System.Windows.Forms.ComboBox();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridView_CamposFH2 = new System.Windows.Forms.DataGridView();
+            this.dataGridView_CamposFH1 = new System.Windows.Forms.DataGridView();
             this.dataGridView_CamposFH = new System.Windows.Forms.DataGridView();
             this.label4 = new System.Windows.Forms.Label();
             this.button_Añadir_Tabla = new System.Windows.Forms.Button();
@@ -48,6 +49,9 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label17 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
             this.comboBox_ColumnaFV = new System.Windows.Forms.ComboBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -64,6 +68,8 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label20 = new System.Windows.Forms.Label();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.comboBox_ColumnaFM = new System.Windows.Forms.ComboBox();
@@ -79,18 +85,12 @@
             this.comboBox_DataBaseFM = new System.Windows.Forms.ComboBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.textBox_Separacion1FH = new System.Windows.Forms.TextBox();
-            this.textBox_Separacion2FH = new System.Windows.Forms.TextBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label20 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.comboBox_Separacion1FH = new System.Windows.Forms.ComboBox();
+            this.comboBox_Separacion2FH = new System.Windows.Forms.ComboBox();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_CamposFH2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_CamposFH1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_CamposFH)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -110,16 +110,16 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.textBox_Separacion2FH);
-            this.groupBox2.Controls.Add(this.textBox_Separacion1FH);
+            this.groupBox2.Controls.Add(this.comboBox_Separacion2FH);
+            this.groupBox2.Controls.Add(this.comboBox_Separacion1FH);
             this.groupBox2.Controls.Add(this.label18);
             this.groupBox2.Controls.Add(this.textBox_NombreTabla2FH);
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.textBox_NombreTabla1FH);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.comboBox_ColumnaFH);
-            this.groupBox2.Controls.Add(this.dataGridView2);
-            this.groupBox2.Controls.Add(this.dataGridView1);
+            this.groupBox2.Controls.Add(this.dataGridView_CamposFH2);
+            this.groupBox2.Controls.Add(this.dataGridView_CamposFH1);
             this.groupBox2.Controls.Add(this.dataGridView_CamposFH);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.button_Añadir_Tabla);
@@ -127,10 +127,20 @@
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBox2.Size = new System.Drawing.Size(674, 768);
+            this.groupBox2.Size = new System.Drawing.Size(674, 969);
             this.groupBox2.TabIndex = 49;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Tabla Seleccionada";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(13, 370);
+            this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(159, 20);
+            this.label18.TabIndex = 59;
+            this.label18.Text = "Datos de Separación";
             // 
             // textBox_NombreTabla2FH
             // 
@@ -177,28 +187,29 @@
             this.comboBox_ColumnaFH.Name = "comboBox_ColumnaFH";
             this.comboBox_ColumnaFH.Size = new System.Drawing.Size(260, 28);
             this.comboBox_ColumnaFH.TabIndex = 14;
+            this.comboBox_ColumnaFH.SelectedIndexChanged += new System.EventHandler(this.comboBox_ColumnaFH_SelectedIndexChanged);
             // 
-            // dataGridView2
+            // dataGridView_CamposFH2
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(338, 495);
-            this.dataGridView2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.RowHeadersWidth = 62;
-            this.dataGridView2.Size = new System.Drawing.Size(310, 215);
-            this.dataGridView2.TabIndex = 33;
+            this.dataGridView_CamposFH2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_CamposFH2.Location = new System.Drawing.Point(8, 705);
+            this.dataGridView_CamposFH2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dataGridView_CamposFH2.Name = "dataGridView_CamposFH2";
+            this.dataGridView_CamposFH2.ReadOnly = true;
+            this.dataGridView_CamposFH2.RowHeadersWidth = 62;
+            this.dataGridView_CamposFH2.Size = new System.Drawing.Size(638, 200);
+            this.dataGridView_CamposFH2.TabIndex = 33;
             // 
-            // dataGridView1
+            // dataGridView_CamposFH1
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(10, 495);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.Size = new System.Drawing.Size(310, 215);
-            this.dataGridView1.TabIndex = 32;
+            this.dataGridView_CamposFH1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_CamposFH1.Location = new System.Drawing.Point(10, 495);
+            this.dataGridView_CamposFH1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dataGridView_CamposFH1.Name = "dataGridView_CamposFH1";
+            this.dataGridView_CamposFH1.ReadOnly = true;
+            this.dataGridView_CamposFH1.RowHeadersWidth = 62;
+            this.dataGridView_CamposFH1.Size = new System.Drawing.Size(638, 200);
+            this.dataGridView_CamposFH1.TabIndex = 32;
             // 
             // dataGridView_CamposFH
             // 
@@ -224,7 +235,7 @@
             // button_Añadir_Tabla
             // 
             this.button_Añadir_Tabla.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_Añadir_Tabla.Location = new System.Drawing.Point(172, 720);
+            this.button_Añadir_Tabla.Location = new System.Drawing.Point(172, 924);
             this.button_Añadir_Tabla.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button_Añadir_Tabla.Name = "button_Añadir_Tabla";
             this.button_Añadir_Tabla.Size = new System.Drawing.Size(316, 35);
@@ -342,6 +353,32 @@
             this.groupBox3.TabIndex = 53;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Tabla Seleccionada";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(338, 395);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(311, 26);
+            this.textBox1.TabIndex = 63;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(10, 395);
+            this.textBox4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(309, 26);
+            this.textBox4.TabIndex = 62;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(15, 370);
+            this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(159, 20);
+            this.label19.TabIndex = 60;
+            this.label19.Text = "Datos de Separación";
             // 
             // comboBox_ColumnaFV
             // 
@@ -523,6 +560,26 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Tabla Seleccionada";
             // 
+            // comboBox1
+            // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(321, 64);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(328, 28);
+            this.comboBox1.TabIndex = 61;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(14, 67);
+            this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(192, 20);
+            this.label20.TabIndex = 60;
+            this.label20.Text = "Seleccionar Tabla Vertical";
+            // 
             // textBox6
             // 
             this.textBox6.Location = new System.Drawing.Point(190, 358);
@@ -680,78 +737,6 @@
             this.label15.TabIndex = 11;
             this.label15.Text = "Base de Datos:";
             // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(13, 370);
-            this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(159, 20);
-            this.label18.TabIndex = 59;
-            this.label18.Text = "Datos de Separación";
-            // 
-            // textBox_Separacion1FH
-            // 
-            this.textBox_Separacion1FH.Location = new System.Drawing.Point(10, 395);
-            this.textBox_Separacion1FH.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox_Separacion1FH.Name = "textBox_Separacion1FH";
-            this.textBox_Separacion1FH.Size = new System.Drawing.Size(310, 26);
-            this.textBox_Separacion1FH.TabIndex = 60;
-            // 
-            // textBox_Separacion2FH
-            // 
-            this.textBox_Separacion2FH.Location = new System.Drawing.Point(338, 395);
-            this.textBox_Separacion2FH.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox_Separacion2FH.Name = "textBox_Separacion2FH";
-            this.textBox_Separacion2FH.Size = new System.Drawing.Size(310, 26);
-            this.textBox_Separacion2FH.TabIndex = 61;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(15, 370);
-            this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(159, 20);
-            this.label19.TabIndex = 60;
-            this.label19.Text = "Datos de Separación";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(338, 395);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(311, 26);
-            this.textBox1.TabIndex = 63;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(10, 395);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(309, 26);
-            this.textBox4.TabIndex = 62;
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(14, 67);
-            this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(192, 20);
-            this.label20.TabIndex = 60;
-            this.label20.Text = "Seleccionar Tabla Vertical";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(321, 64);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(328, 28);
-            this.comboBox1.TabIndex = 61;
-            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.groupBox5);
@@ -764,14 +749,34 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(2124, 994);
+            this.panel1.Size = new System.Drawing.Size(2124, 1195);
             this.panel1.TabIndex = 59;
+            // 
+            // comboBox_Separacion1FH
+            // 
+            this.comboBox_Separacion1FH.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_Separacion1FH.FormattingEnabled = true;
+            this.comboBox_Separacion1FH.Location = new System.Drawing.Point(15, 395);
+            this.comboBox_Separacion1FH.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.comboBox_Separacion1FH.Name = "comboBox_Separacion1FH";
+            this.comboBox_Separacion1FH.Size = new System.Drawing.Size(305, 28);
+            this.comboBox_Separacion1FH.TabIndex = 62;
+            // 
+            // comboBox_Separacion2FH
+            // 
+            this.comboBox_Separacion2FH.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_Separacion2FH.FormattingEnabled = true;
+            this.comboBox_Separacion2FH.Location = new System.Drawing.Point(338, 393);
+            this.comboBox_Separacion2FH.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.comboBox_Separacion2FH.Name = "comboBox_Separacion2FH";
+            this.comboBox_Separacion2FH.Size = new System.Drawing.Size(308, 28);
+            this.comboBox_Separacion2FH.TabIndex = 63;
             // 
             // Form_Fragmentacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(2124, 994);
+            this.ClientSize = new System.Drawing.Size(2124, 1195);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Form_Fragmentacion";
@@ -780,8 +785,8 @@
             this.Load += new System.EventHandler(this.Form_Fragmentacion_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_CamposFH2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_CamposFH1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_CamposFH)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -820,8 +825,8 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridView_CamposFH2;
+        private System.Windows.Forms.DataGridView dataGridView_CamposFH1;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.ComboBox comboBox_ColumnaFH;
         private System.Windows.Forms.TextBox textBox2;
@@ -860,14 +865,14 @@
         private System.Windows.Forms.ComboBox comboBox_TablaFH;
         private System.Windows.Forms.ComboBox comboBox_TablaFV;
         private System.Windows.Forms.ComboBox comboBox_TablaFM;
-        private System.Windows.Forms.TextBox textBox_Separacion1FH;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox textBox_Separacion2FH;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ComboBox comboBox_Separacion1FH;
+        private System.Windows.Forms.ComboBox comboBox_Separacion2FH;
     }
 }

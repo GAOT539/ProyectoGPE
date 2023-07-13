@@ -23,7 +23,7 @@ namespace ProyectoSGBD_MySQL
         {
             // Establecer el tamaño predefinido del formulario
             this.Width = 1425; 
-            this.Height = 685;
+            this.Height = 820;
             this.FormBorderStyle = FormBorderStyle.FixedSingle; // Bloquea el cambio de tamaño del formulario
             this.MaximizeBox = false; // Bloquea la maximización del formulario
             cargarDatos();
@@ -96,10 +96,12 @@ namespace ProyectoSGBD_MySQL
                 MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        
         private void comboBox_DataBase_TablaFH_SelectedIndexChanged(object sender, EventArgs e)
         {
             cargarDatosTabla_TablasFH();
         }
+        
         private void cargarDatosTabla_TablasFH()
         {
             string cadenaConexion = "Database=" + comboBox_DataBaseFH.Text + "; Data Source=localhost; Port=3306; User Id=root; Password=2001;";
@@ -133,9 +135,114 @@ namespace ProyectoSGBD_MySQL
                 MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        
         private void button_Añadir_Tabla_Click(object sender, EventArgs e)
         {
+            CrearFragmentacionH();
+            MostrarTablasEnDataGridViewFH();
+        }
 
+        public void MostrarTablasEnDataGridViewFH()
+        {
+            try
+            {
+                // Obtener los valores de los campos de texto
+                string databaseName = comboBox_DataBaseFH.Text;
+                string newTableName1 = textBox_NombreTabla1FH.Text;
+                string newTableName2 = textBox_NombreTabla2FH.Text;
+
+                // Cadena de conexión a MySQL
+                string connectionString = cAux.CadenaConexion;
+
+                // Consulta para obtener los datos de la tabla 1
+                string selectQuery1 = $"SELECT * FROM {databaseName}.{newTableName1}";
+
+                // Consulta para obtener los datos de la tabla 2
+                string selectQuery2 = $"SELECT * FROM {databaseName}.{newTableName2}";
+
+                // Crear un DataTable para almacenar los datos de la tabla 1
+                DataTable table1 = new DataTable();
+
+                // Crear un DataTable para almacenar los datos de la tabla 2
+                DataTable table2 = new DataTable();
+
+                // Obtener los datos de la tabla 1
+                using (MySqlConnection connection = new MySqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    using (MySqlDataAdapter adapter1 = new MySqlDataAdapter(selectQuery1, connection))
+                    {
+                        adapter1.Fill(table1);
+                    }
+
+                    using (MySqlDataAdapter adapter2 = new MySqlDataAdapter(selectQuery2, connection))
+                    {
+                        adapter2.Fill(table2);
+                    }
+
+                    connection.Close();
+                }
+
+                // Mostrar los datos en los DataGridView
+                dataGridView_CamposFH1.DataSource = table1;
+                dataGridView_CamposFH2.DataSource = table2;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ocurrió un error al mostrar los datos en los DataGridView: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void CrearFragmentacionH()
+        {
+            try
+            {
+                // Obtener los valores de los campos de texto
+                string databaseName = comboBox_DataBaseFH.Text;
+                string tableName = comboBox_TablaFH.Text;
+                string columnName = comboBox_ColumnaFH.Text;
+                string separationAttr1 = comboBox_Separacion1FH.Text;
+                string separationAttr2 = comboBox_Separacion2FH.Text;
+                string newTableName1 = textBox_NombreTabla1FH.Text;
+                string newTableName2 = textBox_NombreTabla2FH.Text;
+
+                // Cadena de conexión a MySQL
+                // string connectionString = cAux.CadenaConexion;
+                string cadenaConexion = "Database=" + comboBox_DataBaseFH.Text + "; Data Source=localhost; Port=3306; User Id=root; Password=2001;";
+
+                // Consulta para crear la tabla 1 (Personas_M)
+                string createTableQuery1 = $"CREATE TABLE {newTableName1} AS SELECT * FROM {databaseName}.{tableName} WHERE {columnName} = '{separationAttr1}'";
+
+                // Consulta para crear la tabla 2 (Personas_F)
+                string createTableQuery2 = $"CREATE TABLE {newTableName2} AS SELECT * FROM {databaseName}.{tableName} WHERE {columnName} = '{separationAttr2}'";
+
+                // Ejecutar las consultas
+                using (MySqlConnection connection = new MySqlConnection(cadenaConexion))
+                {
+                    connection.Open();
+
+                    // Crear tabla 1
+                    using (MySqlCommand command1 = new MySqlCommand(createTableQuery1, connection))
+                    {
+                        command1.ExecuteNonQuery();
+                    }
+
+                    // Crear tabla 2
+                    using (MySqlCommand command2 = new MySqlCommand(createTableQuery2, connection))
+                    {
+                        command2.ExecuteNonQuery();
+                    }
+
+                    connection.Close();
+                }
+
+                MessageBox.Show("Tablas creadas exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ocurrió un error al crear las tablas: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }    
         }
 
         private void comboBox_DataBase_TablaFV_SelectedIndexChanged(object sender, EventArgs e)
@@ -181,6 +288,7 @@ namespace ProyectoSGBD_MySQL
         {
             cargarDatosTabla_TablasFM();
         }
+        
         private void cargarDatosTabla_TablasFM()
         {
             string cadenaConexion = "Database=" + comboBox_DataBaseFM.Text + "; Data Source=localhost; Port=3306; User Id=root; Password=2001;";
@@ -337,6 +445,47 @@ namespace ProyectoSGBD_MySQL
                         dataGridView_CamposFV.DataSource = dataTable;
                     }
                     connection.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void comboBox_ColumnaFH_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CargarDatosAtributosFH();
+        }
+
+        private void CargarDatosAtributosFH()
+        {
+            string cadenaConexion = "Database=" + comboBox_DataBaseFH.Text + "; Data Source=localhost; Port=3306; User Id=root; Password=2001;";
+
+            try
+            {
+                using (MySqlConnection connection = new MySqlConnection(cadenaConexion))
+                {
+                    connection.Open();
+
+                    // Obtener las bases de datos existentes
+                    string sqlQueryTabla = $"SELECT DISTINCT {comboBox_ColumnaFH.Text} FROM {comboBox_DataBaseFH.Text}.{comboBox_TablaFH.Text};";
+                    //Limpia antes de añadir datos
+                    comboBox_Separacion1FH.Items.Clear();
+                    comboBox_Separacion2FH.Items.Clear();
+
+                    using (MySqlCommand commandBasesDatos = new MySqlCommand(sqlQueryTabla, connection))
+                    {
+                        using (MySqlDataReader readerBasesDatos = commandBasesDatos.ExecuteReader())
+                        {
+                            while (readerBasesDatos.Read())
+                            {
+                                string nombreTablas = readerBasesDatos.GetString(0);
+                                comboBox_Separacion1FH.Items.Add(nombreTablas);
+                                comboBox_Separacion2FH.Items.Add(nombreTablas);
+                            }
+                        }
+                    }
                 }
             }
             catch (Exception ex)
