@@ -326,6 +326,8 @@ namespace ProyectoSGBD_MySQL
                     string sqlQueryTabla = "SHOW TABLES FROM " + comboBox_DataBaseFM.Text + ";\r\n";
                     //Limpia antes de añadir datos
                     comboBox_TablaFM.Items.Clear();
+                    comboBox_TablaFMH.Items.Clear();
+                    comboBox_TablaFMV.Items.Clear();
 
                     using (MySqlCommand commandBasesDatos = new MySqlCommand(sqlQueryTabla, connection))
                     {
@@ -335,6 +337,8 @@ namespace ProyectoSGBD_MySQL
                             {
                                 string nombreTablas = readerBasesDatos.GetString(0);
                                 comboBox_TablaFM.Items.Add(nombreTablas);
+                                comboBox_TablaFMH.Items.Add(nombreTablas);
+                                comboBox_TablaFMV.Items.Add(nombreTablas);
                             }
                         }
                     }
@@ -550,6 +554,66 @@ namespace ProyectoSGBD_MySQL
                             }
                         }
                     }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void comboBox_TablaFMH_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cargarDatosDataGridViewFMH();
+        }
+
+        private void cargarDatosDataGridViewFMH()
+        {
+            string cadenaConexion = "Database=" + comboBox_DataBaseFM.Text + "; Data Source=localhost; Port=3306; User Id=root; Password=2001;";
+            try
+            {
+                using (MySqlConnection connection = new MySqlConnection(cadenaConexion))
+                {
+                    connection.Open();
+                    // Cargar los datos de la tabla en el dataGridView_Muestra
+                    string sqlQuery = "DESCRIBE " + comboBox_TablaFMH.Text;
+                    using (MySqlDataAdapter adapter = new MySqlDataAdapter(sqlQuery, connection))
+                    {
+                        DataTable dataTable = new DataTable();
+                        adapter.Fill(dataTable);
+                        dataGridView_CamposFMH.DataSource = dataTable;
+                    }
+                    connection.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void comboBox_TablaFMV_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cargarDatosDataGridViewFMV();
+        }
+
+        private void cargarDatosDataGridViewFMV()
+        {
+            string cadenaConexion = "Database=" + comboBox_DataBaseFM.Text + "; Data Source=localhost; Port=3306; User Id=root; Password=2001;";
+            try
+            {
+                using (MySqlConnection connection = new MySqlConnection(cadenaConexion))
+                {
+                    connection.Open();
+                    // Cargar los datos de la tabla en el dataGridView_Muestra
+                    string sqlQuery = "DESCRIBE " + comboBox_TablaFMV.Text;
+                    using (MySqlDataAdapter adapter = new MySqlDataAdapter(sqlQuery, connection))
+                    {
+                        DataTable dataTable = new DataTable();
+                        adapter.Fill(dataTable);
+                        dataGridView_CamposFMV.DataSource = dataTable;
+                    }
+                    connection.Close();
                 }
             }
             catch (Exception ex)

@@ -71,16 +71,16 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBox_TablaFMV = new System.Windows.Forms.ComboBox();
             this.label20 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.textBox_NombreTablaFMM = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.comboBox_ColumnaFM = new System.Windows.Forms.ComboBox();
-            this.dataGridView8 = new System.Windows.Forms.DataGridView();
-            this.dataGridView6 = new System.Windows.Forms.DataGridView();
-            this.dataGridView_CamposFM = new System.Windows.Forms.DataGridView();
+            this.comboBox_TablaFMH = new System.Windows.Forms.ComboBox();
+            this.dataGridView_CamposFMM = new System.Windows.Forms.DataGridView();
+            this.dataGridView_CamposFMV = new System.Windows.Forms.DataGridView();
+            this.dataGridView_CamposFMH = new System.Windows.Forms.DataGridView();
             this.label13 = new System.Windows.Forms.Label();
-            this.button6 = new System.Windows.Forms.Button();
+            this.button_Añadir_TablaFM = new System.Windows.Forms.Button();
             this.groupBox_FM = new System.Windows.Forms.GroupBox();
             this.comboBox_TablaFM = new System.Windows.Forms.ComboBox();
             this.comboBox_DataBaseFM = new System.Windows.Forms.ComboBox();
@@ -101,9 +101,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_CamposFV)).BeginInit();
             this.groupBox_FV.SuspendLayout();
             this.groupBox5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_CamposFM)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_CamposFMM)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_CamposFMV)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_CamposFMH)).BeginInit();
             this.groupBox_FM.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -273,11 +273,15 @@
             // 
             // button_Añadir_TablaFH
             // 
+            this.button_Añadir_TablaFH.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.button_Añadir_TablaFH.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_Añadir_TablaFH.Location = new System.Drawing.Point(172, 924);
+            this.button_Añadir_TablaFH.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_Añadir_TablaFH.Location = new System.Drawing.Point(8, 924);
             this.button_Añadir_TablaFH.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button_Añadir_TablaFH.Name = "button_Añadir_TablaFH";
-            this.button_Añadir_TablaFH.Size = new System.Drawing.Size(316, 35);
+            this.button_Añadir_TablaFH.Size = new System.Drawing.Size(658, 35);
             this.button_Añadir_TablaFH.TabIndex = 10;
             this.button_Añadir_TablaFH.Text = "Generar Tablas";
             this.button_Añadir_TablaFH.UseVisualStyleBackColor = true;
@@ -545,11 +549,15 @@
             // 
             // button_Añadir_TablaFV
             // 
+            this.button_Añadir_TablaFV.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.button_Añadir_TablaFV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_Añadir_TablaFV.Location = new System.Drawing.Point(174, 924);
+            this.button_Añadir_TablaFV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_Añadir_TablaFV.Location = new System.Drawing.Point(7, 924);
             this.button_Añadir_TablaFV.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button_Añadir_TablaFV.Name = "button_Añadir_TablaFV";
-            this.button_Añadir_TablaFV.Size = new System.Drawing.Size(316, 35);
+            this.button_Añadir_TablaFV.Size = new System.Drawing.Size(660, 35);
             this.button_Añadir_TablaFV.TabIndex = 10;
             this.button_Añadir_TablaFV.Text = "Generar Tablas";
             this.button_Añadir_TablaFV.UseVisualStyleBackColor = true;
@@ -622,16 +630,16 @@
             this.groupBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox5.Controls.Add(this.comboBox1);
+            this.groupBox5.Controls.Add(this.comboBox_TablaFMV);
             this.groupBox5.Controls.Add(this.label20);
-            this.groupBox5.Controls.Add(this.textBox6);
+            this.groupBox5.Controls.Add(this.textBox_NombreTablaFMM);
             this.groupBox5.Controls.Add(this.label16);
-            this.groupBox5.Controls.Add(this.comboBox_ColumnaFM);
-            this.groupBox5.Controls.Add(this.dataGridView8);
-            this.groupBox5.Controls.Add(this.dataGridView6);
-            this.groupBox5.Controls.Add(this.dataGridView_CamposFM);
+            this.groupBox5.Controls.Add(this.comboBox_TablaFMH);
+            this.groupBox5.Controls.Add(this.dataGridView_CamposFMM);
+            this.groupBox5.Controls.Add(this.dataGridView_CamposFMV);
+            this.groupBox5.Controls.Add(this.dataGridView_CamposFMH);
             this.groupBox5.Controls.Add(this.label13);
-            this.groupBox5.Controls.Add(this.button6);
+            this.groupBox5.Controls.Add(this.button_Añadir_TablaFM);
             this.groupBox5.Location = new System.Drawing.Point(1425, 212);
             this.groupBox5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox5.Name = "groupBox5";
@@ -641,17 +649,18 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Tabla Seleccionada";
             // 
-            // comboBox1
+            // comboBox_TablaFMV
             // 
-            this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.comboBox_TablaFMV.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(208, 297);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(458, 28);
-            this.comboBox1.TabIndex = 61;
+            this.comboBox_TablaFMV.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_TablaFMV.FormattingEnabled = true;
+            this.comboBox_TablaFMV.Location = new System.Drawing.Point(208, 297);
+            this.comboBox_TablaFMV.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.comboBox_TablaFMV.Name = "comboBox_TablaFMV";
+            this.comboBox_TablaFMV.Size = new System.Drawing.Size(458, 28);
+            this.comboBox_TablaFMV.TabIndex = 61;
+            this.comboBox_TablaFMV.SelectedIndexChanged += new System.EventHandler(this.comboBox_TablaFMV_SelectedIndexChanged);
             // 
             // label20
             // 
@@ -663,15 +672,15 @@
             this.label20.TabIndex = 60;
             this.label20.Text = "Seleccionar Tabla Vertical";
             // 
-            // textBox6
+            // textBox_NombreTablaFMM
             // 
-            this.textBox6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.textBox_NombreTablaFMM.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox6.Location = new System.Drawing.Point(174, 564);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(492, 26);
-            this.textBox6.TabIndex = 57;
+            this.textBox_NombreTablaFMM.Location = new System.Drawing.Point(174, 564);
+            this.textBox_NombreTablaFMM.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBox_NombreTablaFMM.Name = "textBox_NombreTablaFMM";
+            this.textBox_NombreTablaFMM.Size = new System.Drawing.Size(492, 26);
+            this.textBox_NombreTablaFMM.TabIndex = 57;
             // 
             // label16
             // 
@@ -683,55 +692,56 @@
             this.label16.TabIndex = 58;
             this.label16.Text = "Nombre de la Tabla:";
             // 
-            // comboBox_ColumnaFM
+            // comboBox_TablaFMH
             // 
-            this.comboBox_ColumnaFM.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.comboBox_TablaFMH.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox_ColumnaFM.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox_ColumnaFM.FormattingEnabled = true;
-            this.comboBox_ColumnaFM.Location = new System.Drawing.Point(227, 26);
-            this.comboBox_ColumnaFM.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.comboBox_ColumnaFM.Name = "comboBox_ColumnaFM";
-            this.comboBox_ColumnaFM.Size = new System.Drawing.Size(439, 28);
-            this.comboBox_ColumnaFM.TabIndex = 59;
+            this.comboBox_TablaFMH.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_TablaFMH.FormattingEnabled = true;
+            this.comboBox_TablaFMH.Location = new System.Drawing.Point(227, 26);
+            this.comboBox_TablaFMH.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.comboBox_TablaFMH.Name = "comboBox_TablaFMH";
+            this.comboBox_TablaFMH.Size = new System.Drawing.Size(439, 28);
+            this.comboBox_TablaFMH.TabIndex = 59;
+            this.comboBox_TablaFMH.SelectedIndexChanged += new System.EventHandler(this.comboBox_TablaFMH_SelectedIndexChanged);
             // 
-            // dataGridView8
+            // dataGridView_CamposFMM
             // 
-            this.dataGridView8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.dataGridView_CamposFMM.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView8.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView8.Location = new System.Drawing.Point(10, 600);
-            this.dataGridView8.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.dataGridView8.Name = "dataGridView8";
-            this.dataGridView8.ReadOnly = true;
-            this.dataGridView8.RowHeadersWidth = 62;
-            this.dataGridView8.Size = new System.Drawing.Size(656, 305);
-            this.dataGridView8.TabIndex = 57;
+            this.dataGridView_CamposFMM.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_CamposFMM.Location = new System.Drawing.Point(10, 600);
+            this.dataGridView_CamposFMM.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dataGridView_CamposFMM.Name = "dataGridView_CamposFMM";
+            this.dataGridView_CamposFMM.ReadOnly = true;
+            this.dataGridView_CamposFMM.RowHeadersWidth = 62;
+            this.dataGridView_CamposFMM.Size = new System.Drawing.Size(656, 305);
+            this.dataGridView_CamposFMM.TabIndex = 57;
             // 
-            // dataGridView6
+            // dataGridView_CamposFMV
             // 
-            this.dataGridView6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.dataGridView_CamposFMV.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView6.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView6.Location = new System.Drawing.Point(10, 335);
-            this.dataGridView6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.dataGridView6.Name = "dataGridView6";
-            this.dataGridView6.RowHeadersWidth = 62;
-            this.dataGridView6.Size = new System.Drawing.Size(656, 215);
-            this.dataGridView6.TabIndex = 33;
+            this.dataGridView_CamposFMV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_CamposFMV.Location = new System.Drawing.Point(10, 335);
+            this.dataGridView_CamposFMV.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dataGridView_CamposFMV.Name = "dataGridView_CamposFMV";
+            this.dataGridView_CamposFMV.RowHeadersWidth = 62;
+            this.dataGridView_CamposFMV.Size = new System.Drawing.Size(656, 215);
+            this.dataGridView_CamposFMV.TabIndex = 33;
             // 
-            // dataGridView_CamposFM
+            // dataGridView_CamposFMH
             // 
-            this.dataGridView_CamposFM.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.dataGridView_CamposFMH.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView_CamposFM.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_CamposFM.Location = new System.Drawing.Point(10, 64);
-            this.dataGridView_CamposFM.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.dataGridView_CamposFM.Name = "dataGridView_CamposFM";
-            this.dataGridView_CamposFM.ReadOnly = true;
-            this.dataGridView_CamposFM.RowHeadersWidth = 62;
-            this.dataGridView_CamposFM.Size = new System.Drawing.Size(656, 215);
-            this.dataGridView_CamposFM.TabIndex = 32;
+            this.dataGridView_CamposFMH.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_CamposFMH.Location = new System.Drawing.Point(10, 64);
+            this.dataGridView_CamposFMH.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dataGridView_CamposFMH.Name = "dataGridView_CamposFMH";
+            this.dataGridView_CamposFMH.ReadOnly = true;
+            this.dataGridView_CamposFMH.RowHeadersWidth = 62;
+            this.dataGridView_CamposFMH.Size = new System.Drawing.Size(656, 215);
+            this.dataGridView_CamposFMH.TabIndex = 32;
             // 
             // label13
             // 
@@ -743,16 +753,20 @@
             this.label13.TabIndex = 27;
             this.label13.Text = "Seleccionar Tabla Horizontal";
             // 
-            // button6
+            // button_Añadir_TablaFM
             // 
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Location = new System.Drawing.Point(190, 924);
-            this.button6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(327, 35);
-            this.button6.TabIndex = 10;
-            this.button6.Text = "Generar Tabla";
-            this.button6.UseVisualStyleBackColor = true;
+            this.button_Añadir_TablaFM.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.button_Añadir_TablaFM.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_Añadir_TablaFM.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_Añadir_TablaFM.Location = new System.Drawing.Point(12, 924);
+            this.button_Añadir_TablaFM.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button_Añadir_TablaFM.Name = "button_Añadir_TablaFM";
+            this.button_Añadir_TablaFM.Size = new System.Drawing.Size(654, 35);
+            this.button_Añadir_TablaFM.TabIndex = 10;
+            this.button_Añadir_TablaFM.Text = "Generar Tabla";
+            this.button_Añadir_TablaFM.UseVisualStyleBackColor = true;
             // 
             // groupBox_FM
             // 
@@ -871,9 +885,9 @@
             this.groupBox_FV.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_CamposFM)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_CamposFMM)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_CamposFMV)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_CamposFMH)).EndInit();
             this.groupBox_FM.ResumeLayout(false);
             this.groupBox_FM.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -916,25 +930,25 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.DataGridView dataGridView6;
-        private System.Windows.Forms.DataGridView dataGridView_CamposFM;
+        private System.Windows.Forms.DataGridView dataGridView_CamposFMV;
+        private System.Windows.Forms.DataGridView dataGridView_CamposFMH;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button_Añadir_TablaFM;
         private System.Windows.Forms.GroupBox groupBox_FM;
         private System.Windows.Forms.ComboBox comboBox_DataBaseFM;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.ComboBox comboBox_ColumnaFM;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.ComboBox comboBox_TablaFMH;
+        private System.Windows.Forms.TextBox textBox_NombreTablaFMM;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.DataGridView dataGridView8;
+        private System.Windows.Forms.DataGridView dataGridView_CamposFMM;
         private System.Windows.Forms.ComboBox comboBox_ColumnaFV;
         private System.Windows.Forms.ComboBox comboBox_TablaFH;
         private System.Windows.Forms.ComboBox comboBox_TablaFV;
         private System.Windows.Forms.ComboBox comboBox_TablaFM;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBox_TablaFMV;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ComboBox comboBox_Separacion1FH;
