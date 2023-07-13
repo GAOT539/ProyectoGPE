@@ -140,6 +140,18 @@ namespace ProyectoSGBD_MySQL
         {
             CrearFragmentacionH();
             MostrarTablasEnDataGridViewFH();
+            LimpiarFH();
+        }
+
+        private void LimpiarFH()
+        {
+            comboBox_DataBaseFH.Text = "";
+            comboBox_TablaFH.Text = "";
+            comboBox_ColumnaFH.Text = "";
+            comboBox_Separacion1FH.Text = "";
+            comboBox_Separacion2FH.Text = "";
+            textBox_NombreTabla1FH.Text = "";
+            textBox_NombreTabla2FH.Text = "";
         }
 
         public void MostrarTablasEnDataGridViewFH()
