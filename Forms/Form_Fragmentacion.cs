@@ -157,11 +157,10 @@ namespace ProyectoSGBD_MySQL
 
         private void LimpiarFH()
         {
-            comboBox_DataBaseFH.Text = "";
-            comboBox_TablaFH.Text = "";
-            comboBox_ColumnaFH.Text = "";
-            comboBox_Separacion1FH.Text = "";
-            comboBox_Separacion2FH.Text = "";
+            comboBox_TablaFH.Items.Clear();
+            comboBox_ColumnaFH.Items.Clear();
+            comboBox_Separacion1FH.Items.Clear();
+            comboBox_Separacion2FH.Items.Clear();
             textBox_NombreTabla1FH.Text = "";
             textBox_NombreTabla2FH.Text = "";
         }
