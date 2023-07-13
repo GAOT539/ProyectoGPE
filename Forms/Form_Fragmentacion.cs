@@ -136,7 +136,7 @@ namespace ProyectoSGBD_MySQL
             }
         }
         
-        private void button_Añadir_Tabla_Click(object sender, EventArgs e)
+        private void button_Añadir_TablaFH_Click(object sender, EventArgs e)
         {
             // Verificar que todos los campos estén llenos
             if (string.IsNullOrEmpty(comboBox_DataBaseFH.Text) ||
