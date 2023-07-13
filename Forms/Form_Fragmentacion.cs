@@ -505,5 +505,46 @@ namespace ProyectoSGBD_MySQL
                 MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void comboBox_ColumnaFV_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CargarDatosAtributosFV();
+        }
+
+        private void CargarDatosAtributosFV()
+        {
+            string cadenaConexion = "Database=" + comboBox_DataBaseFV.Text + "; Data Source=localhost; Port=3306; User Id=root; Password=2001;";
+
+            try
+            {
+                using (MySqlConnection connection = new MySqlConnection(cadenaConexion))
+                {
+                    connection.Open();
+
+                    // Obtener las bases de datos existentes
+                    string sqlQueryTabla = $"SELECT DISTINCT {comboBox_ColumnaFV.Text} FROM {comboBox_DataBaseFV.Text}.{comboBox_TablaFV.Text};";
+                    //Limpia antes de añadir datos
+                    comboBox_Separacion1FV.Items.Clear();
+                    comboBox_Separacion2FV.Items.Clear();
+
+                    using (MySqlCommand commandBasesDatos = new MySqlCommand(sqlQueryTabla, connection))
+                    {
+                        using (MySqlDataReader readerBasesDatos = commandBasesDatos.ExecuteReader())
+                        {
+                            while (readerBasesDatos.Read())
+                            {
+                                string nombreTablas = readerBasesDatos.GetString(0);
+                                comboBox_Separacion1FV.Items.Add(nombreTablas);
+                                comboBox_Separacion2FV.Items.Add(nombreTablas);
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

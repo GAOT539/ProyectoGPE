@@ -49,13 +49,11 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label17 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.comboBox_ColumnaFV = new System.Windows.Forms.ComboBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox_NombreTabla2FV = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox_NombreTabla1FV = new System.Windows.Forms.TextBox();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.label5 = new System.Windows.Forms.Label();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
@@ -88,6 +86,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.comboBox_Separacion1FH = new System.Windows.Forms.ComboBox();
             this.comboBox_Separacion2FH = new System.Windows.Forms.ComboBox();
+            this.comboBox_Separacion1FV = new System.Windows.Forms.ComboBox();
+            this.comboBox_Separacion2FV = new System.Windows.Forms.ComboBox();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_CamposFH2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_CamposFH1)).BeginInit();
@@ -332,13 +332,13 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.textBox1);
-            this.groupBox3.Controls.Add(this.textBox4);
+            this.groupBox3.Controls.Add(this.comboBox_Separacion2FV);
+            this.groupBox3.Controls.Add(this.comboBox_Separacion1FV);
             this.groupBox3.Controls.Add(this.label19);
             this.groupBox3.Controls.Add(this.comboBox_ColumnaFV);
-            this.groupBox3.Controls.Add(this.textBox3);
+            this.groupBox3.Controls.Add(this.textBox_NombreTabla2FV);
             this.groupBox3.Controls.Add(this.label9);
-            this.groupBox3.Controls.Add(this.textBox2);
+            this.groupBox3.Controls.Add(this.textBox_NombreTabla1FV);
             this.groupBox3.Controls.Add(this.dataGridView3);
             this.groupBox3.Controls.Add(this.label5);
             this.groupBox3.Controls.Add(this.dataGridView4);
@@ -349,26 +349,10 @@
             this.groupBox3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBox3.Size = new System.Drawing.Size(675, 768);
+            this.groupBox3.Size = new System.Drawing.Size(675, 969);
             this.groupBox3.TabIndex = 53;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Tabla Seleccionada";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(338, 395);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(311, 26);
-            this.textBox1.TabIndex = 63;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(10, 395);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(309, 26);
-            this.textBox4.TabIndex = 62;
             // 
             // label19
             // 
@@ -384,19 +368,20 @@
             // 
             this.comboBox_ColumnaFV.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_ColumnaFV.FormattingEnabled = true;
-            this.comboBox_ColumnaFV.Location = new System.Drawing.Point(380, 333);
+            this.comboBox_ColumnaFV.Location = new System.Drawing.Point(338, 333);
             this.comboBox_ColumnaFV.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.comboBox_ColumnaFV.Name = "comboBox_ColumnaFV";
-            this.comboBox_ColumnaFV.Size = new System.Drawing.Size(260, 28);
+            this.comboBox_ColumnaFV.Size = new System.Drawing.Size(311, 28);
             this.comboBox_ColumnaFV.TabIndex = 59;
+            this.comboBox_ColumnaFV.SelectedIndexChanged += new System.EventHandler(this.comboBox_ColumnaFV_SelectedIndexChanged);
             // 
-            // textBox3
+            // textBox_NombreTabla2FV
             // 
-            this.textBox3.Location = new System.Drawing.Point(338, 459);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(311, 26);
-            this.textBox3.TabIndex = 53;
+            this.textBox_NombreTabla2FV.Location = new System.Drawing.Point(338, 459);
+            this.textBox_NombreTabla2FV.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBox_NombreTabla2FV.Name = "textBox_NombreTabla2FV";
+            this.textBox_NombreTabla2FV.Size = new System.Drawing.Size(311, 26);
+            this.textBox_NombreTabla2FV.TabIndex = 53;
             // 
             // label9
             // 
@@ -408,23 +393,23 @@
             this.label9.TabIndex = 54;
             this.label9.Text = "Nombre de la Tabla:";
             // 
-            // textBox2
+            // textBox_NombreTabla1FV
             // 
-            this.textBox2.Location = new System.Drawing.Point(10, 459);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(309, 26);
-            this.textBox2.TabIndex = 50;
+            this.textBox_NombreTabla1FV.Location = new System.Drawing.Point(10, 459);
+            this.textBox_NombreTabla1FV.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBox_NombreTabla1FV.Name = "textBox_NombreTabla1FV";
+            this.textBox_NombreTabla1FV.Size = new System.Drawing.Size(309, 26);
+            this.textBox_NombreTabla1FV.TabIndex = 50;
             // 
             // dataGridView3
             // 
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Location = new System.Drawing.Point(338, 495);
+            this.dataGridView3.Location = new System.Drawing.Point(7, 705);
             this.dataGridView3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.ReadOnly = true;
             this.dataGridView3.RowHeadersWidth = 62;
-            this.dataGridView3.Size = new System.Drawing.Size(311, 205);
+            this.dataGridView3.Size = new System.Drawing.Size(641, 200);
             this.dataGridView3.TabIndex = 33;
             // 
             // label5
@@ -445,7 +430,7 @@
             this.dataGridView4.Name = "dataGridView4";
             this.dataGridView4.ReadOnly = true;
             this.dataGridView4.RowHeadersWidth = 62;
-            this.dataGridView4.Size = new System.Drawing.Size(309, 205);
+            this.dataGridView4.Size = new System.Drawing.Size(638, 200);
             this.dataGridView4.TabIndex = 32;
             // 
             // dataGridView_CamposFV
@@ -472,7 +457,7 @@
             // button1
             // 
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(174, 720);
+            this.button1.Location = new System.Drawing.Point(174, 924);
             this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(316, 35);
@@ -772,6 +757,26 @@
             this.comboBox_Separacion2FH.Size = new System.Drawing.Size(308, 28);
             this.comboBox_Separacion2FH.TabIndex = 63;
             // 
+            // comboBox_Separacion1FV
+            // 
+            this.comboBox_Separacion1FV.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_Separacion1FV.FormattingEnabled = true;
+            this.comboBox_Separacion1FV.Location = new System.Drawing.Point(10, 395);
+            this.comboBox_Separacion1FV.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.comboBox_Separacion1FV.Name = "comboBox_Separacion1FV";
+            this.comboBox_Separacion1FV.Size = new System.Drawing.Size(309, 28);
+            this.comboBox_Separacion1FV.TabIndex = 63;
+            // 
+            // comboBox_Separacion2FV
+            // 
+            this.comboBox_Separacion2FV.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_Separacion2FV.FormattingEnabled = true;
+            this.comboBox_Separacion2FV.Location = new System.Drawing.Point(338, 395);
+            this.comboBox_Separacion2FV.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.comboBox_Separacion2FV.Name = "comboBox_Separacion2FV";
+            this.comboBox_Separacion2FV.Size = new System.Drawing.Size(310, 28);
+            this.comboBox_Separacion2FV.TabIndex = 64;
+            // 
             // Form_Fragmentacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -780,7 +785,6 @@
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Form_Fragmentacion";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Form_Fragmentacion";
             this.Load += new System.EventHandler(this.Form_Fragmentacion_Load);
             this.groupBox2.ResumeLayout(false);
@@ -829,7 +833,7 @@
         private System.Windows.Forms.DataGridView dataGridView_CamposFH1;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.ComboBox comboBox_ColumnaFH;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox_NombreTabla1FV;
         private System.Windows.Forms.DataGridView dataGridView3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridView dataGridView4;
@@ -843,7 +847,7 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox textBox_NombreTabla1FH;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox_NombreTabla2FV;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.GroupBox groupBox5;
@@ -866,13 +870,13 @@
         private System.Windows.Forms.ComboBox comboBox_TablaFV;
         private System.Windows.Forms.ComboBox comboBox_TablaFM;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ComboBox comboBox_Separacion1FH;
         private System.Windows.Forms.ComboBox comboBox_Separacion2FH;
+        private System.Windows.Forms.ComboBox comboBox_Separacion2FV;
+        private System.Windows.Forms.ComboBox comboBox_Separacion1FV;
     }
 }
