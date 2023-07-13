@@ -260,6 +260,11 @@ namespace ProyectoSGBD_MySQL
                     connection.Close();
                 }
 
+                string[] columnasTablaPrincipal = ObtenerNombresColumnas(tableName);
+
+                // Crear el trigger
+                CrearTrigger(tableName, newTableName1, newTableName2, columnasTablaPrincipal, columnName, separationAttr1, separationAttr2);
+
                 MessageBox.Show("Tablas creadas exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
@@ -718,6 +723,7 @@ namespace ProyectoSGBD_MySQL
                     comandoCrearTabla.ExecuteNonQuery();
 
                     // Insertar los datos de la tabla2 en la tabla3
+                    // Nota: La logica de insercion es que se optiene las columnas de la TablaFV en formato (dato, dato, dato) y asi se selecciona las columnas especificas.
                     string sqlQueryColumnas1 = $"SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = '{nombreBaseDatos}' AND TABLE_NAME = '{nombreTabla1}' ORDER BY ORDINAL_POSITION;";
                     MySqlCommand comandoColumnas1 = new MySqlCommand(sqlQueryColumnas1, conexion);
                     MySqlDataReader readerColumnas1 = comandoColumnas1.ExecuteReader();
@@ -728,9 +734,12 @@ namespace ProyectoSGBD_MySQL
                         columnas.Add(columna);
                     }
                     readerColumnas1.Close();
+
+                    //Dar formato a las columnas
                     string datoColumna = string.Join(", ", columnas.ToArray());
                     datoColumna = datoColumna.TrimStart(',', ' ').TrimEnd(',', ' ');
-                    MessageBox.Show(datoColumna, "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    //MessageBox.Show(datoColumna, "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    
                     string consultaInsertarDatos = $"INSERT INTO {nombreBaseDatos}.{nombreTablaCrear} SELECT {datoColumna} FROM {nombreBaseDatos}.{nombreTabla2}";
                     MySqlCommand comandoInsertarDatos = new MySqlCommand(consultaInsertarDatos, conexion);
                     comandoInsertarDatos.ExecuteNonQuery();
@@ -790,5 +799,128 @@ namespace ProyectoSGBD_MySQL
             comboBox_TablaFMV.Items.Clear();
             textBox_NombreTablaFMM.Text = "";
         }
+
+        private string[] ObtenerNombresColumnas(string tablaPrincipal)
+        {
+            try
+            {
+                // Obtener los nombres de las columnas de la tabla principal
+                List<string> columnas = new List<string>();
+
+                // Cadena de conexión a MySQL
+                string cadenaConexion = "Database=" + comboBox_DataBaseFH.Text + "; Data Source=localhost; Port=3306; User Id=root; Password=2001;";
+
+                // Consulta para obtener los nombres de las columnas
+                string query = $"SHOW COLUMNS FROM {tablaPrincipal}";
+
+                // Ejecutar la consulta
+                using (MySqlConnection connection = new MySqlConnection(cadenaConexion))
+                {
+                    connection.Open();
+
+                    using (MySqlCommand command = new MySqlCommand(query, connection))
+                    {
+                        using (MySqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                string nombreColumna = reader.GetString("Field");
+                                columnas.Add(nombreColumna);
+                            }
+                        }
+                    }
+
+                    connection.Close();
+                }
+
+                return columnas.ToArray();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ocurrió un error al obtener los nombres de las columnas: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return new string[0]; // Devolver un arreglo vacío en caso de error
+            }
+        }
+
+        private void CrearTrigger(string tablaPrincipal, string nombreTabla1, string nombreTabla2, string[] columnas, string columnName, string separationAttr1, string separationAttr2)
+        {
+            try
+            {
+                string triggerName = "Trigger_" + tablaPrincipal + "_" + nombreTabla1 + nombreTabla2;
+
+                // Cadena de conexión a MySQL
+                string cadenaConexion = "Database=" + comboBox_DataBaseFH.Text + "; Data Source=localhost; Port=3306; User Id=root; Password=2001;";
+
+                // Construir la lista de columnas para la inserción
+                string columnList = string.Join(", ", columnas);
+
+                // Construir la lista de valores para la inserción
+                string valueList = string.Join(", ", columnas.Select(c => "NEW." + c));
+
+                // Consulta para crear el trigger
+                string createTriggerQuery = $@"
+                    CREATE TRIGGER {triggerName}_Insert AFTER INSERT ON {tablaPrincipal}
+                    FOR EACH ROW
+                    BEGIN
+                        -- Eliminar de la tabla 1
+                        DELETE FROM {nombreTabla1} WHERE {columnName} = '{separationAttr1}' AND id = NEW.id;
+
+                        -- Eliminar de la tabla 2
+                        DELETE FROM {nombreTabla2} WHERE {columnName} = '{separationAttr2}' AND id = NEW.id;
+
+                        -- Insertar en la tabla 1
+                        INSERT INTO {nombreTabla1} ({columnList}) SELECT {columnList} FROM {tablaPrincipal} WHERE {columnName} = '{separationAttr1}' AND id = NEW.id;
+
+                        -- Insertar en la tabla 2
+                        INSERT INTO {nombreTabla2} ({columnList}) SELECT {columnList} FROM {tablaPrincipal} WHERE {columnName} = '{separationAttr2}' AND id = NEW.id;
+                    END;
+
+                    CREATE TRIGGER {triggerName}_Update AFTER UPDATE ON {tablaPrincipal}
+                    FOR EACH ROW
+                    BEGIN
+                        -- Eliminar de la tabla 1
+                        DELETE FROM {nombreTabla1} WHERE {columnName} = '{separationAttr1}' AND id = NEW.id;
+
+                        -- Eliminar de la tabla 2
+                        DELETE FROM {nombreTabla2} WHERE {columnName} = '{separationAttr2}' AND id = NEW.id;
+
+                        -- Insertar en la tabla 1
+                        INSERT INTO {nombreTabla1} ({columnList}) SELECT {columnList} FROM {tablaPrincipal} WHERE {columnName} = '{separationAttr1}' AND id = NEW.id;
+
+                        -- Insertar en la tabla 2
+                        INSERT INTO {nombreTabla2} ({columnList}) SELECT {columnList} FROM {tablaPrincipal} WHERE {columnName} = '{separationAttr2}' AND id = NEW.id;
+                    END;
+
+                    CREATE TRIGGER {triggerName}_Delete AFTER DELETE ON {tablaPrincipal}
+                    FOR EACH ROW
+                    BEGIN
+                        -- Eliminar de la tabla 1
+                        DELETE FROM {nombreTabla1} WHERE {columnName} = '{separationAttr1}' AND id = OLD.id;
+
+                        -- Eliminar de la tabla 2
+                        DELETE FROM {nombreTabla2} WHERE {columnName} = '{separationAttr2}' AND id = OLD.id;
+                    END";
+
+                // Ejecutar la consulta
+                using (MySqlConnection connection = new MySqlConnection(cadenaConexion))
+                {
+                    connection.Open();
+
+                    using (MySqlCommand command = new MySqlCommand(createTriggerQuery, connection))
+                    {
+                        command.ExecuteNonQuery();
+                    }
+
+                    connection.Close();
+                }
+
+                //MessageBox.Show("Trigger creado exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ocurrió un error al crear el trigger: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
     }
 }
